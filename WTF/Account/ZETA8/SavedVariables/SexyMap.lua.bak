@@ -1,0 +1,130 @@
+
+SexyMap2DB = {
+	["global"] = {
+		["core"] = {
+			["clamp"] = true,
+			["lock"] = false,
+			["rightClickToConfig"] = true,
+			["autoZoom"] = 5,
+			["shape"] = "Interface\\BUTTONS\\WHITE8X8",
+			["northTag"] = false,
+		},
+		["coordinates"] = {
+			["enabled"] = false,
+			["fontColor"] = {
+			},
+			["borderColor"] = {
+			},
+			["locked"] = false,
+			["backgroundColor"] = {
+			},
+		},
+		["ping"] = {
+			["showPing"] = true,
+			["showAt"] = "map",
+		},
+		["movers"] = {
+			["enabled"] = false,
+			["framePositions"] = {
+			},
+			["lock"] = false,
+		},
+		["clock"] = {
+			["bgColor"] = {
+				["a"] = 0,
+				["r"] = 0,
+				["g"] = 0,
+				["b"] = 0,
+			},
+			["font"] = "Expressway",
+			["fontColor"] = {
+			},
+			["borderColor"] = {
+				["a"] = 0,
+				["r"] = 1,
+				["g"] = 1,
+				["b"] = 1,
+			},
+			["xOffset"] = 0,
+			["fontsize"] = 12,
+			["yOffset"] = -5,
+		},
+		["borders"] = {
+			["applyPreset"] = false,
+			["borders"] = {
+			},
+			["backdrop"] = {
+				["show"] = true,
+				["textureColor"] = {
+					["b"] = 0,
+					["g"] = 0,
+					["r"] = 0,
+				},
+				["settings"] = {
+					["edgeSize"] = 16,
+					["edgeFile"] = "Interface\\Addons\\SharedMedia_MyMedia\\border\\Caith.tga",
+					["bgFile"] = "Interface\\Buttons\\WHITE8X8",
+					["tile"] = false,
+					["insets"] = {
+						["top"] = 4,
+						["right"] = 4,
+						["left"] = 4,
+						["bottom"] = 4,
+					},
+				},
+				["borderColor"] = {
+				},
+				["scale"] = 1.07,
+			},
+			["hideBlizzard"] = true,
+		},
+		["zonetext"] = {
+			["bgColor"] = {
+				["a"] = 1,
+				["r"] = 0,
+				["g"] = 0,
+				["b"] = 0,
+			},
+			["font"] = "Expressway",
+			["fontColor"] = {
+			},
+			["borderColor"] = {
+				["a"] = 0,
+				["r"] = 0,
+				["g"] = 0,
+				["b"] = 0,
+			},
+			["xOffset"] = 0,
+			["yOffset"] = -8,
+			["width"] = 102,
+		},
+		["buttons"] = {
+			["lockDragging"] = false,
+			["radius"] = 10,
+			["TEMP2"] = true,
+			["allowDragging"] = true,
+			["visibilitySettings"] = {
+				["MinimapZoomIn"] = "never",
+				["MiniMapMailFrame"] = "always",
+				["MiniMapWorldMapButton"] = "never",
+				["QueueStatusMinimapButton"] = "always",
+				["GarrisonLandingPageMinimapButton"] = "hover",
+				["MinimapZoomOut"] = "never",
+				["MinimapZoneTextButton"] = "always",
+				["TimeManagerClockButton"] = "always",
+			},
+			["dragPositions"] = {
+				["LibDBIcon10_Bartender4"] = 175.804261980264,
+				["GarrisonLandingPageMinimapButton"] = 219.911824373056,
+				["LibDBIcon10_Skada"] = 195.00018930239,
+				["GameTimeFrame"] = 35.4224270807576,
+				["MiniMapTracking"] = 156.937169187708,
+			},
+			["TEMP"] = true,
+			["controlVisibility"] = true,
+		},
+	},
+	["presets"] = {
+	},
+	["Cìrno-Skywall"] = "global",
+}

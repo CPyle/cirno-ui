@@ -1,0 +1,29 @@
+## Interface: 70000
+## Title: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Title-deDE: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Title-esES: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Title-frFR: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Title-koKR: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Title-ruRU: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Title-zhCN: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Title-zhTW: PitBull4 |r[|cffeda55fAlternate mana bar|r]
+## Notes: Show the mana bar for specs that don't use mana as their primary resource.
+## Notes-deDE: Show the mana bar for specs that don't use mana as their primary resource.
+## Notes-esES: Show the mana bar for specs that don't use mana as their primary resource.
+## Notes-frFR: Show the mana bar for specs that don't use mana as their primary resource.
+## Notes-koKR: Show the mana bar for specs that don't use mana as their primary resource.
+## Notes-ruRU: Show the mana bar for specs that don't use mana as their primary resource.
+## Notes-zhCN: Show the mana bar for specs that don't use mana as their primary resource.
+## Notes-zhTW: Show the mana bar for specs that don't use mana as their primary resource.
+## Author: ckknight
+## DefaultState: enabled
+## LoadOnDemand: 1
+## Dependencies: PitBull4
+## Version: v4.0.3
+## X-PitBull4-Condition: return select(2, UnitClass("player")) == "DRUID" or select(2, UnitClass("player")) == "PRIEST" or select(2, UnitClass("player")) == "SHAMAN"
+## X-Curse-Packaged-Version: v4.0.3
+## X-Curse-Project-Name: PitBull Unit Frames 4.0
+## X-Curse-Project-ID: pitbull4
+## X-Curse-Repository-ID: wow/pitbull4/mainline
+
+load.xml

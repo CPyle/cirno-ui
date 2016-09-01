@@ -1,0 +1,101 @@
+
+Quartz3DB = {
+	["namespaces"] = {
+		["Swing"] = {
+		},
+		["Buff"] = {
+		},
+		["Interrupt"] = {
+		},
+		["Flight"] = {
+		},
+		["Pet"] = {
+			["profiles"] = {
+				["Default"] = {
+					["h"] = 14,
+					["w"] = 130,
+					["hideicon"] = true,
+					["font"] = "Century Gothic",
+					["border"] = "Caith",
+					["texture"] = "Melli Dark",
+					["x"] = 86.3217926025391,
+					["y"] = 113.678367614746,
+				},
+			},
+		},
+		["EnemyCasts"] = {
+		},
+		["Player"] = {
+			["profiles"] = {
+				["Default"] = {
+					["w"] = 233,
+					["y"] = 80,
+					["font"] = "Century Gothic",
+					["border"] = "Caith",
+					["x"] = 345.994659423828,
+					["texture"] = "Melli Dark",
+				},
+			},
+		},
+		["GCD"] = {
+		},
+		["Focus"] = {
+			["profiles"] = {
+				["Default"] = {
+					["showhostile"] = false,
+					["h"] = 25,
+					["showfriendly"] = false,
+					["showtarget"] = false,
+					["w"] = 233,
+					["y"] = 230.751907348633,
+					["font"] = "Century Gothic",
+					["iconposition"] = "right",
+					["border"] = "Caith",
+					["texture"] = "Melli Dark",
+					["x"] = 79.3925094604492,
+				},
+			},
+		},
+		["Target"] = {
+			["profiles"] = {
+				["Default"] = {
+					["h"] = 25,
+					["w"] = 233,
+					["y"] = 80,
+					["font"] = "Century Gothic",
+					["border"] = "Caith",
+					["texture"] = "Melli Dark",
+					["x"] = 684.779052734375,
+				},
+			},
+		},
+		["Range"] = {
+		},
+		["Mirror"] = {
+			["profiles"] = {
+				["Default"] = {
+					["mirrorfont"] = "Century Gothic",
+				},
+			},
+		},
+		["Latency"] = {
+		},
+	},
+	["profileKeys"] = {
+		["Cìrno - Stormrage"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["bordercolor"] = {
+				0.992156862745098, -- [1]
+				0.992156862745098, -- [2]
+				0.992156862745098, -- [3]
+				1, -- [4]
+			},
+			["modules"] = {
+				["Focus"] = false,
+				["Buff"] = false,
+			},
+		},
+	},
+}

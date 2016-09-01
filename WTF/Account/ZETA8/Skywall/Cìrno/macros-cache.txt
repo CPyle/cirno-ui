@@ -1,0 +1,4 @@
+VER 3 0100000000000001 "Leap!" "PRIEST_SPELL_LEAPOFFAITH_A"
+#showtooltip
+/cast [@mouseover,help,nodead][@focus,help,nodead][]Leap of Faith
+END

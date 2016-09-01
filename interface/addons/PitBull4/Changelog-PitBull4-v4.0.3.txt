@@ -1,0 +1,22 @@
+tag v4.0.3
+674759c2c88dd6db1e5a3a3d2fd648d3512453c1
+Kyle Buller <bullerk@gmail.com>
+2016-07-26 20:58:26 -0500
+
+Tagging as v4.0.3
+
+
+--------------------
+
+Kyle Buller:
+	- HostilityFader: Update state on player flag changes.
+	- CombatFader: Update power checks.
+	- RangeFader: Update spells.
+	- AltManaBar: Add option for Druids to always show the bar.
+	- ComboPoints: Allow more than 5 combo points.
+	- Localize "Demon Hunters" for color options.
+	- Add Arcane Charges module.
+	- Remove some missed legion compat code.
+	- Runes: Tweaks.
+	- SoulShards: Increase number of shards to 5.
+	- Runes: Update for Legion.

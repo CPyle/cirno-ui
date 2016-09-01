@@ -1,0 +1,39 @@
+
+SkadaDB = {
+	["namespaces"] = {
+		["LibDualSpec-1.0"] = {
+		},
+	},
+	["hasUpgraded"] = true,
+	["profileKeys"] = {
+		["Cìrno - Skywall"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["windows"] = {
+				{
+					["hidden"] = true,
+					["y"] = 128.19255065918,
+					["barfont"] = "Expressway",
+					["mode"] = "Damage",
+					["point"] = "LEFT",
+					["barwidth"] = 330.081695556641,
+					["background"] = {
+						["borderthickness"] = 16,
+						["color"] = {
+							["a"] = 0.580038487911224,
+							["b"] = 0,
+						},
+						["height"] = 116.078102111816,
+						["bordertexture"] = "Caith",
+					},
+					["x"] = 17.8166999816895,
+					["bartexture"] = "Melli Dark",
+				}, -- [1]
+			},
+			["report"] = {
+				["channel"] = "party",
+			},
+		},
+	},
+}

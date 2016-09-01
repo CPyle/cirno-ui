@@ -1,0 +1,28 @@
+## Interface: 70000
+## Title: PitBull4 |r[|cffeda55fPower bar|r]
+## Title-deDE: PitBull4 |r[|cffeda55fRessourcenleiste|r]
+## Title-esES: PitBull4 |r[|cffeda55fBarra de poder|r]
+## Title-frFR: PitBull4 |r[|cffeda55fBarre de puissance|r]
+## Title-koKR: PitBull4 |r[|cffeda55f자원 바|r]
+## Title-ruRU: PitBull4 |r[|cffeda55fПанель энергии|r]
+## Title-zhCN: PitBull4 |r[|cffeda55f法力条|r]
+## Title-zhTW: PitBull4 |r[|cffeda55f法力條|r]
+## Notes: Show a bar for your primary resource.
+## Notes-deDE: Show a bar for your primary resource.
+## Notes-esES: Show a bar for your primary resource.
+## Notes-frFR: Show a bar for your primary resource.
+## Notes-koKR: Show a bar for your primary resource.
+## Notes-ruRU: Show a bar for your primary resource.
+## Notes-zhCN: Show a bar for your primary resource.
+## Notes-zhTW: Show a bar for your primary resource.
+## Author: ckknight
+## DefaultState: enabled
+## LoadOnDemand: 1
+## Dependencies: PitBull4
+## Version: v4.0.3
+## X-Curse-Packaged-Version: v4.0.3
+## X-Curse-Project-Name: PitBull Unit Frames 4.0
+## X-Curse-Project-ID: pitbull4
+## X-Curse-Repository-ID: wow/pitbull4/mainline
+
+load.xml

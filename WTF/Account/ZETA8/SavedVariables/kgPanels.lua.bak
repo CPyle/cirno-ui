@@ -1,0 +1,19 @@
+
+kgPanelsDB = {
+	["namespaces"] = {
+		["LibDualSpec-1.0"] = {
+		},
+	},
+	["profileKeys"] = {
+		["Cìrno - Stormrage"] = "Default",
+	},
+	["global"] = {
+		["border"] = {
+			["Caith"] = "interface\\Textures\\Caith.tga",
+		},
+	},
+	["profiles"] = {
+		["Default"] = {
+		},
+	},
+}

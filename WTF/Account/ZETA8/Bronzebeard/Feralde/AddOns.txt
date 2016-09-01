@@ -1,0 +1,3 @@
+Forte_Healthstone: disabled
+Forte_Soulstone: disabled
+Forte_Summon: disabled

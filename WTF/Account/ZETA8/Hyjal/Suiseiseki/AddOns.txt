@@ -1,0 +1,2 @@
+Forte_Core: disabled
+Skada: disabled

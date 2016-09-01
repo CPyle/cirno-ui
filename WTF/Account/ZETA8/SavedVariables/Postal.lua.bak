@@ -1,0 +1,17 @@
+
+Postal3DB = {
+	["global"] = {
+		["BlackBook"] = {
+			["alts"] = {
+				"Cìrno|Skywall|Alliance|100|PRIEST", -- [1]
+			},
+		},
+	},
+	["profileKeys"] = {
+		["Cìrno - Skywall"] = "Cìrno - Skywall",
+	},
+	["profiles"] = {
+		["Cìrno - Skywall"] = {
+		},
+	},
+}

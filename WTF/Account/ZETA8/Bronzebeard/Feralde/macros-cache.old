@@ -1,0 +1,3 @@
+MACRO 16777217 "Run" Ability_Mount_BlackDireWolf
+/cast Running Wild
+END

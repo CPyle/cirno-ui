@@ -1,0 +1,46 @@
+VER 3 0000000000000009 " Mount" "Ability_Mount_Dreadsteed"
+/run if IsMounted() then Dismount() return end local t if IsSwimming() then t={1} elseif (GetZoneText()=="Wintergrasp" and GetWintergraspWaitTime()==nil) or not IsFlyableArea() then t={3,8} else t={9} end CallCompanion("MOUNT",t[random(#t)])
+END
+VER 3 000000000000000B " Shadow Prot" "Spell_Holy_PrayerofShadowProtection"
+#showtooltip Shadow Protection
+/cast [modifier:shift] Prayer of Shadow Protection; Shadow Protection
+END
+VER 3 000000000000000C " Spirit" "Spell_Holy_DivineSpirit"
+#showtooltip Divine Spirit
+/cast [modifier:shift] Prayer of Spirit; Divine Spirit
+END
+VER 3 0000000000000012 "BS1" "Spell_Shadow_UnstableAffliction_1"
+/y And shepherds we shall be, For thee my lord for thee. Power has descended forth from thy hand, that our feet may swiftly carry out thy commands.
+END
+VER 3 0000000000000013 "BS2" "Spell_Shadow_UnstableAffliction_1"
+/y So we shall flow a river forth to thee, and teeming with souls shall it ever be. 
+END
+VER 3 0000000000000014 "BS3" "Spell_Shadow_UnstableAffliction_1"
+/y In nomine Patri 
+/y Et Fili 
+/y Spiritus Sancti
+END
+VER 3 000000000000001D "Dispel" "SPELL_HOLY_DISPELMAGIC"
+#showtooltip
+/cast [@mouseover,harm,nodead][harm,nodead] Dispel Magic;
+END
+VER 3 0000000000000021 "Dispel Magic" "SPELL_NATURE_NULLIFYDISEASE"
+#showtooltip
+/cast [@mouseover,harm,nodead][harm,nodead] Dispel Magic
+END
+VER 3 0000000000000008 "Fortitude" "Spell_Holy_WordFortitude"
+#showtooltip Power Word: Fortitude(Rank 7)
+/cast [modifier:shift] Prayer of Fortitude; Power Word: Fortitude
+END
+VER 3 000000000000001E "FrameName" "INV_Misc_QuestionMark"
+/dump GetMouseFocus():GetName();
+END
+VER 3 000000000000001F "Lightwell" "Spell_Holy_SummonLightwell"
+#showtooltip Lightwell
+/p A lightwell is going down!  Use it for great happiness!
+/cast Lightwell
+END
+VER 3 0000000000000020 "Purge" "Spell_Nature_WispSplode"
+#showtooltip Purge
+/cast [target=mouseover,exists] Cleanse Spirit; Cleanse Spirit
+END
