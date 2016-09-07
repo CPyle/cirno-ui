@@ -117,6 +117,7 @@ Prat3DB = {
 		["Prismriver - Drak'thul"] = "Default",
 		["Mews - Cho'gall"] = "Default",
 		["Cìrno - Skywall"] = "Default",
+		["Cirnosa - Blackrock"] = "Default",
 	},
 	["profiles"] = {
 		["Cìrno - Blackrock"] = {

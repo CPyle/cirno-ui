@@ -130,99 +130,17 @@ local miscArmorExceptions = {
 }
 
 
------------------------------
--- Tooltip text constants --
------------------------------
-
-
-local KNOWN_ICON = "|TInterface\\Addons\\CanIMogIt\\Icons\\KNOWN:0|t "
-local KNOWN_ICON_OVERLAY = "|TInterface\\Addons\\CanIMogIt\\Icons\\KNOWN_OVERLAY:0|t "
-local KNOWN_BUT_ICON = "|TInterface\\Addons\\CanIMogIt\\Icons\\KNOWN_circle:0|t "
-local KNOWN_BUT_ICON_OVERLAY = "|TInterface\\Addons\\CanIMogIt\\Icons\\KNOWN_circle_OVERLAY:0|t "
-local UNKNOWN_ICON = "|TInterface\\Addons\\CanIMogIt\\Icons\\UNKNOWN:0|t "
-local UNKNOWN_ICON_OVERLAY = "|TInterface\\Addons\\CanIMogIt\\Icons\\UNKNOWN_OVERLAY:0|t "
-local UNKNOWABLE_BY_CHARACTER_ICON = "|TInterface\\Addons\\CanIMogIt\\Icons\\UNKNOWABLE_BY_CHARACTER:0|t "
-local UNKNOWABLE_BY_CHARACTER_ICON_OVERLAY = "|TInterface\\Addons\\CanIMogIt\\Icons\\UNKNOWABLE_BY_CHARACTER_OVERLAY:0|t "
-local UNKNOWABLE_SOULBOUND_ICON = "|TInterface\\Addons\\CanIMogIt\\Icons\\UNKNOWABLE_SOULBOUND:0|t "
-local UNKNOWABLE_SOULBOUND_ICON_OVERLAY = "|TInterface\\Addons\\CanIMogIt\\Icons\\UNKNOWABLE_SOULBOUND_OVERLAY:0|t "
-local NOT_TRANSMOGABLE_ICON = "|TInterface\\Addons\\CanIMogIt\\Icons\\NOT_TRANSMOGABLE:0|t "
-local NOT_TRANSMOGABLE_ICON_OVERLAY = "|TInterface\\Addons\\CanIMogIt\\Icons\\NOT_TRANSMOGABLE_OVERLAY:0|t "
-local QUESTIONABLE_ICON = "|TInterface\\Addons\\CanIMogIt\\Icons\\QUESTIONABLE:0|t "
-local QUESTIONABLE_ICON_OVERLAY = "|TInterface\\Addons\\CanIMogIt\\Icons\\QUESTIONABLE_OVERLAY:0|t "
-
--- Colorblind colors
-local BLUE =   "|cff15abff"
-local BLUE_GREEN = "|cff009e73"
-local PINK = "|cffcc79a7"
-local ORANGE = "|cffe69f00"
-local RED_ORANGE = "|cffff9333"
-local YELLOW = "|cfff0e442"
-local GRAY =   "|cff888888"
-
 -- Built-in colors
+-- TODO: move to constants
 local BLIZZARD_RED = "|cffff1919"
 
 
-local KNOWN =                                       L["Learned."]
-local KNOWN_FROM_ANOTHER_ITEM =                     L["Learned from another item."]
-local KNOWN_BY_ANOTHER_CHARACTER =                  L["Learned for a different class."]
-local KNOWN_BUT_TOO_LOW_LEVEL =                     L["Learned but cannot transmog yet."]
-local KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL =   L["Learned from another item but cannot transmog yet."]
-local KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER =       L["Learned for a different class and item."]
-local UNKNOWN =                                     L["Not learned."]
-local UNKNOWABLE_BY_CHARACTER =                     L["Cannot learn: "] -- subClass
-local UNKNOWABLE_SOULBOUND =                        L["Cannot learn: Soulbound "] -- subClass
-local CAN_BE_LEARNED_BY =                           L["Can be learned by:"] -- list of classes
-local NOT_TRANSMOGABLE =                            L["Cannot be learned."]
-local CANNOT_DETERMINE =                            L["Cannot determine status on other characters."]
+-------------------------
+-- Text related tables --
+-------------------------
 
 
-CanIMogIt.KNOWN =                                       KNOWN_ICON .. BLUE .. KNOWN
-CanIMogIt.KNOWN_FROM_ANOTHER_ITEM =                     KNOWN_BUT_ICON .. BLUE .. KNOWN_FROM_ANOTHER_ITEM
-CanIMogIt.KNOWN_BY_ANOTHER_CHARACTER =                  KNOWN_ICON .. BLUE .. KNOWN_BY_ANOTHER_CHARACTER
-CanIMogIt.KNOWN_BUT_TOO_LOW_LEVEL =                     KNOWN_ICON .. BLUE .. KNOWN_BUT_TOO_LOW_LEVEL
-CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL =   KNOWN_BUT_ICON .. BLUE .. KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL
--- CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER =    KNOWN_BUT_ICON .. BLUE .. KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER
-CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER =       QUESTIONABLE_ICON .. YELLOW .. CANNOT_DETERMINE
-CanIMogIt.UNKNOWN =                                     UNKNOWN_ICON .. RED_ORANGE .. UNKNOWN
-CanIMogIt.UNKNOWABLE_BY_CHARACTER =                     UNKNOWABLE_BY_CHARACTER_ICON .. YELLOW .. UNKNOWABLE_BY_CHARACTER
-CanIMogIt.UNKNOWABLE_SOULBOUND =                        UNKNOWABLE_SOULBOUND_ICON .. BLUE_GREEN .. UNKNOWABLE_SOULBOUND
-CanIMogIt.NOT_TRANSMOGABLE =                            NOT_TRANSMOGABLE_ICON .. GRAY .. NOT_TRANSMOGABLE
-
-
-CanIMogIt.tooltipTexts = {
-    [KNOWN] = CanIMogIt.KNOWN,
-    [KNOWN_FROM_ANOTHER_ITEM] = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM,
-    [KNOWN_BY_ANOTHER_CHARACTER] = CanIMogIt.KNOWN_BY_ANOTHER_CHARACTER,
-    [KNOWN_BUT_TOO_LOW_LEVEL] = CanIMogIt.KNOWN_BUT_TOO_LOW_LEVEL,
-    [KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL] = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL,
-    [KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER] = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER,
-    [UNKNOWN] = CanIMogIt.UNKNOWN,
-    [UNKNOWABLE_BY_CHARACTER] = CanIMogIt.UNKNOWABLE_BY_CHARACTER,
-    [UNKNOWABLE_SOULBOUND] = CanIMogIt.UNKNOWABLE_SOULBOUND,
-    [CAN_BE_LEARNED_BY] = CanIMogIt.CAN_BE_LEARNED_BY,
-    [NOT_TRANSMOGABLE] = CanIMogIt.NOT_TRANSMOGABLE,
-    [CANNOT_DETERMINE] = CanIMogIt.CANNOT_DETERMINE,
-}
-
-
-CanIMogIt.tooltipIcons = {
-    [CanIMogIt.KNOWN] = KNOWN_ICON_OVERLAY,
-    [CanIMogIt.KNOWN_FROM_ANOTHER_ITEM] = KNOWN_BUT_ICON_OVERLAY,
-    [CanIMogIt.KNOWN_BY_ANOTHER_CHARACTER] = KNOWN_ICON_OVERLAY,
-    [CanIMogIt.KNOWN_BUT_TOO_LOW_LEVEL] = KNOWN_ICON_OVERLAY,
-    [CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL] = KNOWN_BUT_ICON_OVERLAY,
-    -- [CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER] = KNOWN_BUT_ICON_OVERLAY,
-    [CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER] = QUESTIONABLE_ICON_OVERLAY,
-    [CanIMogIt.UNKNOWN] = UNKNOWN_ICON_OVERLAY,
-    [CanIMogIt.UNKNOWABLE_BY_CHARACTER] = UNKNOWABLE_BY_CHARACTER_ICON_OVERLAY,
-    [CanIMogIt.UNKNOWABLE_SOULBOUND] = UNKNOWABLE_SOULBOUND_ICON_OVERLAY,
-    -- [CanIMogIt.CAN_BE_LEARNED_BY] = UNKNOWABLE_BY_CHARACTER_ICON_OVERLAY,
-    [CanIMogIt.NOT_TRANSMOGABLE] = NOT_TRANSMOGABLE_ICON_OVERLAY,
-    -- [CanIMogIt.CANNOT_DETERMINE] = QUESTIONABLE_ICON_OVERLAY,
-}
-
-
+-- Maps a text to its simpler version
 local simpleTextMap = {
     [CanIMogIt.KNOWN_BY_ANOTHER_CHARACTER] = CanIMogIt.KNOWN,
     [CanIMogIt.KNOWN_BUT_TOO_LOW_LEVEL] = CanIMogIt.KNOWN,
@@ -242,6 +160,7 @@ for text, full_text in pairs(CanIMogIt.tooltipTexts) do
 end
 
 
+-- List of all Known texts
 local knownTexts = {
     [CanIMogIt.KNOWN] = true,
     [CanIMogIt.KNOWN_FROM_ANOTHER_ITEM] = true,
@@ -252,6 +171,7 @@ local knownTexts = {
 }
 
 
+-- List of all Unknown texts
 local unknownTexts = {
     [CanIMogIt.UNKNOWN] = true,
     [CanIMogIt.UNKNOWABLE_BY_CHARACTER] = true,
@@ -411,14 +331,6 @@ end
 -----------------------------
 
 
-function CanIMogIt:GetValueInTableFromText(tbl, text)
-    -- Returns the value from tbl when the key contains text.
-    for key, value in pairs(tbl) do
-        if text:find(key) then return value end
-    end
-end
-
-
 function CanIMogIt:GetAppearances()
     -- Gets a table of all the appearances known to a character.
     C_TransmogCollection.ClearSearch()
@@ -490,7 +402,7 @@ function CanIMogIt:IsArmorSubClass(subClass, itemLink)
 end
 
 
-function CanIMogIt:IsArmorSubClassIdentical(itemLinkA, itemLinkB)
+function CanIMogIt:IsItemSubClassIdentical(itemLinkA, itemLinkB)
     local subClassA = CanIMogIt:GetItemSubClassName(itemLinkA)
     local subClassB = CanIMogIt:GetItemSubClassName(itemLinkB)
     if subClassA == nil or subClassB == nil then return end
@@ -614,7 +526,7 @@ function CanIMogIt:PlayerKnowsTransmog(itemLink)
     -- if CanIMogIt:IsItemArmor(itemLink) then
     --     for knownItemLink, bool in pairs(appearanceTable) do
     --         -- if itemLink armor type is the same as one of the knownItemLink armor types
-    --         if CanIMogIt:IsArmorSubClassIdentical(itemLink, knownItemLink) then
+    --         if CanIMogIt:IsItemSubClassIdentical(itemLink, knownItemLink) then
     --             return true
     --         end
     --     end
@@ -628,7 +540,8 @@ function CanIMogIt:PlayerKnowsTransmog(itemLink)
     local sources = C_TransmogCollection.GetAppearanceSources(appearanceID)
     if sources then
         for i, source in pairs(sources) do
-            if source.isCollected then
+            local sourceItemLink = select(6, C_TransmogCollection.GetAppearanceSourceInfo(source.sourceID))
+            if CanIMogIt:IsItemSubClassIdentical(itemLink, sourceItemLink) and source.isCollected then
                 return true
             end
         end
@@ -723,9 +636,9 @@ function CanIMogIt:TextIsKnown(text)
 end
 
 
-function CanIMogIt:TextIsUnknown(text)
+function CanIMogIt:TextIsUnknown(unmodifiedText)
     -- Returns whether the text is considered to be an UNKNOWN value or not.
-    return CanIMogIt:GetValueInTableFromText(unknownTexts, text) or false
+    return unknownTexts[unmodifiedText] or false
 end
 
 
@@ -741,15 +654,15 @@ function CanIMogIt:PreLogicOptionsContinue(itemLink)
 end
 
 
-function CanIMogIt:PostLogicOptionsText(text)
+function CanIMogIt:PostLogicOptionsText(text, unmodifiedText)
     -- Apply the options to the text. Returns the relevant text.
     
-    if CanIMogItOptions["showUnknownOnly"] and not CanIMogIt:TextIsUnknown(text) then
+    if CanIMogItOptions["showUnknownOnly"] and not CanIMogIt:TextIsUnknown(unmodifiedText) then
         -- We don't want to show the tooltip if it's already known.
         return
     end
 
-    if CanIMogItOptions["showTransmoggableOnly"] and text:find(CanIMogIt.NOT_TRANSMOGABLE) then
+    if CanIMogItOptions["showTransmoggableOnly"] and unmodifiedText == CanIMogIt.NOT_TRANSMOGABLE then
         -- If we don't want to show the tooltip if it's not transmoggable
         return
     end
@@ -758,7 +671,7 @@ function CanIMogIt:PostLogicOptionsText(text)
         text = simpleTextMap[text] or text
     end
 
-    return text
+    return text, unmodifiedText
 end
 
 
@@ -768,12 +681,17 @@ function CanIMogIt:GetTooltipText(itemLink, bag, slot)
 
         If bag and slot are given, this will use the itemLink from 
         bag and slot instead.
+
+        Returns two things:
+            the text to display.
+            the unmodifiedText that can be used for lookup values.
     ]]
     if bag and slot then
         itemLink = GetContainerItemLink(bag, slot)
     end
     if not itemLink then return end
     local text = ""
+    local unmodifiedText = ""
 
     -- Must have GetItemInfo available for item.
     local itemInfo = GetItemInfo(itemLink)
@@ -782,12 +700,12 @@ function CanIMogIt:GetTooltipText(itemLink, bag, slot)
     if not CanIMogIt:PreLogicOptionsContinue(itemLink) then return end
 
     -- Return cached items
-    cachedText = CanIMogIt.cache[itemLink]
-    if cachedText ~= nil then
+    if CanIMogIt.cache[itemLink] then
+        cachedText, cachedUnmodifiedText = unpack(CanIMogIt.cache[itemLink])
         if cachedText == false then
             return nil
         end
-        return cachedText
+        return cachedText, cachedUnmodifiedText
     end
 
     local exception_text = CanIMogIt:GetExceptionText(itemLink)
@@ -819,29 +737,35 @@ function CanIMogIt:GetTooltipText(itemLink, bag, slot)
             if isValidAppearanceForCharacter then
                 if characterIsTooLowLevel then
                     text = CanIMogIt.KNOWN_BUT_TOO_LOW_LEVEL
+                    unmodifiedText = CanIMogIt.KNOWN_BUT_TOO_LOW_LEVEL
                 else
                     text = CanIMogIt.KNOWN
+                    unmodifiedText = CanIMogIt.KNOWN
                 end
             else
                 text = CanIMogIt.KNOWN_BY_ANOTHER_CHARACTER
+                unmodifiedText = CanIMogIt.KNOWN_BY_ANOTHER_CHARACTER
             end
         elseif playerKnowsTransmog then
             if isValidAppearanceForCharacter then
                 if characterIsTooLowLevel then
                     text = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL
+                    unmodifiedText = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_BUT_TOO_LOW_LEVEL
                 else
                     text = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM
+                    unmodifiedText = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM
                 end
             else
                 text = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER
+                unmodifiedText = CanIMogIt.KNOWN_FROM_ANOTHER_ITEM_AND_CHARACTER
             end
         else
             characterCanLearnTransmog = CanIMogIt:CharacterCanLearnTransmog(itemLink)
             if characterCanLearnTransmog == nil then return end
 
             if characterCanLearnTransmog then
-                -- Set text to UNKNOWN
                 text = CanIMogIt.UNKNOWN
+                unmodifiedText = CanIMogIt.UNKNOWN
             else
                 isItemSoulbound = CanIMogIt:IsItemSoulbound(itemLink, bag, slot)
                 if isItemSoulbound == nil then return end
@@ -849,27 +773,29 @@ function CanIMogIt:GetTooltipText(itemLink, bag, slot)
                 if isItemSoulbound then
                     text = CanIMogIt.UNKNOWABLE_SOULBOUND
                             .. BLIZZARD_RED .. CanIMogIt:GetReason(itemLink)
+                    unmodifiedText = CanIMogIt.UNKNOWABLE_SOULBOUND
                 else
                     text = CanIMogIt.UNKNOWABLE_BY_CHARACTER
                             .. BLIZZARD_RED .. CanIMogIt:GetReason(itemLink)
+                    unmodifiedText = CanIMogIt.UNKNOWABLE_BY_CHARACTER
                 end
             end
         end
     else
-        --Set text to NOT_TRANSMOGABLE
         text = CanIMogIt.NOT_TRANSMOGABLE
+        unmodifiedText = CanIMogIt.NOT_TRANSMOGABLE
     end
 
-    text = CanIMogIt:PostLogicOptionsText(text)
+    text = CanIMogIt:PostLogicOptionsText(text, unmodifiedText)
 
     -- Update cached items
     if text == nil then
-        CanIMogIt.cache[itemLink] = false
+        CanIMogIt.cache[itemLink] = {false, false}
     else
-        CanIMogIt.cache[itemLink] = text
+        CanIMogIt.cache[itemLink] = {text, unmodifiedText}
     end
 
-    return text
+    return text, unmodifiedText
 end
 
 -----------------------------

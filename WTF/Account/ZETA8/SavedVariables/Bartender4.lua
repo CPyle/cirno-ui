@@ -103,8 +103,8 @@ Bartender4DB = {
 							},
 						}, -- [2]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -113,8 +113,8 @@ Bartender4DB = {
 							},
 						}, -- [3]
 						{
-							["rows"] = 12,
 							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -308,6 +308,72 @@ Bartender4DB = {
 						{
 							["rows"] = 12,
 							["padding"] = 5,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -42,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [4]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 83,
+								["x"] = 3,
+								["point"] = "BOTTOM",
+							},
+						}, -- [5]
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 83,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						{
+						}, -- [8]
+						[10] = {
+						},
+					},
+				},
+				["Cirnosa - Blackrock"] = {
+					["actionbars"] = {
+						{
+							["padding"] = 6,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 41.75,
+								["x"] = -510,
+								["point"] = "BOTTOM",
+							},
+						}, -- [1]
+						{
+							["enabled"] = false,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 198.710494995117,
+								["x"] = -231.500061035156,
+								["point"] = "BOTTOM",
+							},
+						}, -- [2]
+						{
+							["padding"] = 5,
+							["rows"] = 12,
+							["version"] = 3,
+							["position"] = {
+								["y"] = 610,
+								["x"] = -82,
+								["point"] = "BOTTOMRIGHT",
+							},
+						}, -- [3]
+						{
+							["padding"] = 5,
+							["rows"] = 12,
 							["version"] = 3,
 							["position"] = {
 								["y"] = 610,
@@ -473,7 +539,7 @@ Bartender4DB = {
 			["profiles"] = {
 				["Cìrno - Stormrage"] = {
 					["position"] = {
-						["y"] = 223,
+						["y"] = 240,
 						["x"] = -31.4998779296875,
 						["point"] = "BOTTOM",
 					},
@@ -508,6 +574,14 @@ Bartender4DB = {
 					["position"] = {
 						["y"] = -180.710540771484,
 						["x"] = -31.5000305175781,
+						["point"] = "CENTER",
+					},
+				},
+				["Cirnosa - Blackrock"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -180.710517883301,
+						["x"] = -31.5,
 						["point"] = "CENTER",
 					},
 				},
@@ -577,6 +651,16 @@ Bartender4DB = {
 						["x"] = 37.5,
 						["point"] = "BOTTOM",
 						["scale"] = 1,
+					},
+				},
+				["Cirnosa - Blackrock"] = {
+					["padding"] = -2,
+					["version"] = 3,
+					["position"] = {
+						["scale"] = 1,
+						["x"] = 37.5,
+						["point"] = "BOTTOM",
+						["y"] = 41.75,
 					},
 				},
 				["Feralde - Bronzebeard"] = {
@@ -691,6 +775,15 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
+				["Cirnosa - Blackrock"] = {
+					["enabled"] = true,
+					["version"] = 3,
+					["position"] = {
+						["y"] = 47,
+						["x"] = -512,
+						["point"] = "BOTTOM",
+					},
+				},
 				["PRIEST"] = {
 					["enabled"] = true,
 					["version"] = 3,
@@ -738,6 +831,14 @@ Bartender4DB = {
 					},
 				},
 				["Prismriver - Drak'thul"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 38.5,
+						["x"] = 345,
+						["point"] = "BOTTOM",
+					},
+				},
+				["Cirnosa - Blackrock"] = {
 					["version"] = 3,
 					["position"] = {
 						["y"] = 38.5,
@@ -805,6 +906,14 @@ Bartender4DB = {
 						["point"] = "CENTER",
 					},
 				},
+				["Cirnosa - Blackrock"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 47.4999389648438,
+						["x"] = 99.4999389648438,
+						["point"] = "CENTER",
+					},
+				},
 				["Feralde - Bronzebeard"] = {
 					["version"] = 3,
 					["position"] = {
@@ -868,6 +977,14 @@ Bartender4DB = {
 						["scale"] = 1,
 					},
 				},
+				["Cirnosa - Blackrock"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = -14.9999771118164,
+						["x"] = -82.5000381469727,
+						["point"] = "CENTER",
+					},
+				},
 				["Feralde - Bronzebeard"] = {
 					["version"] = 3,
 					["position"] = {
@@ -929,6 +1046,14 @@ Bartender4DB = {
 						["point"] = "BOTTOM",
 					},
 				},
+				["Cirnosa - Blackrock"] = {
+					["version"] = 3,
+					["position"] = {
+						["y"] = 116,
+						["x"] = -460,
+						["point"] = "BOTTOM",
+					},
+				},
 				["Feralde - Bronzebeard"] = {
 					["version"] = 3,
 					["position"] = {
@@ -986,8 +1111,18 @@ Bartender4DB = {
 		["Prismriver - Drak'thul"] = "Prismriver - Drak'thul",
 		["Mews - Cho'gall"] = "Mews - Cho'gall",
 		["Cìrno - Skywall"] = "Cìrno - Stormrage",
+		["Cirnosa - Blackrock"] = "Cìrno - Stormrage",
 	},
 	["profiles"] = {
+		["Cìrno - Skywall"] = {
+		},
+		["Mews - Cho'gall"] = {
+		},
+		["PRIEST"] = {
+			["focuscastmodifier"] = false,
+			["blizzardVehicle"] = true,
+			["outofrange"] = "hotkey",
+		},
 		["Cìrno - Stormrage"] = {
 			["blizzardVehicle"] = true,
 			["focuscastmodifier"] = false,
@@ -1008,18 +1143,14 @@ Bartender4DB = {
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
 		},
-		["Feralde - Bronzebeard"] = {
-		},
 		["Prismriver - Drak'thul"] = {
 			["focuscastmodifier"] = false,
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",
 		},
-		["Mews - Cho'gall"] = {
+		["Feralde - Bronzebeard"] = {
 		},
-		["Cìrno - Skywall"] = {
-		},
-		["PRIEST"] = {
+		["Cirnosa - Blackrock"] = {
 			["focuscastmodifier"] = false,
 			["blizzardVehicle"] = true,
 			["outofrange"] = "hotkey",

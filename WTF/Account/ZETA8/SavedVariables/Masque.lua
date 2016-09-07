@@ -11,6 +11,7 @@ MasqueDB = {
 		["Prismriver - Drak'thul"] = "Default",
 		["Mews - Cho'gall"] = "Default",
 		["Cìrno - Skywall"] = "Default",
+		["Cirnosa - Blackrock"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

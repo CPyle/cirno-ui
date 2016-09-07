@@ -11,16 +11,16 @@
 ## Notes-deDE: Show a bar for your primary resource.
 ## Notes-esES: Show a bar for your primary resource.
 ## Notes-frFR: Show a bar for your primary resource.
-## Notes-koKR: Show a bar for your primary resource.
-## Notes-ruRU: Show a bar for your primary resource.
+## Notes-koKR: 주 자원 바를 표시합니다.
+## Notes-ruRU: Отображать полосу для вашего основного ресурса.
 ## Notes-zhCN: Show a bar for your primary resource.
 ## Notes-zhTW: Show a bar for your primary resource.
 ## Author: ckknight
 ## DefaultState: enabled
 ## LoadOnDemand: 1
 ## Dependencies: PitBull4
-## Version: v4.0.3
-## X-Curse-Packaged-Version: v4.0.3
+## Version: v4.0.4
+## X-Curse-Packaged-Version: v4.0.4
 ## X-Curse-Project-Name: PitBull Unit Frames 4.0
 ## X-Curse-Project-ID: pitbull4
 ## X-Curse-Repository-ID: wow/pitbull4/mainline

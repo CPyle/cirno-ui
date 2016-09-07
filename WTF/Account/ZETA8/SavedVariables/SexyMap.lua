@@ -1,5 +1,8 @@
 
 SexyMap2DB = {
+	["Cirnosa-Blackrock"] = "global",
+	["presets"] = {
+	},
 	["Cìrno-Blackrock"] = "global",
 	["global"] = {
 		["core"] = {
@@ -128,8 +131,6 @@ SexyMap2DB = {
 			["TEMP"] = true,
 			["controlVisibility"] = true,
 		},
-	},
-	["presets"] = {
 	},
 	["Cìrno-Skywall"] = "global",
 }

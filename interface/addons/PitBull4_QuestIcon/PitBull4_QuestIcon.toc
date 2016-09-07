@@ -4,7 +4,7 @@
 ## Title-esES: PitBull4 |r[|cffeda55fIcono de misión|r]
 ## Title-frFR: PitBull4 |r[|cffeda55fIcône de quête|r]
 ## Title-koKR: PitBull4 |r[|cffeda55f퀘스트 아이콘|r]
-## Title-ruRU: PitBull4 |r[|cffeda55fИконка Квеста|r]
+## Title-ruRU: PitBull4 |r[|cffeda55fИконка заданий (квестов)|r]
 ## Title-zhCN: PitBull4 |r[|cffeda55f任务图标|r]
 ## Title-zhTW: PitBull4 |r[|cffeda55f任務圖示|r]
 ## Notes: Show an icon based on whether or not the unit is a quest boss.
@@ -12,15 +12,15 @@
 ## Notes-esES: Mostrar un icono para los jefes de misiones.
 ## Notes-frFR: Affiche une icône selon le fait que l'unité est un boss de quête ou non.
 ## Notes-koKR: 유닛의 퀘스트 우두머리 여부에 따라 아이콘을 표시합니다.
-## Notes-ruRU: Как иконка отображается - является ли юнит квестовым боссом.
+## Notes-ruRU: Показывает иконку, если юнит является квестовым боссом.
 ## Notes-zhCN: 用一个图标显示此单位是否是一个任务怪
 ## Notes-zhTW: 圖示以不論單位是任務首領為基礎。
 ## Author: Shefki
 ## DefaultState: enabled
 ## LoadOnDemand: 1
 ## Dependencies: PitBull4
-## Version: v4.0.3
-## X-Curse-Packaged-Version: v4.0.3
+## Version: v4.0.4
+## X-Curse-Packaged-Version: v4.0.4
 ## X-Curse-Project-Name: PitBull Unit Frames 4.0
 ## X-Curse-Project-ID: pitbull4
 ## X-Curse-Repository-ID: wow/pitbull4/mainline

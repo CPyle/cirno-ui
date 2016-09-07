@@ -7,25 +7,15 @@ SkadaDB = {
 	["hasUpgraded"] = true,
 	["profileKeys"] = {
 		["Cìrno - Blackrock"] = "Default",
+		["Cirnosa - Blackrock"] = "Default",
 		["Cìrno - Skywall"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
 			["windows"] = {
 				{
-					["background"] = {
-						["color"] = {
-							["a"] = 0.580038487911224,
-						},
-						["bordertexture"] = "None",
-						["borderthickness"] = 16,
-						["height"] = 126.207160949707,
-						["bordercolor"] = {
-							["b"] = 1,
-							["g"] = 1,
-							["r"] = 1,
-						},
-					},
+					["set"] = "total",
+					["hidden"] = true,
 					["y"] = 0,
 					["x"] = 7.181515684351330e-006,
 					["title"] = {
@@ -49,11 +39,24 @@ SkadaDB = {
 						["texture"] = "Glamour6",
 					},
 					["point"] = "BOTTOMRIGHT",
-					["scale"] = 1.00999999046326,
 					["barfontsize"] = 10,
+					["scale"] = 1.00999999046326,
 					["mode"] = "Damage",
 					["bartexture"] = "Melli Dark",
 					["barwidth"] = 165.916229248047,
+					["background"] = {
+						["height"] = 126.207160949707,
+						["bordercolor"] = {
+							["b"] = 1,
+							["g"] = 1,
+							["r"] = 1,
+						},
+						["borderthickness"] = 16,
+						["color"] = {
+							["a"] = 0.580038487911224,
+						},
+						["bordertexture"] = "None",
+					},
 					["barfont"] = "Expressway",
 				}, -- [1]
 			},

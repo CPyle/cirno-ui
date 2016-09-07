@@ -396,10 +396,10 @@ PitBull4DB = {
 						["yopart"] = {
 							["enabled"] = false,
 						},
-						["yopet"] = {
+						["yop"] = {
 							["enabled"] = false,
 						},
-						["yop"] = {
+						["raid 3 test"] = {
 							["enabled"] = false,
 						},
 						["Party c"] = {
@@ -420,7 +420,7 @@ PitBull4DB = {
 						["Target"] = {
 							["enabled"] = false,
 						},
-						["raid 3 test"] = {
+						["yopet"] = {
 							["enabled"] = false,
 						},
 						["players pet"] = {
@@ -529,11 +529,11 @@ PitBull4DB = {
 							["enabled"] = false,
 							["position"] = 1.00001,
 						},
-						["yopet"] = {
+						["yop"] = {
 							["enabled"] = false,
 							["position"] = 1.00001,
 						},
-						["yop"] = {
+						["raid 3 test"] = {
 							["enabled"] = false,
 							["position"] = 1.00001,
 						},
@@ -565,7 +565,7 @@ PitBull4DB = {
 							["spacing"] = 0,
 							["location"] = "out_left",
 						},
-						["raid 3 test"] = {
+						["yopet"] = {
 							["enabled"] = false,
 							["position"] = 1.00001,
 						},
@@ -803,6 +803,80 @@ PitBull4DB = {
 									["exists"] = true,
 									["attach_to"] = "HealthBar",
 									["code"] = "[Name] [(AFK or DND):Angle]",
+								},
+							},
+							["first"] = false,
+						},
+					},
+				},
+				["Cìrno - Skywall"] = {
+					["layouts"] = {
+						["Normal"] = {
+							["elements"] = {
+								["Druid mana"] = {
+									["location"] = "right",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
+									["code"] = "[if not IsMana then FractionalDruidMP]",
+								},
+								["Threat"] = {
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
+									["code"] = "[PercentThreat:Round(1):Hide(0):Percent]",
+								},
+								["Power"] = {
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
+									["code"] = "[if HasMP then FractionalMP]",
+								},
+								["Reputation"] = {
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
+									["code"] = "[if IsMouseOver then ReputationName else if ReputationName then FractionalReputation ' ' PercentReputation:Percent:Paren]",
+								},
+								["PVPTimer"] = {
+									["location"] = "out_right_top",
+									["exists"] = true,
+									["code"] = "[PvPDuration:FormatDuration:Red]",
+								},
+								["Cast"] = {
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
+									["code"] = "[Alpha((-CastStopDuration or 0) + 1) CastStopMessage or (CastName ' ' CastTarget:Paren)]",
+								},
+								["Name"] = {
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
+									["code"] = "[Name] [(AFK or DND):Angle]",
+								},
+								["Class"] = {
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
+									["code"] = "[Classification] [Level:DifficultyColor] [(if (IsPlayer or (IsEnemy and not IsPet)) then Class):ClassColor] [DruidForm:Paren] [SmartRace]",
+								},
+								["Experience"] = {
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
+									["code"] = "[FractionalXP] [PercentXP:Percent:Paren] [Concatenate('R: ', PercentRestXP:Hide(0):Percent)]",
+								},
+								["Cast time"] = {
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
+									["code"] = "[if not CastStopDuration then Concatenate(CastIsChanneling ? '-' ! '+', CastDelay:Abs:Round(1):Hide(0)):Red ' ' [CastEndDuration >= 0 ? '%.1f':Format(CastEndDuration)]]",
+								},
+								["Health"] = {
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
+									["code"] = "[Status or (FractionalHP:Short ' || ' PercentHP:Percent)]",
 								},
 							},
 							["first"] = false,
@@ -1469,10 +1543,10 @@ PitBull4DB = {
 						["yopart"] = {
 							["enabled"] = false,
 						},
-						["yopet"] = {
+						["yop"] = {
 							["enabled"] = false,
 						},
-						["yop"] = {
+						["raid 3 test"] = {
 							["enabled"] = false,
 						},
 						["Party c"] = {
@@ -1493,7 +1567,7 @@ PitBull4DB = {
 						["Target"] = {
 							["enabled"] = false,
 						},
-						["raid 3 test"] = {
+						["yopet"] = {
 							["enabled"] = false,
 						},
 						["players pet"] = {
@@ -1634,13 +1708,13 @@ PitBull4DB = {
 							["attach_to"] = "HealthBar",
 							["size"] = 0.85,
 						},
-						["yopet"] = {
+						["yop"] = {
 							["enabled"] = false,
 							["location"] = "center",
 							["attach_to"] = "HealthBar",
 							["size"] = 1.35,
 						},
-						["yop"] = {
+						["raid 3 test"] = {
 							["enabled"] = false,
 							["location"] = "center",
 							["attach_to"] = "HealthBar",
@@ -1682,7 +1756,7 @@ PitBull4DB = {
 							["attach_to"] = "HealthBar",
 							["size"] = 1,
 						},
-						["raid 3 test"] = {
+						["yopet"] = {
 							["enabled"] = false,
 							["location"] = "center",
 							["attach_to"] = "HealthBar",
@@ -1717,6 +1791,9 @@ PitBull4DB = {
 							["position"] = 3.00001,
 						},
 						["raid 3 test"] = {
+							["position"] = 3.00002,
+						},
+						["yopart"] = {
 							["position"] = 3.00002,
 						},
 					},
@@ -1851,195 +1928,6 @@ PitBull4DB = {
 						["enabled"] = false,
 					},
 				},
-				["CaithUI"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-			},
-		},
-		["Portrait"] = {
-			["profiles"] = {
-				["zabiadd"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI MTA"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI v.16"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["focus-test1"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["yuppycaith2"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI v.15"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI v.14"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["yuppy"] = {
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-			},
-		},
-		["ExperienceBar"] = {
-			["profiles"] = {
-				["CaithUI"] = {
-					["layouts"] = {
-						["focus2"] = {
-							["enabled"] = false,
-							["position"] = 6,
-						},
-						["focusnew"] = {
-							["enabled"] = false,
-						},
-						["yopart"] = {
-							["enabled"] = false,
-							["position"] = 6,
-						},
-						["yopet"] = {
-							["enabled"] = false,
-							["position"] = 6,
-						},
-						["yop"] = {
-							["enabled"] = false,
-							["position"] = 6,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-						["yop2"] = {
-							["enabled"] = false,
-							["position"] = 6,
-						},
-						["focusnew2"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-							["position"] = 5,
-						},
-						["Target"] = {
-							["enabled"] = false,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-							["position"] = 6,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-					},
-				},
-			},
-		},
-		["RaidTargetIcon"] = {
-			["profiles"] = {
-				["CaithUI"] = {
-					["layouts"] = {
-						["focus2"] = {
-							["enabled"] = false,
-							["location"] = "in_center",
-							["size"] = 1.05,
-						},
-						["focusnew"] = {
-							["position"] = 2,
-							["location"] = "left",
-							["attach_to"] = "BlankSpace;Default",
-							["size"] = 0.65,
-						},
-						["yopart"] = {
-							["enabled"] = false,
-							["location"] = "in_center",
-							["size"] = 1.05,
-						},
-						["yopet"] = {
-							["enabled"] = false,
-							["location"] = "in_center",
-							["size"] = 1.05,
-						},
-						["yop"] = {
-							["enabled"] = false,
-							["location"] = "in_center",
-							["size"] = 1.05,
-						},
-						["Party c"] = {
-							["location"] = "left",
-							["attach_to"] = "BlankSpace;Default",
-							["size"] = 0.55,
-						},
-						["yop2"] = {
-							["enabled"] = false,
-							["location"] = "in_center",
-							["size"] = 1.05,
-						},
-						["focusnew2"] = {
-							["location"] = "left",
-							["attach_to"] = "BlankSpace;Default",
-							["size"] = 0.75,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["location"] = "left",
-							["attach_to"] = "BlankSpace;Default",
-							["size"] = 0.7,
-						},
-						["Target"] = {
-							["position"] = 2,
-							["size"] = 0.65,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-							["location"] = "in_center",
-							["size"] = 1.05,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["TargetsTarget"] = {
-							["location"] = "left",
-							["attach_to"] = "BlankSpace;Default",
-							["size"] = 0.7,
-						},
-					},
-				},
-			},
-		},
-		["ShadowOrbs"] = {
-			["profiles"] = {
 				["CaithUI"] = {
 					["global"] = {
 						["enabled"] = false,
@@ -2241,6 +2129,195 @@ PitBull4DB = {
 				},
 			},
 		},
+		["Portrait"] = {
+			["profiles"] = {
+				["zabiadd"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI MTA"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI v.16"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["focus-test1"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["yuppycaith2"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI v.15"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI v.14"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["yuppy"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["ExperienceBar"] = {
+			["profiles"] = {
+				["CaithUI"] = {
+					["layouts"] = {
+						["focus2"] = {
+							["enabled"] = false,
+							["position"] = 6,
+						},
+						["focusnew"] = {
+							["enabled"] = false,
+						},
+						["yopart"] = {
+							["enabled"] = false,
+							["position"] = 6,
+						},
+						["yop"] = {
+							["enabled"] = false,
+							["position"] = 6,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+							["position"] = 6,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+						["yop2"] = {
+							["enabled"] = false,
+							["position"] = 6,
+						},
+						["focusnew2"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+							["position"] = 5,
+						},
+						["Target"] = {
+							["enabled"] = false,
+						},
+						["yopet"] = {
+							["enabled"] = false,
+							["position"] = 6,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+					},
+				},
+			},
+		},
+		["RaidTargetIcon"] = {
+			["profiles"] = {
+				["CaithUI"] = {
+					["layouts"] = {
+						["focus2"] = {
+							["enabled"] = false,
+							["location"] = "in_center",
+							["size"] = 1.05,
+						},
+						["focusnew"] = {
+							["position"] = 2,
+							["location"] = "left",
+							["attach_to"] = "BlankSpace;Default",
+							["size"] = 0.65,
+						},
+						["yopart"] = {
+							["enabled"] = false,
+							["location"] = "in_center",
+							["size"] = 1.05,
+						},
+						["yop"] = {
+							["enabled"] = false,
+							["location"] = "in_center",
+							["size"] = 1.05,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+							["location"] = "in_center",
+							["size"] = 1.05,
+						},
+						["Party c"] = {
+							["location"] = "left",
+							["attach_to"] = "BlankSpace;Default",
+							["size"] = 0.55,
+						},
+						["yop2"] = {
+							["enabled"] = false,
+							["location"] = "in_center",
+							["size"] = 1.05,
+						},
+						["focusnew2"] = {
+							["location"] = "left",
+							["attach_to"] = "BlankSpace;Default",
+							["size"] = 0.75,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["location"] = "left",
+							["attach_to"] = "BlankSpace;Default",
+							["size"] = 0.7,
+						},
+						["Target"] = {
+							["position"] = 2,
+							["size"] = 0.65,
+						},
+						["yopet"] = {
+							["enabled"] = false,
+							["location"] = "in_center",
+							["size"] = 1.05,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["TargetsTarget"] = {
+							["location"] = "left",
+							["attach_to"] = "BlankSpace;Default",
+							["size"] = 0.7,
+						},
+					},
+				},
+			},
+		},
+		["ShadowOrbs"] = {
+			["profiles"] = {
+				["CaithUI"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
 		["LeaderIcon"] = {
 			["profiles"] = {
 				["CaithUI"] = {
@@ -2263,13 +2340,13 @@ PitBull4DB = {
 							["attach_to"] = "HealthBar",
 							["size"] = 0.5,
 						},
-						["yopet"] = {
+						["yop"] = {
 							["enabled"] = false,
 							["location"] = "right",
 							["attach_to"] = "HealthBar",
 							["size"] = 0.5,
 						},
-						["yop"] = {
+						["raid 3 test"] = {
 							["enabled"] = false,
 							["location"] = "right",
 							["attach_to"] = "HealthBar",
@@ -2305,7 +2382,7 @@ PitBull4DB = {
 							["location"] = "out_left_top",
 							["size"] = 0.6,
 						},
-						["raid 3 test"] = {
+						["yopet"] = {
 							["enabled"] = false,
 							["location"] = "right",
 							["attach_to"] = "HealthBar",
@@ -2321,9 +2398,392 @@ PitBull4DB = {
 				},
 			},
 		},
+		["CombatIcon"] = {
+			["profiles"] = {
+				["zabiadd"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI MTA"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI v.16"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["focus-test1"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["yuppycaith2"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI v.15"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI v.14"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["CaithUI"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+				["yuppy"] = {
+					["layouts"] = {
+						["TargetsTarget"] = {
+							["enabled"] = false,
+						},
+						["Player"] = {
+							["enabled"] = false,
+						},
+						["Focus"] = {
+							["enabled"] = false,
+						},
+						["Target"] = {
+							["enabled"] = false,
+							["position"] = 16,
+						},
+						["raid 3 test"] = {
+							["enabled"] = false,
+						},
+						["players pet"] = {
+							["enabled"] = false,
+						},
+						["Party c"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
 		["Sounds"] = {
 		},
-		["DruidManaBar"] = {
+		["Background"] = {
+			["profiles"] = {
+				["CaithUI"] = {
+					["layouts"] = {
+						["focus2"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["focusnew"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["yopart"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["yop"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["raid 3 test"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["Party c"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["yop2"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["focusnew2"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["Player"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["Focus"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["Target"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["yopet"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["players pet"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["TargetsTarget"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+					},
+				},
+			},
 		},
 		["PvPIcon"] = {
 			["profiles"] = {
@@ -2462,46 +2922,48 @@ PitBull4DB = {
 						},
 						["yopart"] = {
 							["enabled_weapons"] = false,
-							["max_debuffs"] = 10,
-							["max_buffs"] = 7,
+							["max_debuffs"] = 2,
+							["max_buffs"] = 3,
 							["zoom_aura"] = true,
-							["enabled_buffs"] = false,
-							["highlight_style"] = "thinborder",
 							["layout"] = {
 								["debuff"] = {
 									["width_percent"] = 1,
 									["size_to_fit"] = false,
-									["my_size"] = 23,
-									["offset_y"] = -9,
-									["size"] = 23,
-									["frame_level"] = 1,
+									["my_size"] = 24,
+									["offset_y"] = -5,
+									["anchor"] = "BOTTOMLEFT",
+									["size"] = 24,
+									["growth"] = "right_down",
 									["width"] = 270,
 									["row_spacing"] = 3,
-									["growth"] = "left_up",
+									["filter"] = "!D",
+									["frame_level"] = 1,
 									["col_spacing"] = 2,
 									["width_type"] = "fixed",
 								},
 								["buff"] = {
-									["width_percent"] = 1,
-									["my_size"] = 18,
-									["offset_y"] = -15,
+									["width_percent"] = 0.72,
+									["size_to_fit"] = false,
+									["my_size"] = 24,
+									["offset_y"] = -5,
+									["anchor"] = "BOTTOMRIGHT",
 									["size"] = 24,
-									["side"] = "LEFT",
-									["growth"] = "down_right",
-									["width"] = 20,
+									["growth"] = "down_left",
+									["width"] = 30,
 									["row_spacing"] = 3,
-									["offset_x"] = -20,
+									["filter"] = "Cirno Buffs",
 									["new_row_size"] = true,
-									["col_spacing"] = 2,
 									["frame_level"] = 1,
+									["col_spacing"] = 2,
+									["width_type"] = "fixed",
 								},
 							},
-							["highlight"] = false,
+							["highlight_style"] = "thinborder",
 							["cooldown"] = {
 								["other_debuffs"] = false,
 								["weapon_buffs"] = false,
-								["my_buffs"] = false,
 								["my_debuffs"] = false,
+								["other_buffs"] = false,
 							},
 						},
 						["focusnew"] = {
@@ -2562,47 +3024,6 @@ PitBull4DB = {
 								},
 							},
 						},
-						["yopet"] = {
-							["enabled_weapons"] = false,
-							["max_debuffs"] = 5,
-							["max_buffs"] = 7,
-							["zoom_aura"] = true,
-							["enabled_buffs"] = false,
-							["highlight_style"] = "normal",
-							["layout"] = {
-								["debuff"] = {
-									["width_percent"] = 1,
-									["my_size"] = 18,
-									["offset_y"] = 60,
-									["size"] = 18,
-									["width"] = 50,
-									["row_spacing"] = 3,
-									["growth"] = "left_up",
-									["col_spacing"] = 2,
-									["offset_x"] = -2,
-								},
-								["buff"] = {
-									["width_percent"] = 0.4,
-									["my_size"] = 18,
-									["offset_y"] = -40,
-									["size"] = 35,
-									["side"] = "LEFT",
-									["width"] = 20,
-									["row_spacing"] = 2,
-									["growth"] = "down_right",
-									["col_spacing"] = 2,
-									["new_row_size"] = true,
-								},
-							},
-							["highlight"] = false,
-							["cooldown"] = {
-								["other_debuffs"] = false,
-								["weapon_buffs"] = false,
-								["my_buffs"] = false,
-								["other_buffs"] = false,
-								["my_debuffs"] = false,
-							},
-						},
 						["yop"] = {
 							["enabled_weapons"] = false,
 							["max_buffs"] = 7,
@@ -2639,6 +3060,46 @@ PitBull4DB = {
 								["other_debuffs"] = false,
 								["weapon_buffs"] = false,
 								["other_buffs"] = false,
+							},
+						},
+						["raid 3 test"] = {
+							["enabled_debuffs"] = false,
+							["zoom_aura"] = true,
+							["layout"] = {
+								["debuff"] = {
+									["width_percent"] = 1,
+									["my_size"] = 9,
+									["offset_y"] = -5,
+									["anchor"] = "TOPLEFT",
+									["size"] = 9,
+									["side"] = "TOP",
+									["width"] = 50,
+									["row_spacing"] = 3,
+									["col_spacing"] = 2,
+									["growth"] = "right_up",
+								},
+								["buff"] = {
+									["width_percent"] = 0.4,
+									["my_size"] = 18,
+									["offset_y"] = 5,
+									["anchor"] = "TOPLEFT",
+									["size"] = 35,
+									["side"] = "TOP",
+									["growth"] = "up_right",
+									["width"] = 20,
+									["row_spacing"] = 2,
+									["filter"] = "!C",
+									["col_spacing"] = 2,
+									["new_row_size"] = true,
+								},
+							},
+							["highlight_style"] = "normal",
+							["max_buffs"] = 2,
+							["highlight"] = false,
+							["cooldown"] = {
+								["other_debuffs"] = false,
+								["weapon_buffs"] = false,
+								["my_debuffs"] = false,
 							},
 						},
 						["Party c"] = {
@@ -2842,23 +3303,23 @@ PitBull4DB = {
 								},
 								["buff"] = {
 									["width_percent"] = 1,
+									["size_to_fit"] = false,
 									["my_size"] = 23,
 									["offset_y"] = 10,
 									["anchor"] = "TOPLEFT",
 									["size"] = 23,
 									["side"] = "TOP",
+									["growth"] = "right_up",
 									["width"] = 20,
 									["row_spacing"] = 2,
-									["new_row_size"] = true,
+									["filter"] = "!B",
 									["col_spacing"] = 1,
-									["growth"] = "right_up",
+									["new_row_size"] = true,
 								},
 							},
 							["highlight_style"] = "thinborder",
-							["enabled_buffs"] = false,
 							["highlight"] = false,
 							["cooldown"] = {
-								["other_debuffs"] = false,
 								["weapon_buffs"] = false,
 								["my_debuffs"] = false,
 							},
@@ -2937,6 +3398,19 @@ PitBull4DB = {
 							["enabled_weapons"] = false,
 							["max_debuffs"] = 9,
 							["max_buffs"] = 9,
+							["borders"] = {
+								["my_buffs"] = {
+									["friend"] = {
+										["custom_color"] = {
+											0.419607843137255, -- [1]
+											1, -- [2]
+											0, -- [3]
+											1, -- [4]
+										},
+										["color_type"] = "custom",
+									},
+								},
+							},
 							["layout"] = {
 								["debuff"] = {
 									["width_percent"] = 1,
@@ -2966,13 +3440,11 @@ PitBull4DB = {
 									["row_spacing"] = 2,
 								},
 							},
-							["highlight"] = false,
 							["cooldown"] = {
 								["other_debuffs"] = false,
 								["weapon_buffs"] = false,
-								["my_buffs"] = false,
-								["other_buffs"] = false,
 								["my_debuffs"] = false,
+								["other_buffs"] = false,
 							},
 							["texts"] = {
 								["my_debuffs"] = {
@@ -2983,43 +3455,44 @@ PitBull4DB = {
 								},
 							},
 						},
-						["raid 3 test"] = {
-							["enabled_debuffs"] = false,
+						["yopet"] = {
+							["enabled_weapons"] = false,
+							["max_debuffs"] = 5,
+							["max_buffs"] = 7,
 							["zoom_aura"] = true,
+							["enabled_buffs"] = false,
+							["highlight_style"] = "normal",
 							["layout"] = {
 								["debuff"] = {
 									["width_percent"] = 1,
-									["my_size"] = 9,
-									["offset_y"] = -5,
-									["anchor"] = "TOPLEFT",
-									["size"] = 9,
-									["side"] = "TOP",
+									["my_size"] = 18,
+									["offset_y"] = 60,
+									["size"] = 18,
 									["width"] = 50,
 									["row_spacing"] = 3,
+									["growth"] = "left_up",
 									["col_spacing"] = 2,
-									["growth"] = "right_up",
+									["offset_x"] = -2,
 								},
 								["buff"] = {
 									["width_percent"] = 0.4,
 									["my_size"] = 18,
-									["offset_y"] = 5,
-									["anchor"] = "TOPLEFT",
+									["offset_y"] = -40,
 									["size"] = 35,
-									["side"] = "TOP",
-									["growth"] = "up_right",
+									["side"] = "LEFT",
 									["width"] = 20,
 									["row_spacing"] = 2,
-									["filter"] = "!C",
+									["growth"] = "down_right",
 									["col_spacing"] = 2,
 									["new_row_size"] = true,
 								},
 							},
-							["highlight_style"] = "normal",
-							["max_buffs"] = 2,
 							["highlight"] = false,
 							["cooldown"] = {
 								["other_debuffs"] = false,
 								["weapon_buffs"] = false,
+								["my_buffs"] = false,
+								["other_buffs"] = false,
 								["my_debuffs"] = false,
 							},
 						},
@@ -3159,6 +3632,20 @@ PitBull4DB = {
 							},
 						},
 						["filters"] = {
+							["Cirno Buffs"] = {
+								["display_when"] = "buff",
+								["operators"] = {
+									"|", -- [1]
+									"&", -- [2]
+									[0] = "&",
+								},
+								["filter_type"] = "Meta",
+								["filters"] = {
+									"!C", -- [1]
+									"Atonement", -- [2]
+									"@H", -- [3]
+								},
+							},
 							["!B"] = {
 								["operators"] = {
 									nil, -- [1]
@@ -3168,12 +3655,33 @@ PitBull4DB = {
 									nil, -- [5]
 									nil, -- [6]
 									nil, -- [7]
-									"&", -- [8]
+									"|", -- [8]
+									"&", -- [9]
+								},
+								["filters"] = {
+									[9] = "@H",
+									[10] = "Atonement",
 								},
 							},
 							["*A"] = {
 								["name_list"] = {
 									["Mind Flay"] = false,
+								},
+							},
+							["Atonement"] = {
+								["display_when"] = "buff",
+								["operators"] = {
+									"&", -- [1]
+									[0] = "&",
+								},
+								["id_list"] = {
+									[194384] = true,
+								},
+								["filter_type"] = "Spell id",
+								["whitelist"] = true,
+								["filters"] = {
+									"!C", -- [1]
+									"*A", -- [2]
 								},
 							},
 						},
@@ -3211,125 +3719,7 @@ PitBull4DB = {
 				},
 			},
 		},
-		["Background"] = {
-			["profiles"] = {
-				["CaithUI"] = {
-					["layouts"] = {
-						["focus2"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["focusnew"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["yopart"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["yopet"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["yop"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["Party c"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["yop2"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["focusnew2"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["Player"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["Focus"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["Target"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["raid 3 test"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["players pet"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-						["TargetsTarget"] = {
-							["color"] = {
-								nil, -- [1]
-								nil, -- [2]
-								nil, -- [3]
-								1, -- [4]
-							},
-						},
-					},
-				},
-			},
+		["DruidManaBar"] = {
 		},
 		["PowerBar"] = {
 			["profiles"] = {
@@ -3356,11 +3746,10 @@ PitBull4DB = {
 						},
 						["Player"] = {
 							["size"] = 3,
-							["enabled"] = false,
 							["anim_duration"] = 0.1,
 							["animated"] = true,
 						},
-						["yopet"] = {
+						["raid 3 test"] = {
 							["anim_duration"] = 0.1,
 							["animated"] = true,
 							["position"] = 3.00001,
@@ -3373,12 +3762,12 @@ PitBull4DB = {
 							["anim_duration"] = 0.1,
 							["animated"] = true,
 						},
-						["yop"] = {
+						["yopet"] = {
 							["anim_duration"] = 0.1,
 							["animated"] = true,
 							["position"] = 3.00001,
 						},
-						["raid 3 test"] = {
+						["yop"] = {
 							["anim_duration"] = 0.1,
 							["animated"] = true,
 							["position"] = 3.00001,
@@ -3793,22 +4182,20 @@ PitBull4DB = {
 							["animated"] = true,
 							["size"] = 12,
 						},
-						["yopet"] = {
-							["color_by_class"] = false,
-							["hostility_color"] = false,
-							["size"] = 12,
-							["anim_duration"] = 0.1,
-							["hostility_color_npcs"] = false,
-							["animated"] = true,
-							["position"] = 2,
-							["color_by_happiness"] = true,
-						},
 						["yop"] = {
 							["size"] = 12,
 							["anim_duration"] = 0.1,
 							["position"] = 2,
 							["animated"] = true,
 							["texture"] = "Melli Dark",
+						},
+						["raid 3 test"] = {
+							["anim_duration"] = 0.1,
+							["hostility_color_npcs"] = false,
+							["animated"] = true,
+							["position"] = 2,
+							["hostility_color"] = false,
+							["size"] = 12,
 						},
 						["Party c"] = {
 							["anim_duration"] = 0.2,
@@ -3842,13 +4229,15 @@ PitBull4DB = {
 							["anim_duration"] = 0.1,
 							["size"] = 12,
 						},
-						["raid 3 test"] = {
+						["yopet"] = {
+							["color_by_class"] = false,
+							["hostility_color"] = false,
+							["size"] = 12,
 							["anim_duration"] = 0.1,
 							["hostility_color_npcs"] = false,
 							["animated"] = true,
 							["position"] = 2,
-							["hostility_color"] = false,
-							["size"] = 12,
+							["color_by_happiness"] = true,
 						},
 						["players pet"] = {
 							["color_by_class"] = false,
@@ -4279,11 +4668,11 @@ PitBull4DB = {
 							["enabled"] = false,
 							["position"] = 8,
 						},
-						["yopet"] = {
+						["yop"] = {
 							["enabled"] = false,
 							["position"] = 8,
 						},
-						["yop"] = {
+						["raid 3 test"] = {
 							["enabled"] = false,
 							["position"] = 8,
 						},
@@ -4307,7 +4696,7 @@ PitBull4DB = {
 						["Target"] = {
 							["enabled"] = false,
 						},
-						["raid 3 test"] = {
+						["yopet"] = {
 							["enabled"] = false,
 							["position"] = 8,
 						},
@@ -4979,271 +5368,6 @@ PitBull4DB = {
 						["raid 3 test"] = {
 							["enabled"] = false,
 							["position"] = 7,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-			},
-		},
-		["CombatIcon"] = {
-			["profiles"] = {
-				["zabiadd"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI MTA"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI v.16"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["focus-test1"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["yuppycaith2"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI v.15"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI v.14"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["CaithUI"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
-						},
-						["players pet"] = {
-							["enabled"] = false,
-						},
-						["Party c"] = {
-							["enabled"] = false,
-						},
-					},
-					["global"] = {
-						["enabled"] = false,
-					},
-				},
-				["yuppy"] = {
-					["layouts"] = {
-						["TargetsTarget"] = {
-							["enabled"] = false,
-						},
-						["Player"] = {
-							["enabled"] = false,
-						},
-						["Focus"] = {
-							["enabled"] = false,
-						},
-						["Target"] = {
-							["enabled"] = false,
-							["position"] = 16,
-						},
-						["raid 3 test"] = {
-							["enabled"] = false,
 						},
 						["players pet"] = {
 							["enabled"] = false,
@@ -9595,70 +9719,66 @@ PitBull4DB = {
 						["Normal"] = {
 							["elements"] = {
 								["Lua:Eclipse"] = {
-									["exists"] = true,
+									["events"] = {
+										["UNIT_MAXPOWER"] = true,
+										["UNIT_POWER_FREQUENT"] = true,
+									},
 									["code"] = "return math.abs(Power(unit,SPELL_POWER_ECLIPSE))\n",
 									["location"] = "center",
 									["attach_to"] = "Eclipse",
+									["exists"] = true,
+								},
+								["Lua:Power"] = {
 									["events"] = {
 										["UNIT_MAXPOWER"] = true,
 										["UNIT_POWER_FREQUENT"] = true,
 									},
-								},
-								["Lua:Power"] = {
-									["exists"] = true,
 									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
 									["location"] = "right",
 									["attach_to"] = "PowerBar",
-									["events"] = {
-										["UNIT_MAXPOWER"] = true,
-										["UNIT_POWER_FREQUENT"] = true,
-									},
+									["exists"] = true,
 								},
 								["Lua:Reputation"] = {
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -9669,22 +9789,22 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Alternate power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit,ALTERNATE_POWER_INDEX)\nif max > 0 then\n  return \"%s%%\",Percent(Power(unit,ALTERNATE_POWER_INDEX),max)\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "AltPowerBar",
 									["events"] = {
 										["UNIT_MAXPOWER"] = true,
 										["UNIT_POWER_FREQUENT"] = true,
 									},
+									["code"] = "local max = MaxPower(unit,ALTERNATE_POWER_INDEX)\nif max > 0 then\n  return \"%s%%\",Percent(Power(unit,ALTERNATE_POWER_INDEX),max)\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "AltPowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_SUCCEEDED"] = true,
 										["UNIT_SPELLCAST_START"] = true,
@@ -9696,17 +9816,21 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_HEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_MAXHEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["location"] = "out_right_top",
@@ -9717,36 +9841,36 @@ PitBull4DB = {
 									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Class"] = {
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_DISPLAYPOWER"] = true,
 										["UNIT_MAXPOWER"] = true,
 										["UNIT_POWER_FREQUENT"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Demonic fury"] = {
-									["exists"] = true,
-									["code"] = "return \"%s/%s\",Power(unit,SPELL_POWER_DEMONIC_FURY),MaxPower(unit,SPELL_POWER_DEMONIC_FURY)\n",
-									["location"] = "center",
-									["attach_to"] = "DemonicFury",
 									["events"] = {
 										["UNIT_MAXPOWER"] = true,
 										["UNIT_POWER_FREQUENT"] = true,
 									},
+									["code"] = "return \"%s/%s\",Power(unit,SPELL_POWER_DEMONIC_FURY),MaxPower(unit,SPELL_POWER_DEMONIC_FURY)\n",
+									["location"] = "center",
+									["attach_to"] = "DemonicFury",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -11247,67 +11371,71 @@ PitBull4DB = {
 						["Normal"] = {
 							["elements"] = {
 								["Lua:Eclipse"] = {
+									["exists"] = true,
+									["code"] = "return math.abs(Power(unit,SPELL_POWER_ECLIPSE))\n",
+									["location"] = "center",
+									["attach_to"] = "Eclipse",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
-									["code"] = "return math.abs(Power(unit,SPELL_POWER_ECLIPSE))\n",
-									["location"] = "center",
-									["attach_to"] = "Eclipse",
-									["exists"] = true,
 								},
 								["Lua:Name"] = {
+									["exists"] = true,
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
-									["exists"] = true,
 								},
 								["Lua:Reputation"] = {
+									["exists"] = true,
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
-									["exists"] = true,
 								},
 								["Lua:Power"] = {
+									["exists"] = true,
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
-									["exists"] = true,
 								},
 								["Lua:Threat"] = {
+									["exists"] = true,
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
-									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
+									["exists"] = true,
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_DISPLAYPOWER"] = true,
 										["UNIT_MAXPOWER"] = true,
 										["UNIT_POWER_FREQUENT"] = true,
 									},
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
-									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
+									["exists"] = true,
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_SUCCEEDED"] = true,
 										["UNIT_SPELLCAST_START"] = true,
@@ -11319,10 +11447,6 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
-									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["location"] = "out_right_top",
@@ -11333,6 +11457,10 @@ PitBull4DB = {
 									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Cast"] = {
+									["exists"] = true,
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
@@ -11343,62 +11471,58 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
-									["exists"] = true,
 								},
 								["Lua:Health"] = {
+									["exists"] = true,
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_HEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_MAXHEALTH"] = true,
 									},
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
-									["exists"] = true,
 								},
 								["Lua:Alternate power"] = {
+									["exists"] = true,
+									["code"] = "local max = MaxPower(unit,ALTERNATE_POWER_INDEX)\nif max > 0 then\n  return \"%s%%\",Percent(Power(unit,ALTERNATE_POWER_INDEX),max)\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "AltPowerBar",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
-									["code"] = "local max = MaxPower(unit,ALTERNATE_POWER_INDEX)\nif max > 0 then\n  return \"%s%%\",Percent(Power(unit,ALTERNATE_POWER_INDEX),max)\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "AltPowerBar",
-									["exists"] = true,
 								},
 								["Lua:Class"] = {
+									["exists"] = true,
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
-									["exists"] = true,
 								},
 								["Lua:Experience"] = {
+									["exists"] = true,
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
-									["exists"] = true,
 								},
 								["Lua:Demonic fury"] = {
+									["exists"] = true,
+									["code"] = "return \"%s/%s\",Power(unit,SPELL_POWER_DEMONIC_FURY),MaxPower(unit,SPELL_POWER_DEMONIC_FURY)\n",
+									["location"] = "center",
+									["attach_to"] = "DemonicFury",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
-									["code"] = "return \"%s/%s\",Power(unit,SPELL_POWER_DEMONIC_FURY),MaxPower(unit,SPELL_POWER_DEMONIC_FURY)\n",
-									["location"] = "center",
-									["attach_to"] = "DemonicFury",
-									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -14558,40 +14682,36 @@ PitBull4DB = {
 						["Normal"] = {
 							["elements"] = {
 								["Lua:Reputation"] = {
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -14605,12 +14725,28 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
-									["exists"] = true,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+									},
 									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
 									["location"] = "right",
 									["attach_to"] = "CastBar",
+									["exists"] = true,
+								},
+								["Lua:Cast"] = {
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
@@ -14621,33 +14757,21 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
-								},
-								["Lua:Cast"] = {
-									["exists"] = true,
 									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
 									["location"] = "left",
 									["attach_to"] = "CastBar",
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-									},
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["location"] = "out_right_top",
@@ -14658,35 +14782,35 @@ PitBull4DB = {
 									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Class"] = {
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MANA"] = true,
 										["UNIT_MAXMANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -16076,71 +16200,67 @@ PitBull4DB = {
 						["Normal"] = {
 							["elements"] = {
 								["Lua:Eclipse"] = {
-									["exists"] = true,
-									["code"] = "return math.abs(Power(unit,SPELL_POWER_ECLIPSE))\n",
-									["location"] = "center",
-									["attach_to"] = "Eclipse",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
+									["code"] = "return math.abs(Power(unit,SPELL_POWER_ECLIPSE))\n",
+									["location"] = "center",
+									["attach_to"] = "Eclipse",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Reputation"] = {
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_DISPLAYPOWER"] = true,
 										["UNIT_MAXPOWER"] = true,
 										["UNIT_POWER_FREQUENT"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_SUCCEEDED"] = true,
 										["UNIT_SPELLCAST_START"] = true,
@@ -16152,6 +16272,10 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["location"] = "out_right_top",
@@ -16162,10 +16286,6 @@ PitBull4DB = {
 									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Cast"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
@@ -16176,58 +16296,62 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_HEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_MAXHEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Alternate power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit,ALTERNATE_POWER_INDEX)\nif max > 0 then\n  return \"%s%%\",Percent(Power(unit,ALTERNATE_POWER_INDEX),max)\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "AltPowerBar",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit,ALTERNATE_POWER_INDEX)\nif max > 0 then\n  return \"%s%%\",Percent(Power(unit,ALTERNATE_POWER_INDEX),max)\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "AltPowerBar",
+									["exists"] = true,
 								},
 								["Lua:Class"] = {
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Demonic fury"] = {
-									["exists"] = true,
-									["code"] = "return \"%s/%s\",Power(unit,SPELL_POWER_DEMONIC_FURY),MaxPower(unit,SPELL_POWER_DEMONIC_FURY)\n",
-									["location"] = "center",
-									["attach_to"] = "DemonicFury",
 									["events"] = {
 										["UNIT_POWER_FREQUENT"] = true,
 										["UNIT_MAXPOWER"] = true,
 									},
+									["code"] = "return \"%s/%s\",Power(unit,SPELL_POWER_DEMONIC_FURY),MaxPower(unit,SPELL_POWER_DEMONIC_FURY)\n",
+									["location"] = "center",
+									["attach_to"] = "DemonicFury",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -17876,40 +18000,36 @@ PitBull4DB = {
 						["Normal"] = {
 							["elements"] = {
 								["Lua:Reputation"] = {
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -17923,12 +18043,28 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
-									["exists"] = true,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+									},
 									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
 									["location"] = "right",
 									["attach_to"] = "CastBar",
+									["exists"] = true,
+								},
+								["Lua:Cast"] = {
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
@@ -17939,33 +18075,21 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
-								},
-								["Lua:Cast"] = {
-									["exists"] = true,
 									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
 									["location"] = "left",
 									["attach_to"] = "CastBar",
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-									},
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["location"] = "out_right_top",
@@ -17976,35 +18100,35 @@ PitBull4DB = {
 									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Class"] = {
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MANA"] = true,
 										["UNIT_MAXMANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -18012,40 +18136,36 @@ PitBull4DB = {
 						["yopart"] = {
 							["elements"] = {
 								["Lua:Reputation"] = {
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -18059,12 +18179,12 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_SUCCEEDED"] = true,
 										["UNIT_SPELLCAST_START"] = true,
@@ -18076,12 +18196,12 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
@@ -18092,17 +18212,21 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_HEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_MAXHEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["location"] = "out_right_top",
@@ -18113,35 +18237,35 @@ PitBull4DB = {
 									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Class"] = {
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MANA"] = true,
 										["UNIT_MAXMANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -18150,64 +18274,60 @@ PitBull4DB = {
 							["elements"] = {
 								["Lua:Reputation"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "local r,g,b = ClassColor(unit)\nif Percent(HP(unit),MaxHP(unit)) < 100 then\nreturn \"|cff%02x%02x%02x%s|r || |cff2f9717%s%%|r\",r,g,b,Name(unit),Percent(HP(unit),MaxHP(unit))\nelse\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)\nend",
-									["location"] = "center",
-									["attach_to"] = "BlankSpace;Default",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "local r,g,b = ClassColor(unit)\nif Percent(HP(unit),MaxHP(unit)) < 100 then\nreturn \"|cff%02x%02x%02x%s|r || |cff2f9717%s%%|r\",r,g,b,Name(unit),Percent(HP(unit),MaxHP(unit))\nelse\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)\nend",
+									["location"] = "center",
+									["attach_to"] = "BlankSpace;Default",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MAXMANA"] = true,
 										["UNIT_MANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -18218,63 +18338,210 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
+								},
+								["Lua:Health"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_MAXHEALTH"] = true,
+										["UNIT_AURA"] = true,
+										["UNIT_HEALTH"] = true,
+									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
+								},
+								["Lua:PVPTimer"] = {
+									["enabled"] = false,
+									["events"] = {
+										["PLAYER_FLAGS_CHANGED"] = true,
+									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+									["location"] = "out_right_top",
+									["exists"] = true,
+								},
+								["Lua:Class"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_LEVEL"] = true,
+										["UNIT_CLASSIFICATION_CHANGED"] = true,
+										["UNIT_AURA"] = true,
+									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
+								},
+								["Lua:Cast"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
+								},
+								["Lua:Power"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_MAXENERGY"] = true,
+										["UNIT_MANA"] = true,
+										["UNIT_RAGE"] = true,
+										["UNIT_ENERGY"] = true,
+										["UNIT_MAXFOCUS"] = true,
+										["UNIT_FOCUS"] = true,
+										["UNIT_MAXMANA"] = true,
+										["UNIT_DISPLAYPOWER"] = true,
+										["UNIT_RUNIC_POWER"] = true,
+										["UNIT_MAXRAGE"] = true,
+										["UNIT_MAXRUNIC_POWER"] = true,
+									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
+								},
+							},
+							["first"] = false,
+						},
+						["raid 3 test"] = {
+							["elements"] = {
+								["Lua:Reputation"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_FACTION"] = true,
+										["UPDATE_FACTION"] = true,
+									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
+								},
+								["Lua:Name"] = {
+									["events"] = {
+										["PLAYER_FLAGS_CHANGED"] = true,
+										["UNIT_NAME_UPDATE"] = true,
+									},
+									["code"] = "Outline()\nlocal r,g,b = ClassColor(unit)\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
+								},
+								["Lua:Threat"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_THREAT_LIST_UPDATE"] = true,
+										["UNIT_THREAT_SITUATION_UPDATE"] = true,
+									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
+								},
+								["Lua:Experience"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_PET_EXPERIENCE"] = true,
+										["PLAYER_XP_UPDATE"] = true,
+									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
+								},
+								["Lua:Druid mana"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_MAXMANA"] = true,
+										["UNIT_MANA"] = true,
+									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
+								},
+								["Lua:Cast time"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
+								},
+								["Lua:Cast"] = {
+									["enabled"] = false,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
 									["enabled"] = false,
 									["exists"] = true,
 									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
 									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["attach_to"] = "HealthBar",
+									["position"] = 1.00002,
 								},
 								["Lua:PVPTimer"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-									["location"] = "out_right_top",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+									["location"] = "out_right_top",
+									["exists"] = true,
 								},
 								["Lua:Class"] = {
 									["enabled"] = false,
-									["exists"] = true,
+									["events"] = {
+										["UNIT_LEVEL"] = true,
+										["UNIT_CLASSIFICATION_CHANGED"] = true,
+										["UNIT_AURA"] = true,
+									},
 									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
 									["location"] = "left",
 									["attach_to"] = "PowerBar",
-									["events"] = {
-										["UNIT_LEVEL"] = true,
-										["UNIT_CLASSIFICATION_CHANGED"] = true,
-										["UNIT_AURA"] = true,
-									},
-								},
-								["Lua:Cast"] = {
-									["enabled"] = false,
 									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-									},
 								},
 								["Lua:Power"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -18288,143 +18555,30 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
-								},
-							},
-							["first"] = false,
-						},
-						["yopet"] = {
-							["elements"] = {
-								["Lua:Reputation"] = {
-									["events"] = {
-										["UNIT_FACTION"] = true,
-										["UPDATE_FACTION"] = true,
-									},
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
-									["exists"] = true,
-								},
-								["Lua:Name"] = {
-									["events"] = {
-										["PLAYER_FLAGS_CHANGED"] = true,
-										["UNIT_NAME_UPDATE"] = true,
-									},
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
-									["exists"] = true,
-								},
-								["Lua:Threat"] = {
-									["events"] = {
-										["UNIT_THREAT_LIST_UPDATE"] = true,
-										["UNIT_THREAT_SITUATION_UPDATE"] = true,
-									},
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
-									["exists"] = true,
-								},
-								["Lua:Experience"] = {
-									["events"] = {
-										["UNIT_PET_EXPERIENCE"] = true,
-										["PLAYER_XP_UPDATE"] = true,
-									},
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
-									["exists"] = true,
-								},
-								["Lua:Druid mana"] = {
-									["events"] = {
-										["UNIT_MAXMANA"] = true,
-										["UNIT_MANA"] = true,
-									},
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
-									["exists"] = true,
-								},
-								["Lua:Cast"] = {
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-									},
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
-									["exists"] = true,
-								},
-								["Lua:Health"] = {
-									["events"] = {
-										["UNIT_HEALTH"] = true,
-										["UNIT_AURA"] = true,
-										["UNIT_MAXHEALTH"] = true,
-									},
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
-									["exists"] = true,
-								},
-								["Lua:PVPTimer"] = {
-									["location"] = "out_right_top",
-									["events"] = {
-										["PLAYER_FLAGS_CHANGED"] = true,
-									},
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-								},
-								["Lua:Class"] = {
-									["events"] = {
-										["UNIT_LEVEL"] = true,
-										["UNIT_CLASSIFICATION_CHANGED"] = true,
-										["UNIT_AURA"] = true,
-									},
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
-									["exists"] = true,
-								},
-								["Lua:Cast time"] = {
-									["events"] = {
-										["UNIT_SPELLCAST_SUCCEEDED"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-									},
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
-									["exists"] = true,
-								},
-								["Lua:Power"] = {
-									["events"] = {
-										["UNIT_MAXENERGY"] = true,
-										["UNIT_MANA"] = true,
-										["UNIT_RAGE"] = true,
-										["UNIT_DISPLAYPOWER"] = true,
-										["UNIT_MAXFOCUS"] = true,
-										["UNIT_FOCUS"] = true,
-										["UNIT_MAXMANA"] = true,
-										["UNIT_ENERGY"] = true,
-										["UNIT_RUNIC_POWER"] = true,
-										["UNIT_MAXRAGE"] = true,
-										["UNIT_MAXRUNIC_POWER"] = true,
-									},
 									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
 									["location"] = "right",
 									["attach_to"] = "PowerBar",
 									["exists"] = true,
+								},
+								["Lua:Low"] = {
+									["exists"] = true,
+									["code"] = "Outline()\nlocal dead = UnitIsDeadOrGhost(unit)\nif HP(unit) < 7500 and not dead then\nreturn '|cffFAF212LOW|r'\nend\nif dead then\nreturn '|cffA70606DEAD|r'\nend",
+									["location"] = "right",
+									["events"] = {
+										["UNIT_MAXENERGY"] = true,
+										["UNIT_MANA"] = true,
+										["UNIT_RAGE"] = true,
+										["UNIT_ENERGY"] = true,
+										["UNIT_MAXFOCUS"] = true,
+										["UNIT_FOCUS"] = true,
+										["UNIT_MAXMANA"] = true,
+										["UNIT_DISPLAYPOWER"] = true,
+										["UNIT_RUNIC_POWER"] = true,
+										["UNIT_MAXRAGE"] = true,
+										["UNIT_MAXRUNIC_POWER"] = true,
+									},
+									["attach_to"] = "HealthBar",
+									["position"] = 1.00001,
 								},
 							},
 							["first"] = false,
@@ -18433,81 +18587,77 @@ PitBull4DB = {
 							["elements"] = {
 								["Lua:Reputation"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "local r,g,b = ClassColor(unit)\nif Percent(HP(unit),MaxHP(unit)) < 100 then\nreturn \"|cff%02x%02x%02x%s|r || |cff2f9717%s%%|r\",r,g,b,Name(unit),Percent(HP(unit),MaxHP(unit))\nelse\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)\nend",
-									["location"] = "center",
-									["attach_to"] = "BlankSpace;Default",
 									["events"] = {
 										["UNIT_HEALTH"] = true,
 										["UNIT_MAXHEALTH"] = true,
 									},
+									["code"] = "local r,g,b = ClassColor(unit)\nif Percent(HP(unit),MaxHP(unit)) < 100 then\nreturn \"|cff%02x%02x%02x%s|r || |cff2f9717%s%%|r\",r,g,b,Name(unit),Percent(HP(unit),MaxHP(unit))\nelse\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)\nend",
+									["location"] = "center",
+									["attach_to"] = "BlankSpace;Default",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MAXMANA"] = true,
 										["UNIT_MANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
 									["enabled"] = false,
-									["exists"] = true,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+									},
 									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
 									["location"] = "right",
 									["attach_to"] = "CastBar",
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-									},
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -18518,46 +18668,46 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["position"] = 1.00001,
-									["location"] = "center",
-									["attach_to"] = "BlankSpace;Default",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["position"] = 1.00001,
+									["location"] = "center",
+									["attach_to"] = "BlankSpace;Default",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-									["location"] = "out_right_top",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+									["location"] = "out_right_top",
+									["exists"] = true,
 								},
 								["Lua:Class"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -18571,11 +18721,15 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Low"] = {
 									["location"] = "right",
-									["exists"] = true,
 									["attach_to"] = "HealthBar",
+									["exists"] = true,
 									["code"] = "Outline()\nlocal dead = UnitIsDeadOrGhost(unit)\nif HP(unit) < 7500 and not dead then\nreturn '|cffFAF212LOW|r'\nend\nif dead then\nreturn '|cffA70606DEAD|r'\nend",
 								},
 							},
@@ -18585,36 +18739,36 @@ PitBull4DB = {
 							["elements"] = {
 								["Lua:Reputation"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
 									["events"] = {
@@ -18628,83 +18782,79 @@ PitBull4DB = {
 									["size"] = 0.9,
 								},
 								["Lua:Health100"] = {
-									["exists"] = true,
-									["code"] = "Outline()\nif Percent(HP(unit),MaxHP(unit)) < 100 then\nreturn \"|cffA50707%s%%|r\",Percent(HP(unit),MaxHP(unit))\nend",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "Outline()\nif Percent(HP(unit),MaxHP(unit)) < 100 then\nreturn \"|cffA50707%s%%|r\",Percent(HP(unit),MaxHP(unit))\nend",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MAXMANA"] = true,
 										["UNIT_MANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
 									["enabled"] = false,
-									["exists"] = true,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+									},
 									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
 									["location"] = "right",
 									["attach_to"] = "CastBar",
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-									},
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
 									["exists"] = true,
-									["position"] = 1.00001,
-									["location"] = "left",
 									["code"] = "  local cur,max = HP(unit),MaxHP(unit)\n  local hp_r,hp_g,hp_b = HPColor(cur,max)\n  return \"|cff%02x%02x%02x%s|r || |cff2f9717%s|r \",hp_r,hp_g,hp_b,Short(cur,true),Short(max,true)",
-									["attach_to"] = "BlankSpace;Default",
+									["location"] = "left",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["attach_to"] = "BlankSpace;Default",
+									["position"] = 1.00001,
 								},
 								["Lua:PVPTimer"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-									["location"] = "out_right_top",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+									["location"] = "out_right_top",
+									["exists"] = true,
 								},
 								["Lua:Class"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if Percent(HP(unit),MaxHP(unit)) < 99.99 and Percent(HP(unit),MaxHP(unit)) > 0.01 then\nreturn '|cff34D12BLOW|r'\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "if Percent(HP(unit),MaxHP(unit)) < 99.99 and Percent(HP(unit),MaxHP(unit)) > 0.01 then\nreturn '|cff34D12BLOW|r'\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -18715,12 +18865,12 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"|cff76B3EC%s|r || |cff377BBC%s|r\",Short(Power(unit),true),Short(MaxPower(unit),true)\nend",
-									["location"] = "right",
-									["attach_to"] = "BlankSpace;Default",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -18734,173 +18884,147 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"|cff76B3EC%s|r || |cff377BBC%s|r\",Short(Power(unit),true),Short(MaxPower(unit),true)\nend",
+									["location"] = "right",
+									["attach_to"] = "BlankSpace;Default",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
 						},
-						["raid 3 test"] = {
+						["yop"] = {
 							["elements"] = {
 								["Lua:Reputation"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "Outline()\nlocal r,g,b = ClassColor(unit)\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
-								},
-								["Lua:Experience"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
 									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
-									["events"] = {
-										["UNIT_PET_EXPERIENCE"] = true,
-										["PLAYER_XP_UPDATE"] = true,
-									},
-								},
-								["Lua:Druid mana"] = {
-									["enabled"] = false,
+									["attach_to"] = "ThreatBar",
 									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
+								},
+								["Lua:Power"] = {
 									["events"] = {
-										["UNIT_MAXMANA"] = true,
+										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
+										["UNIT_RAGE"] = true,
+										["UNIT_DISPLAYPOWER"] = true,
+										["UNIT_MAXFOCUS"] = true,
+										["UNIT_FOCUS"] = true,
+										["UNIT_MAXMANA"] = true,
+										["UNIT_ENERGY"] = true,
+										["UNIT_RUNIC_POWER"] = true,
+										["UNIT_MAXRAGE"] = true,
+										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_SUCCEEDED"] = true,
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
-									["enabled"] = false,
-									["exists"] = true,
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+									},
 									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
 									["location"] = "left",
 									["attach_to"] = "CastBar",
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-									},
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["position"] = 1.00002,
-									["location"] = "right",
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
-									["attach_to"] = "HealthBar",
 									["events"] = {
-										["UNIT_MAXHEALTH"] = true,
-										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
+										["UNIT_AURA"] = true,
+										["UNIT_MAXHEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 									["location"] = "out_right_top",
+									["exists"] = true,
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Class"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
-								},
-								["Lua:Power"] = {
-									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
 									["attach_to"] = "PowerBar",
-									["events"] = {
-										["UNIT_MAXENERGY"] = true,
-										["UNIT_MANA"] = true,
-										["UNIT_RAGE"] = true,
-										["UNIT_ENERGY"] = true,
-										["UNIT_MAXFOCUS"] = true,
-										["UNIT_FOCUS"] = true,
-										["UNIT_MAXMANA"] = true,
-										["UNIT_DISPLAYPOWER"] = true,
-										["UNIT_RUNIC_POWER"] = true,
-										["UNIT_MAXRAGE"] = true,
-										["UNIT_MAXRUNIC_POWER"] = true,
-									},
-								},
-								["Lua:Low"] = {
 									["exists"] = true,
-									["position"] = 1.00001,
-									["location"] = "right",
-									["code"] = "Outline()\nlocal dead = UnitIsDeadOrGhost(unit)\nif HP(unit) < 7500 and not dead then\nreturn '|cffFAF212LOW|r'\nend\nif dead then\nreturn '|cffA70606DEAD|r'\nend",
-									["attach_to"] = "HealthBar",
+								},
+								["Lua:Druid mana"] = {
 									["events"] = {
-										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
-										["UNIT_RAGE"] = true,
-										["UNIT_ENERGY"] = true,
-										["UNIT_MAXFOCUS"] = true,
-										["UNIT_FOCUS"] = true,
 										["UNIT_MAXMANA"] = true,
-										["UNIT_DISPLAYPOWER"] = true,
-										["UNIT_RUNIC_POWER"] = true,
-										["UNIT_MAXRAGE"] = true,
-										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
+								},
+								["Lua:Experience"] = {
+									["events"] = {
+										["UNIT_PET_EXPERIENCE"] = true,
+										["PLAYER_XP_UPDATE"] = true,
+									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -18909,64 +19033,60 @@ PitBull4DB = {
 							["elements"] = {
 								["Lua:Reputation"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "local r,g,b = ClassColor(unit)\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)",
-									["location"] = "center",
-									["attach_to"] = "BlankSpace;Default",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "local r,g,b = ClassColor(unit)\nreturn '|cff%02x%02x%02x%s|r',r,g,b,Name(unit)",
+									["location"] = "center",
+									["attach_to"] = "BlankSpace;Default",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MAXMANA"] = true,
 										["UNIT_MANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -18977,46 +19097,46 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-									["location"] = "out_right_top",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+									["location"] = "out_right_top",
+									["exists"] = true,
 								},
 								["Lua:Class"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -19027,13 +19147,13 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -19047,6 +19167,10 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -19055,46 +19179,46 @@ PitBull4DB = {
 							["elements"] = {
 								["Lua:Reputation"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "local TrName = Name(unit)\nlocal TrVal = 40\nlocal cr,cg,cb = ClassColor(unit)\nlocal dr,dg,db = DifficultyColor(unit)\nlocal hr,hg,hb = HostileColor(unit)\nif #TrName > TrVal then\n   TrName = strsub(TrName,1,TrVal) .. \".\"\nend\nif IsMouseOver() then\n  return \"|cff76B3EC%s|r || |cff377BBC%s|r\",Short(Power(unit),true),Short(MaxPower(unit),true)\nelse\n  return \"|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r\",cr,cg,cb,TrName,dr,dg,db,Level(unit),hr,hg,hb,SmartRace(unit),cr,cg,cb,Class(unit)\nend",
-									["location"] = "left",
-									["attach_to"] = "BlankSpace;Default",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "local TrName = Name(unit)\nlocal TrVal = 40\nlocal cr,cg,cb = ClassColor(unit)\nlocal dr,dg,db = DifficultyColor(unit)\nlocal hr,hg,hb = HostileColor(unit)\nif #TrName > TrVal then\n   TrName = strsub(TrName,1,TrVal) .. \".\"\nend\nif IsMouseOver() then\n  return \"|cff76B3EC%s|r || |cff377BBC%s|r\",Short(Power(unit),true),Short(MaxPower(unit),true)\nelse\n  return \"|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r\",cr,cg,cb,TrName,dr,dg,db,Level(unit),hr,hg,hb,SmartRace(unit),cr,cg,cb,Class(unit)\nend",
+									["location"] = "left",
+									["attach_to"] = "BlankSpace;Default",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Health100"] = {
 									["events"] = {
@@ -19110,21 +19234,17 @@ PitBull4DB = {
 								},
 								["Lua:Druid mana"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MAXMANA"] = true,
 										["UNIT_MANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -19135,45 +19255,45 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local dead = UnitIsDeadOrGhost(unit)\nlocal offline = not UnitIsConnected(unit) and \" |cff8d8483Offline|r\" or \"\"\nif not dead then\n  local cur,max = HP(unit),MaxHP(unit)\n  local hp_r,hp_g,hp_b = HPColor(cur,max)\n  return \"|cff%02x%02x%02x%s|r || |cff2f9717%s|r%s \",hp_r,hp_g,hp_b,Short(cur,true),Short(max,true),offline\nelse\n  return \"|cff922e21Dead|r%s \",offline\nend",
-									["location"] = "right",
-									["attach_to"] = "BlankSpace;Default",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "local dead = UnitIsDeadOrGhost(unit)\nlocal offline = not UnitIsConnected(unit) and \" |cff8d8483Offline|r\" or \"\"\nif not dead then\n  local cur,max = HP(unit),MaxHP(unit)\n  local hp_r,hp_g,hp_b = HPColor(cur,max)\n  return \"|cff%02x%02x%02x%s|r || |cff2f9717%s|r%s \",hp_r,hp_g,hp_b,Short(cur,true),Short(max,true),offline\nelse\n  return \"|cff922e21Dead|r%s \",offline\nend",
+									["location"] = "right",
+									["attach_to"] = "BlankSpace;Default",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-									["location"] = "out_right_top",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+									["location"] = "out_right_top",
+									["exists"] = true,
 								},
 								["Lua:Class"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -19184,13 +19304,13 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -19204,11 +19324,15 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
 						},
-						["yop"] = {
+						["yopet"] = {
 							["elements"] = {
 								["Lua:Reputation"] = {
 									["exists"] = true,
@@ -19240,23 +19364,70 @@ PitBull4DB = {
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
 								},
-								["Lua:Power"] = {
+								["Lua:Experience"] = {
 									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["events"] = {
+										["UNIT_PET_EXPERIENCE"] = true,
+										["PLAYER_XP_UPDATE"] = true,
+									},
+								},
+								["Lua:Druid mana"] = {
+									["exists"] = true,
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["events"] = {
+										["UNIT_MAXMANA"] = true,
+										["UNIT_MANA"] = true,
+									},
+								},
+								["Lua:Cast"] = {
+									["exists"] = true,
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["events"] = {
+										["UNIT_SPELLCAST_DELAYED"] = true,
+										["UNIT_SPELLCAST_FAILED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
+										["UNIT_SPELLCAST_INTERRUPTED"] = true,
+										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
+										["UNIT_SPELLCAST_STOP"] = true,
+										["UNIT_SPELLCAST_START"] = true,
+										["UNIT_SPELLCAST_CHANNEL_START"] = true,
+									},
+								},
+								["Lua:Health"] = {
+									["exists"] = true,
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
 									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["events"] = {
+										["UNIT_HEALTH"] = true,
+										["UNIT_AURA"] = true,
+										["UNIT_MAXHEALTH"] = true,
+									},
+								},
+								["Lua:PVPTimer"] = {
+									["location"] = "out_right_top",
+									["events"] = {
+										["PLAYER_FLAGS_CHANGED"] = true,
+									},
+									["exists"] = true,
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+								},
+								["Lua:Class"] = {
+									["exists"] = true,
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
 									["attach_to"] = "PowerBar",
 									["events"] = {
-										["UNIT_MAXENERGY"] = true,
-										["UNIT_MANA"] = true,
-										["UNIT_RAGE"] = true,
-										["UNIT_DISPLAYPOWER"] = true,
-										["UNIT_MAXFOCUS"] = true,
-										["UNIT_FOCUS"] = true,
-										["UNIT_MAXMANA"] = true,
-										["UNIT_ENERGY"] = true,
-										["UNIT_RUNIC_POWER"] = true,
-										["UNIT_MAXRAGE"] = true,
-										["UNIT_MAXRUNIC_POWER"] = true,
+										["UNIT_LEVEL"] = true,
+										["UNIT_CLASSIFICATION_CHANGED"] = true,
+										["UNIT_AURA"] = true,
 									},
 								},
 								["Lua:Cast time"] = {
@@ -19276,70 +19447,23 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
 								},
-								["Lua:Cast"] = {
+								["Lua:Power"] = {
 									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
-									["events"] = {
-										["UNIT_SPELLCAST_DELAYED"] = true,
-										["UNIT_SPELLCAST_CHANNEL_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-										["UNIT_SPELLCAST_START"] = true,
-										["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-										["UNIT_SPELLCAST_STOP"] = true,
-										["UNIT_SPELLCAST_INTERRUPTED"] = true,
-										["UNIT_SPELLCAST_FAILED"] = true,
-									},
-								},
-								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
 									["location"] = "right",
-									["attach_to"] = "HealthBar",
-									["events"] = {
-										["UNIT_HEALTH"] = true,
-										["UNIT_AURA"] = true,
-										["UNIT_MAXHEALTH"] = true,
-									},
-								},
-								["Lua:PVPTimer"] = {
-									["location"] = "out_right_top",
-									["exists"] = true,
-									["events"] = {
-										["PLAYER_FLAGS_CHANGED"] = true,
-									},
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-								},
-								["Lua:Class"] = {
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
 									["attach_to"] = "PowerBar",
 									["events"] = {
-										["UNIT_LEVEL"] = true,
-										["UNIT_CLASSIFICATION_CHANGED"] = true,
-										["UNIT_AURA"] = true,
-									},
-								},
-								["Lua:Druid mana"] = {
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
-									["events"] = {
+										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
+										["UNIT_RAGE"] = true,
+										["UNIT_DISPLAYPOWER"] = true,
+										["UNIT_MAXFOCUS"] = true,
+										["UNIT_FOCUS"] = true,
 										["UNIT_MAXMANA"] = true,
-									},
-								},
-								["Lua:Experience"] = {
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
-									["events"] = {
-										["UNIT_PET_EXPERIENCE"] = true,
-										["PLAYER_XP_UPDATE"] = true,
+										["UNIT_ENERGY"] = true,
+										["UNIT_RUNIC_POWER"] = true,
+										["UNIT_MAXRAGE"] = true,
+										["UNIT_MAXRUNIC_POWER"] = true,
 									},
 								},
 							},
@@ -19349,65 +19473,61 @@ PitBull4DB = {
 							["elements"] = {
 								["Lua:Reputation"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MAXMANA"] = true,
 										["UNIT_MANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -19418,46 +19538,46 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      if duration and duration >= 0 then\n        return \"|cffff0000+%s|r %.1f\",Round(delay,1),duration\n      else\n        return \"|cffff0000+%s|r\",Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nif UnitIsFriend(unit,\"player\") then\n  local miss = max - cur \n  if miss ~= 0 then\n    return \"|cffff7f7f%d|r\",miss\n  else\n    return ''\n  end\nelse\n  return \"%s/%s\",Short(cur,true),Short(max,true)\nend",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
-									["location"] = "out_right_top",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 									},
+									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
+									["location"] = "out_right_top",
+									["exists"] = true,
 								},
 								["Lua:Class"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s |cff%02x%02x%02x%s|r (%s) %s\",Classification(unit) or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s |cff%02x%02x%02x%s|r %s\",Classification(unit) or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -19468,13 +19588,13 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
 									["enabled"] = false,
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -19488,6 +19608,10 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -19495,60 +19619,56 @@ PitBull4DB = {
 						["focus2"] = {
 							["elements"] = {
 								["Lua:Reputation"] = {
-									["exists"] = true,
-									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ReputationBar",
 									["events"] = {
 										["UNIT_FACTION"] = true,
 										["UPDATE_FACTION"] = true,
 									},
+									["code"] = "local name, _, min , max, value, id = GetWatchedFactionInfo()\nif IsMouseOver() then\n  return name or ConfigMode() \nelse\n  local fs_id, fs_rep, _, _, _, _, _, fs_threshold, next_fs_threshold = GetFriendshipReputation(id)\n  if fs_id then\n    if next_fs_threshold then\n      min, max, value = fs_threshold, next_fs_threshold, fs_rep\n    else\n      min, max, value = 0, 1, 1\n    end\n  end\n  local bar_cur,bar_max = value-min,max-min\n  return \"%d/%d (%s%%)\",bar_cur,bar_max,Percent(bar_cur,bar_max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ReputationBar",
+									["exists"] = true,
 								},
 								["Lua:Name"] = {
-									["exists"] = true,
-									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
-									["location"] = "left",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["PLAYER_FLAGS_CHANGED"] = true,
 										["UNIT_NAME_UPDATE"] = true,
 									},
+									["code"] = "return '%s %s%s%s',Name(unit),Angle(AFK(unit) or DND(unit))",
+									["location"] = "left",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:Threat"] = {
-									["exists"] = true,
-									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
-									["location"] = "center",
-									["attach_to"] = "ThreatBar",
 									["events"] = {
 										["UNIT_THREAT_LIST_UPDATE"] = true,
 										["UNIT_THREAT_SITUATION_UPDATE"] = true,
 									},
+									["code"] = "local unit_a,unit_b = ThreatPair(unit)\nif unit_a and unit_b then\n  local _,_,percent = UnitDetailedThreatSituation(unit_a, unit_b)\n  if percent and percent ~= 0 then\n    return \"%s%%\",Round(percent,1)\n  end\nend\nreturn ConfigMode()",
+									["location"] = "center",
+									["attach_to"] = "ThreatBar",
+									["exists"] = true,
 								},
 								["Lua:Experience"] = {
-									["exists"] = true,
-									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
-									["location"] = "center",
-									["attach_to"] = "ExperienceBar",
 									["events"] = {
 										["UNIT_PET_EXPERIENCE"] = true,
 										["PLAYER_XP_UPDATE"] = true,
 									},
+									["code"] = "local cur, max, rest = XP(unit), MaxXP(unit), RestXP(unit)\nif rest then\n  return \"%s/%s (%s%%) R: %s%%\",cur,max,Percent(cur,max),Percent(rest,max)\nelse\n  return \"%s/%s (%s%%)\",cur,max,Percent(cur,max)\nend",
+									["location"] = "center",
+									["attach_to"] = "ExperienceBar",
+									["exists"] = true,
 								},
 								["Lua:Druid mana"] = {
-									["exists"] = true,
-									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
-									["location"] = "center",
-									["attach_to"] = "DruidManaBar",
 									["events"] = {
 										["UNIT_MAXMANA"] = true,
 										["UNIT_MANA"] = true,
 									},
+									["code"] = "if UnitPowerType(unit) ~= 0 then\n  return \"%s/%s\",Power(unit,0),MaxPower(unit,0)\nend",
+									["location"] = "center",
+									["attach_to"] = "DruidManaBar",
+									["exists"] = true,
 								},
 								["Lua:Cast"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
-									["location"] = "left",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_DELAYED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
@@ -19559,17 +19679,21 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_START"] = true,
 										["UNIT_SPELLCAST_CHANNEL_START"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  local spell,stop_message,target = cast_data.spell,cast_data.stop_message,cast_data.target\n  local stop_time,stop_duration = cast_data.stop_time\n  if stop_time then\n    stop_duration = GetTime() - stop_time\n  end\n  Alpha(-(stop_duration or 0) + 1)\n  if stop_message then\n    return stop_message\n  elseif target then\n    return \"%s (%s)\",spell,target\n  else\n    return spell \n  end\nend\nreturn ConfigMode()",
+									["location"] = "left",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Health"] = {
-									["exists"] = true,
-									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
-									["location"] = "right",
-									["attach_to"] = "HealthBar",
 									["events"] = {
 										["UNIT_MAXHEALTH"] = true,
 										["UNIT_AURA"] = true,
 										["UNIT_HEALTH"] = true,
 									},
+									["code"] = "local s = Status(unit)\nif s then\n  return s\nend\nlocal cur, max = HP(unit), MaxHP(unit)\nreturn \"%s/%s || %s%%\",Short(cur,true),Short(max,true),Percent(cur,max)",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["exists"] = true,
 								},
 								["Lua:PVPTimer"] = {
 									["location"] = "out_right_top",
@@ -19580,21 +19704,17 @@ PitBull4DB = {
 									["code"] = "if unit == \"player\" then\n  local pvp = PVPDuration()\n  if pvp then\n    return \"|cffff0000%s|r\",FormatDuration(pvp)\n  end\nend",
 								},
 								["Lua:Class"] = {
-									["exists"] = true,
-									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
-									["location"] = "left",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_LEVEL"] = true,
 										["UNIT_CLASSIFICATION_CHANGED"] = true,
 										["UNIT_AURA"] = true,
 									},
+									["code"] = "local dr,dg,db = DifficultyColor(unit)\nlocal form = DruidForm(unit)\nlocal classification = Classification(unit)\nif UnitIsPlayer(unit) or (not UnitIsFriend(unit,\"player\") and not IsPet(unit)) then\n  local cr,cg,cb = ClassColor(unit)\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r |cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),cr,cg,cb,Class(unit),SmartRace(unit) or ''\n  end\nelse\n  if form then\n    return \"%s%s|cff%02x%02x%02x%s|r (%s) %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),form,SmartRace(unit) or ''\n  else\n    return \"%s%s|cff%02x%02x%02x%s|r %s\",classification or '',classification and ' ' or '',dr,dg,db,Level(unit),SmartRace(unit) or ''\n  end\nend",
+									["location"] = "left",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 								["Lua:Cast time"] = {
-									["exists"] = true,
-									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
-									["location"] = "right",
-									["attach_to"] = "CastBar",
 									["events"] = {
 										["UNIT_SPELLCAST_SUCCEEDED"] = true,
 										["UNIT_SPELLCAST_START"] = true,
@@ -19606,12 +19726,12 @@ PitBull4DB = {
 										["UNIT_SPELLCAST_INTERRUPTED"] = true,
 										["UNIT_SPELLCAST_FAILED"] = true,
 									},
+									["code"] = "local cast_data = CastData(unit)\nif cast_data then\n  if not cast_data.stop_time then\n    local delay,end_time = cast_data.delay, cast_data.end_time\n    local duration\n    if end_time then\n      duration = end_time - GetTime()\n    end\n    if delay and delay ~= 0 then\n      local delay_sign = '+'\n      if delay < 0 then\n        delay_sign = ''\n      end\n      if duration and duration >= 0 then\n        return \"|cffff0000%s%s|r %.1f\",delay_sign,Round(delay,1),duration\n      else\n        return \"|cffff0000%s%s|r\",delay_sign,Round(delay,1)\n      end\n    elseif duration and duration >= 0 then\n      return \"%.1f\",duration\n    end\n  end\nend\nreturn ConfigMode()",
+									["location"] = "right",
+									["attach_to"] = "CastBar",
+									["exists"] = true,
 								},
 								["Lua:Power"] = {
-									["exists"] = true,
-									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
-									["location"] = "right",
-									["attach_to"] = "PowerBar",
 									["events"] = {
 										["UNIT_MAXENERGY"] = true,
 										["UNIT_MANA"] = true,
@@ -19625,6 +19745,10 @@ PitBull4DB = {
 										["UNIT_MAXRAGE"] = true,
 										["UNIT_MAXRUNIC_POWER"] = true,
 									},
+									["code"] = "local max = MaxPower(unit)\nif max > 0 then\n  return \"%s/%s\",Power(unit),max\nend",
+									["location"] = "right",
+									["attach_to"] = "PowerBar",
+									["exists"] = true,
 								},
 							},
 							["first"] = false,
@@ -19786,6 +19910,8 @@ PitBull4DB = {
 				},
 			},
 		},
+		["Chi"] = {
+		},
 	},
 	["global"] = {
 		["config_version"] = 2,
@@ -19798,32 +19924,33 @@ PitBull4DB = {
 		["Çaith - Gorgonnash"] = "CaithUI",
 		["Caithz - Gorgonnash"] = "CaithUI",
 		["Caithan - Kor'gall"] = "CaithUI",
+		["Prismriver - Drak'thul"] = "Default",
 		["Kutza - Illidan"] = "caith ui",
 		["Caizh - Gorgonnash"] = "CaithUI",
-		["Prismriver - Drak'thul"] = "Default",
 		["Caithlol - Madmortem"] = "Default",
-		["Orciash - Ambossar"] = "CaithUI",
+		["Mews - Cho'gall"] = "Default",
 		["Flunkyball - Gorgonnash"] = "caith ui",
+		["Orciash - Ambossar"] = "CaithUI",
 		["Caithlen - Ambossar"] = "CaithUI",
-		["Cìrno - Blackrock"] = "CaithUI",
 		["Daith - Gorgonnash"] = "CaithUI",
 		["Caithllyn - Gorgonnash"] = "CaithUI",
+		["Jasdaya - Ambossar"] = "CaithUI",
 		["Caithen - Gorgonnash"] = "CaithUI",
-		["Mews - Cho'gall"] = "Default",
+		["Hagsax - Ambossar"] = "CaithUI",
 		["Koinzell - Gorgonnash"] = "caith ui",
 		["Caithin - Gorgonnash"] = "CaithUI",
 		["Tukui - Gundrak"] = "caith ui",
-		["Øø - Aegwynn"] = "Default",
+		["Cìrno - Blackrock"] = "CaithUI",
 		["Menos - Gorgonnash"] = "caith ui",
 		["Caithkekz - Destromath"] = "Default",
-		["Jasdaya - Ambossar"] = "CaithUI",
-		["Caith - Aegwynn"] = "Default",
 		["Caîth - Das Konsortium"] = "Default",
-		["Feralde - Bronzebeard"] = "Default",
-		["Caithz - Destromath"] = "Default",
+		["Caith - Aegwynn"] = "Default",
+		["Timbynature - Gorgonnash"] = "Default",
 		["Irlina - Gorgonnash"] = "caith ui",
-		["Zuz - Vek'lor"] = "CaithUI",
+		["Caithz - Destromath"] = "Default",
 		["Cìrno - Skywall"] = "CaithUI",
+		["Zuz - Vek'lor"] = "CaithUI",
+		["Feralde - Bronzebeard"] = "Default",
 		["Caithyn - Gorgonnash"] = "CaithUI",
 		["Leeny - Ambossar"] = "CaithUI",
 		["Rndhundert - Aegwynn"] = "Default",
@@ -19831,11 +19958,11 @@ PitBull4DB = {
 		["Caith - Arena Pass 1"] = "CaithUI",
 		["Caithy - Gorgonnash"] = "CaithUI",
 		["Kisama - Gorgonnash"] = "CaithUI",
-		["Cìrno - Stormrage"] = "CaithUI",
 		["Caithlen - Gorgonnash"] = "CaithUI",
+		["Caithlyn - Gorgonnash"] = "CaithUI",
 		["Caithhuman - Gorgonnash"] = "Default",
 		["Zabimaru - Gorgonnash"] = "CaithUI",
-		["Caithlyn - Gorgonnash"] = "CaithUI",
+		["Cìrno - Stormrage"] = "CaithUI",
 		["Caiz - Gorgonnash"] = "CaithUI",
 		["Caiths - Gorgonnash"] = "CaithUI",
 		["Shadowlyn - Gorgonnash"] = "caith ui",
@@ -19843,11 +19970,11 @@ PitBull4DB = {
 		["Foorlaan - Aegwynn"] = "CaithUI",
 		["Caithlin - Aegwynn"] = "CaithUI",
 		["Gfaadds - Das Konsortium"] = "Default",
-		["Timbynature - Gorgonnash"] = "Default",
+		["Øø - Aegwynn"] = "Default",
 		["Ceithlyn - Gorgonnash"] = "CaithUI",
 		["Caithz - Stormscale"] = "caith ui",
 		["Spriest - Frostmourne"] = "Default",
-		["Hagsax - Ambossar"] = "CaithUI",
+		["Cirnosa - Blackrock"] = "CaithUI",
 		["Caithlen - Arena Pass 1"] = "CaithUI",
 		["Ekutza - Illidan"] = "Default",
 		["Randoa - Aegwynn"] = "CaithUI",
@@ -20412,8 +20539,8 @@ PitBull4DB = {
 					["layout"] = "Target",
 				},
 				["pet"] = {
-					["position_x"] = -444.470428466797,
-					["position_y"] = -242.06916809082,
+					["position_x"] = -443.803070068359,
+					["position_y"] = -244.851547241211,
 					["layout"] = "yopet",
 				},
 				["focustargettarget"] = {

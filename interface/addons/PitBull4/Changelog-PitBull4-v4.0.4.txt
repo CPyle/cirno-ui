@@ -1,0 +1,28 @@
+tag v4.0.4
+3f27d09e1d13df8cfe24d1de58854f551119264f
+Kyle Buller <bullerk@gmail.com>
+2016-08-18 21:38:52 -0500
+
+Tagging as v4.0.4
+
+
+--------------------
+
+Kyle Buller:
+	- Aura: Fix spell id
+	- Aura: Warlocks can dispel, not purge
+	- LuaTexts: Finish removing Demonic Fury and Eclipse
+	- Strip whitespace, I'm done with it.
+	- Fix updating the minimap icon on profile change
+	- Add a notice about having old modules enabled and disable them
+	- Revert "Remove all of the custom UnitPopup handling, the default is fine"
+	This reverts commit 735490e57a9da350843916a0ed854f039249d9e2.
+	- LuaTexts: Whitespace and other completely unnecessary changes
+	- LuaTexts: Remove Eclipse and Demonic Fury texts
+	- Aura: Update filter options
+	- Aura: Remove all the compat for removed spells
+	- Aura: Add empty Demon Hunter tables
+	- Aura: Update DK, Mage, Paladin, and Warrior filters.
+	- Aura: Check Priests for Purify on spec change.
+	Missed squashing this in with the previous commit ^^;
+	- Aura: Update dispel and purge spells.

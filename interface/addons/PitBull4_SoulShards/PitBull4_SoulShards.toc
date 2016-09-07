@@ -3,7 +3,7 @@
 ## Title-deDE: PitBull4 |r[|cffeda55fSeelensplitter|r]
 ## Title-esES: PitBull4 |r[|cffeda55fSoul shards|r]
 ## Title-frFR: PitBull4 |r[|cffeda55fSoul shards|r]
-## Title-koKR: PitBull4 |r[|cffeda55fSoul shards|r]
+## Title-koKR: PitBull4 |r[|cffeda55f영혼의 조각|r]
 ## Title-ruRU: PitBull4 |r[|cffeda55fSoul shards|r]
 ## Title-zhCN: PitBull4 |r[|cffeda55fSoul shards|r]
 ## Title-zhTW: PitBull4 |r[|cffeda55fSoul shards|r]
@@ -11,17 +11,17 @@
 ## Notes-deDE: Show Warlock Soul shards.
 ## Notes-esES: Show Warlock Soul shards.
 ## Notes-frFR: Show Warlock Soul shards.
-## Notes-koKR: Show Warlock Soul shards.
-## Notes-ruRU: Show Warlock Soul shards.
+## Notes-koKR: 흑마법사의 영혼의 조각을 표시합니다.
+## Notes-ruRU: Отображать осколки душ чернокнижников.
 ## Notes-zhCN: Show Warlock Soul shards.
 ## Notes-zhTW: Show Warlock Soul shards.
 ## Author: ckknight
 ## DefaultState: enabled
 ## LoadOnDemand: 1
 ## Dependencies: PitBull4
-## Version: v4.0.3
+## Version: v4.0.4
 ## X-PitBull4-Condition: return select(2, UnitClass("player")) == "WARLOCK"
-## X-Curse-Packaged-Version: v4.0.3
+## X-Curse-Packaged-Version: v4.0.4
 ## X-Curse-Project-Name: PitBull Unit Frames 4.0
 ## X-Curse-Project-ID: pitbull4
 ## X-Curse-Repository-ID: wow/pitbull4/mainline

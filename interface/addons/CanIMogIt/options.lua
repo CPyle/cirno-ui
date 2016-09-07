@@ -69,6 +69,9 @@ local EVENTS = {
     "TRANSMOG_COLLECTION_UPDATED",
     -- "PLAYER_LOGIN",
     -- "GET_ITEM_INFO_RECEIVED",
+    "AUCTION_HOUSE_SHOW",
+    "GUILDBANKFRAME_OPENED",
+    "VOID_STORAGE_OPEN",
 }
 
 for i, event in pairs(EVENTS) do
@@ -79,8 +82,11 @@ end
 CanIMogIt.frame:SetScript("OnEvent", function(self, event, ...)
     -- Add functions you want to catch events here
     self:AddonLoaded(event, ...)
+    self:OnEncounterJournalLoaded(event, ...)
     self:TransmogCollectionUpdated(event, ...)
-    -- self:GetItemInfoReceived(event, ...)
+    -- self:OnAuctionHouseShow(event, ...)
+    self:OnGuildBankOpened(event, ...)
+    self:OnVoidStorageOpened(event, ...)
 end)
 
 
@@ -187,4 +193,14 @@ function CanIMogIt.frame.Loaded()
         CanIMogItOptions = CanIMogItOptions_temp;
     end
     createOptionsMenu()
+end
+
+CanIMogIt:RegisterChatCommand("cimi", "OpenOptionsMenu")
+CanIMogIt:RegisterChatCommand("canimogit", "OpenOptionsMenu")
+
+function CanIMogIt:OpenOptionsMenu()
+    -- Run it twice, because the first one only opens
+    -- the main interface window.
+    InterfaceOptionsFrame_OpenToCategory(CanIMogIt.frame)
+    InterfaceOptionsFrame_OpenToCategory(CanIMogIt.frame)
 end

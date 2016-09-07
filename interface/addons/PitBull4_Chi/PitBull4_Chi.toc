@@ -12,16 +12,16 @@
 ## Notes-esES: Mostrar los iconos de chi para monjes.
 ## Notes-frFR: Montrer les icônes de chi du Moine
 ## Notes-koKR: 수도사의 기 아이콘을 표시합니다.
-## Notes-ruRU: Показывать иконки ресурса монахов ци
+## Notes-ruRU: Показывать иконки ресурса ци монахов.
 ## Notes-zhCN: 显示武僧真气图标
 ## Notes-zhTW: 顯示武僧的真氣圖示。
 ## Author: Shefki
 ## DefaultState: enabled
 ## LoadOnDemand: 1
 ## Dependencies: PitBull4
-## Version: v4.0.3
+## Version: v4.0.4
 ## X-PitBull4-Condition: return select(2, UnitClass("player")) == "MONK"
-## X-Curse-Packaged-Version: v4.0.3
+## X-Curse-Packaged-Version: v4.0.4
 ## X-Curse-Project-Name: PitBull Unit Frames 4.0
 ## X-Curse-Project-ID: pitbull4
 ## X-Curse-Repository-ID: wow/pitbull4/mainline

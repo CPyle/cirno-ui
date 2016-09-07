@@ -1,0 +1,403 @@
+
+SkadaPerCharDB = {
+	["total"] = {
+		["healingabsorbed"] = 0,
+		["dispells"] = 0,
+		["ccbreaks"] = 0,
+		["time"] = 131,
+		["interrupts"] = 0,
+		["damage"] = 783346,
+		["players"] = {
+			{
+				["healingabsorbed"] = 0,
+				["class"] = "MONK",
+				["damaged"] = {
+				},
+				["auras"] = {
+					["Fists of Fury"] = {
+						["name"] = "Fists of Fury",
+						["active"] = 0,
+						["id"] = 113656,
+						["auratype"] = "BUFF",
+						["uptime"] = 4,
+					},
+					["Mortal Wounds"] = {
+						["name"] = "Mortal Wounds",
+						["active"] = 1,
+						["id"] = 115804,
+						["auratype"] = "DEBUFF",
+						["uptime"] = 28,
+					},
+				},
+				["role"] = "NONE",
+				["time"] = 118,
+				["interrupts"] = 0,
+				["power"] = {
+					[12] = {
+						["amount"] = 52,
+						["spells"] = {
+							[100780] = 52,
+						},
+					},
+				},
+				["damage"] = 783346,
+				["damagespells"] = {
+					["Fists of Fury"] = {
+						["min"] = 15397,
+						["critical"] = 1,
+						["hit"] = 9,
+						["totalhits"] = 10,
+						["id"] = 117418,
+						["max"] = 30794,
+						["damage"] = 169369,
+					},
+					["Blackout Kick"] = {
+						["min"] = 6764,
+						["critical"] = 2,
+						["hit"] = 11,
+						["totalhits"] = 13,
+						["id"] = 100784,
+						["max"] = 22583,
+						["damage"] = 159960,
+					},
+					["Tiger Palm"] = {
+						["min"] = 2636,
+						["critical"] = 9,
+						["hit"] = 17,
+						["totalhits"] = 26,
+						["id"] = 100780,
+						["max"] = 6161,
+						["damage"] = 101593,
+					},
+					["Rising Sun Kick"] = {
+						["min"] = 26688,
+						["hit"] = 7,
+						["totalhits"] = 7,
+						["id"] = 185099,
+						["max"] = 26689,
+						["damage"] = 186820,
+					},
+					["Attack"] = {
+						["min"] = 1096,
+						["max"] = 4877,
+						["critical"] = 15,
+						["hit"] = 68,
+						["totalhits"] = 93,
+						["id"] = 6603,
+						["MISS"] = 10,
+						["damage"] = 165604,
+					},
+				},
+				["maxhp"] = 213240,
+				["damagetaken"] = 0,
+				["deathlog"] = {
+				},
+				["id"] = "Player-10-0A804A58",
+				["overhealing"] = 0,
+				["damagetakenspells"] = {
+				},
+				["healingspells"] = {
+				},
+				["shielding"] = 0,
+				["name"] = "Cirnosa",
+				["healing"] = 0,
+				["healed"] = {
+				},
+				["dispells"] = 0,
+				["ccbreaks"] = 0,
+				["multistrikes"] = 0,
+			}, -- [1]
+		},
+		["deaths"] = 0,
+		["mobs"] = {
+			["Target Dummy"] = {
+				["players"] = {
+					["Cirnosa"] = {
+						["taken"] = 783346,
+						["done"] = 0,
+						["role"] = "NONE",
+						["class"] = "MONK",
+					},
+				},
+				["hdone"] = 0,
+				["htakenspell"] = {
+				},
+				["taken"] = 783346,
+				["done"] = 0,
+				["htaken"] = 0,
+				["hdonespell"] = {
+				},
+			},
+		},
+		["mobtaken"] = 783346,
+		["healing"] = 0,
+		["power"] = {
+			[12] = 52,
+		},
+		["multistrikes"] = 0,
+		["overhealing"] = 0,
+		["shielding"] = 0,
+		["name"] = "Total",
+		["starttime"] = 1473221954,
+		["damagetaken"] = 0,
+		["mobhdone"] = 0,
+		["last_action"] = 1473221954,
+		["mobdone"] = 0,
+	},
+	["sets"] = {
+		{
+			["healingabsorbed"] = 0,
+			["dispells"] = 0,
+			["ccbreaks"] = 0,
+			["time"] = 98,
+			["interrupts"] = 0,
+			["endtime"] = 1473222100,
+			["damage"] = 721175,
+			["players"] = {
+				{
+					["last"] = 1473222094,
+					["healingabsorbed"] = 0,
+					["class"] = "MONK",
+					["damaged"] = {
+						["Target Dummy"] = 721175,
+					},
+					["auras"] = {
+						["Fists of Fury"] = {
+							["name"] = "Fists of Fury",
+							["active"] = 0,
+							["id"] = 113656,
+							["auratype"] = "BUFF",
+							["uptime"] = 4,
+						},
+						["Mortal Wounds"] = {
+							["name"] = "Mortal Wounds",
+							["active"] = 1,
+							["id"] = 115804,
+							["auratype"] = "DEBUFF",
+							["uptime"] = 28,
+						},
+					},
+					["role"] = "NONE",
+					["time"] = 92,
+					["interrupts"] = 0,
+					["damage"] = 721175,
+					["damagespells"] = {
+						["Fists of Fury"] = {
+							["min"] = 15397,
+							["critical"] = 1,
+							["hit"] = 9,
+							["totalhits"] = 10,
+							["id"] = 117418,
+							["max"] = 30794,
+							["damage"] = 169369,
+						},
+						["Blackout Kick"] = {
+							["min"] = 6764,
+							["critical"] = 2,
+							["hit"] = 11,
+							["totalhits"] = 13,
+							["id"] = 100784,
+							["max"] = 22583,
+							["damage"] = 159960,
+						},
+						["Tiger Palm"] = {
+							["min"] = 2636,
+							["critical"] = 8,
+							["hit"] = 11,
+							["totalhits"] = 19,
+							["id"] = 100780,
+							["max"] = 6161,
+							["damage"] = 79615,
+						},
+						["Rising Sun Kick"] = {
+							["min"] = 26688,
+							["hit"] = 7,
+							["totalhits"] = 7,
+							["id"] = 185099,
+							["max"] = 26689,
+							["damage"] = 186820,
+						},
+						["Attack"] = {
+							["min"] = 1096,
+							["max"] = 4877,
+							["critical"] = 10,
+							["hit"] = 54,
+							["totalhits"] = 71,
+							["id"] = 6603,
+							["MISS"] = 7,
+							["damage"] = 125411,
+						},
+					},
+					["power"] = {
+						[12] = {
+							["amount"] = 38,
+							["spells"] = {
+								[100780] = 38,
+							},
+						},
+					},
+					["damagetaken"] = 0,
+					["shielding"] = 0,
+					["id"] = "Player-10-0A804A58",
+					["first"] = 1473222002,
+					["ccbreaks"] = 0,
+					["damagetakenspells"] = {
+					},
+					["overhealing"] = 0,
+					["healingspells"] = {
+					},
+					["name"] = "Cirnosa",
+					["healing"] = 0,
+					["healed"] = {
+					},
+					["maxhp"] = 213240,
+					["dispells"] = 0,
+					["multistrikes"] = 0,
+				}, -- [1]
+			},
+			["deaths"] = 0,
+			["mobs"] = {
+				["Target Dummy"] = {
+					["players"] = {
+						["Cirnosa"] = {
+							["taken"] = 721175,
+							["done"] = 0,
+							["role"] = "NONE",
+							["class"] = "MONK",
+						},
+					},
+					["hdone"] = 0,
+					["htakenspell"] = {
+					},
+					["taken"] = 721175,
+					["done"] = 0,
+					["htaken"] = 0,
+					["hdonespell"] = {
+					},
+				},
+			},
+			["mobtaken"] = 721175,
+			["starttime"] = 1473222002,
+			["healing"] = 0,
+			["power"] = {
+				[12] = 38,
+			},
+			["multistrikes"] = 0,
+			["overhealing"] = 0,
+			["shielding"] = 0,
+			["name"] = "Target Dummy (2)",
+			["mobname"] = "Target Dummy",
+			["damagetaken"] = 0,
+			["mobhdone"] = 0,
+			["last_action"] = 1473222002,
+			["mobdone"] = 0,
+		}, -- [1]
+		{
+			["healingabsorbed"] = 0,
+			["dispells"] = 0,
+			["ccbreaks"] = 0,
+			["time"] = 33,
+			["interrupts"] = 0,
+			["endtime"] = 1473221987,
+			["damage"] = 62171,
+			["players"] = {
+				{
+					["last"] = 1473221980,
+					["healingabsorbed"] = 0,
+					["class"] = "MONK",
+					["damaged"] = {
+						["Target Dummy"] = 62171,
+					},
+					["auras"] = {
+					},
+					["role"] = "NONE",
+					["time"] = 26,
+					["interrupts"] = 0,
+					["damage"] = 62171,
+					["damagespells"] = {
+						["Attack"] = {
+							["min"] = 1098,
+							["max"] = 4762,
+							["critical"] = 5,
+							["hit"] = 14,
+							["totalhits"] = 22,
+							["id"] = 6603,
+							["MISS"] = 3,
+							["damage"] = 40193,
+						},
+						["Tiger Palm"] = {
+							["min"] = 2636,
+							["critical"] = 1,
+							["hit"] = 6,
+							["totalhits"] = 7,
+							["id"] = 100780,
+							["max"] = 6160,
+							["damage"] = 21978,
+						},
+					},
+					["power"] = {
+						[12] = {
+							["amount"] = 14,
+							["spells"] = {
+								[100780] = 14,
+							},
+						},
+					},
+					["damagetaken"] = 0,
+					["shielding"] = 0,
+					["id"] = "Player-10-0A804A58",
+					["first"] = 1473221954,
+					["ccbreaks"] = 0,
+					["damagetakenspells"] = {
+					},
+					["overhealing"] = 0,
+					["healingspells"] = {
+					},
+					["name"] = "Cirnosa",
+					["healing"] = 0,
+					["healed"] = {
+					},
+					["maxhp"] = 213240,
+					["dispells"] = 0,
+					["multistrikes"] = 0,
+				}, -- [1]
+			},
+			["deaths"] = 0,
+			["mobs"] = {
+				["Target Dummy"] = {
+					["players"] = {
+						["Cirnosa"] = {
+							["taken"] = 62171,
+							["done"] = 0,
+							["role"] = "NONE",
+							["class"] = "MONK",
+						},
+					},
+					["hdone"] = 0,
+					["htakenspell"] = {
+					},
+					["taken"] = 62171,
+					["done"] = 0,
+					["htaken"] = 0,
+					["hdonespell"] = {
+					},
+				},
+			},
+			["mobtaken"] = 62171,
+			["starttime"] = 1473221954,
+			["healing"] = 0,
+			["power"] = {
+				[12] = 14,
+			},
+			["multistrikes"] = 0,
+			["overhealing"] = 0,
+			["shielding"] = 0,
+			["name"] = "Target Dummy",
+			["mobname"] = "Target Dummy",
+			["damagetaken"] = 0,
+			["mobhdone"] = 0,
+			["last_action"] = 1473221954,
+			["mobdone"] = 0,
+		}, -- [2]
+	},
+}

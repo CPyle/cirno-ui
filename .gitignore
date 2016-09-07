@@ -1,0 +1,15 @@
+Cache/
+Data/
+dev/
+Errors/
+Logs/
+Screenshots/
+Utils/
+
+*.db
+*.curseclient
+.patch.result
+*.exe
+*.dll
+WoW.mfil
+.build.info

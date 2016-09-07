@@ -8,6 +8,9 @@ CliqueDB3 = {
 		["Cìrno - Blackrock"] = {
 			["alerthidden"] = true,
 		},
+		["Cirnosa - Blackrock"] = {
+			["alerthidden"] = true,
+		},
 		["Cìrno - Skywall"] = {
 			["alerthidden"] = true,
 			["sec_profileKey"] = "Cirno - Disc",
@@ -24,6 +27,7 @@ CliqueDB3 = {
 		["Prismriver - Drak'thul"] = "Prismriver - Drak'thul",
 		["Mews - Cho'gall"] = "Mews - Cho'gall",
 		["Cìrno - Skywall"] = "Cìrno - Skywall",
+		["Cirnosa - Blackrock"] = "Cirnosa - Blackrock",
 	},
 	["profiles"] = {
 		["Cìrno - Stormrage"] = {
@@ -92,21 +96,12 @@ CliqueDB3 = {
 					["unit"] = "mouseover",
 				}, -- [1]
 				{
-					["spell"] = "Power Word: Shield",
-					["key"] = "CTRL-BUTTON1",
-					["sets"] = {
-						["default"] = true,
-					},
-					["icon"] = 135940,
-					["type"] = "spell",
-				}, -- [2]
-				{
 					["type"] = "menu",
 					["key"] = "BUTTON2",
 					["sets"] = {
 						["default"] = true,
 					},
-				}, -- [3]
+				}, -- [2]
 				{
 					["spell"] = "Plea",
 					["key"] = "SHIFT-BUTTON2",
@@ -115,16 +110,16 @@ CliqueDB3 = {
 					},
 					["icon"] = 135915,
 					["type"] = "spell",
-				}, -- [4]
+				}, -- [3]
 				{
-					["spell"] = "Power Word: Radiance",
-					["key"] = "SHIFT-BUTTON3",
+					["spell"] = "Power Word: Shield",
+					["key"] = "CTRL-BUTTON1",
 					["sets"] = {
 						["default"] = true,
 					},
-					["icon"] = 1386546,
+					["icon"] = 135940,
 					["type"] = "spell",
-				}, -- [5]
+				}, -- [4]
 				{
 					["spell"] = "Shining Force",
 					["key"] = "CTRL-BUTTON2",
@@ -133,7 +128,7 @@ CliqueDB3 = {
 					},
 					["icon"] = 571554,
 					["type"] = "spell",
-				}, -- [6]
+				}, -- [5]
 				{
 					["spell"] = "Pain Suppression",
 					["key"] = "CTRL-BUTTON3",
@@ -141,6 +136,15 @@ CliqueDB3 = {
 						["default"] = true,
 					},
 					["icon"] = 135936,
+					["type"] = "spell",
+				}, -- [6]
+				{
+					["spell"] = "Power Word: Radiance",
+					["key"] = "SHIFT-BUTTON3",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 1386546,
 					["type"] = "spell",
 				}, -- [7]
 				{
@@ -161,44 +165,6 @@ CliqueDB3 = {
 					["sets"] = {
 						["default"] = true,
 					},
-					["key"] = "BUTTON1",
-					["unit"] = "mouseover",
-				}, -- [1]
-				{
-					["type"] = "menu",
-					["key"] = "BUTTON2",
-					["sets"] = {
-						["default"] = true,
-					},
-				}, -- [2]
-			},
-		},
-		["Prismriver - Drak'thul"] = {
-			["bindings"] = {
-				{
-					["sets"] = {
-						["default"] = true,
-					},
-					["type"] = "target",
-					["key"] = "BUTTON1",
-					["unit"] = "mouseover",
-				}, -- [1]
-				{
-					["type"] = "menu",
-					["key"] = "BUTTON2",
-					["sets"] = {
-						["default"] = true,
-					},
-				}, -- [2]
-			},
-		},
-		["Mews - Cho'gall"] = {
-			["bindings"] = {
-				{
-					["sets"] = {
-						["default"] = true,
-					},
-					["type"] = "target",
 					["key"] = "BUTTON1",
 					["unit"] = "mouseover",
 				}, -- [1]
@@ -246,6 +212,44 @@ CliqueDB3 = {
 					["icon"] = 136202,
 					["type"] = "spell",
 				}, -- [4]
+			},
+		},
+		["Prismriver - Drak'thul"] = {
+			["bindings"] = {
+				{
+					["sets"] = {
+						["default"] = true,
+					},
+					["type"] = "target",
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+			},
+		},
+		["Mews - Cho'gall"] = {
+			["bindings"] = {
+				{
+					["sets"] = {
+						["default"] = true,
+					},
+					["type"] = "target",
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
 			},
 		},
 		["Cirno - Disc"] = {
@@ -328,6 +332,34 @@ CliqueDB3 = {
 					["icon"] = "INTERFACE\\ICONS\\priest_spell_leapoffaith_a",
 					["type"] = "spell",
 				}, -- [9]
+			},
+		},
+		["Cirnosa - Blackrock"] = {
+			["bindings"] = {
+				{
+					["type"] = "target",
+					["sets"] = {
+						["default"] = true,
+					},
+					["key"] = "BUTTON1",
+					["unit"] = "mouseover",
+				}, -- [1]
+				{
+					["type"] = "menu",
+					["key"] = "BUTTON2",
+					["sets"] = {
+						["default"] = true,
+					},
+				}, -- [2]
+				{
+					["spell"] = "Effuse",
+					["key"] = "SHIFT-BUTTON1",
+					["sets"] = {
+						["default"] = true,
+					},
+					["icon"] = 1360977,
+					["type"] = "spell",
+				}, -- [3]
 			},
 		},
 	},
