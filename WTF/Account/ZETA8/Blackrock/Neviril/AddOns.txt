@@ -80,7 +80,7 @@ WeakAurasModelPaths: disabled
 WeakAurasOptions: disabled
 WeakAurasTemplates: disabled
 WeakAurasTutorials: disabled
-DBM-Core: disabled
+DBM-Core: enabled
 DBM-DefaultSkin: disabled
 DBM-GUI: disabled
 DBM-StatusBarTimers: disabled
@@ -97,3 +97,7 @@ DBM-Party-Legion: disabled
 DBM-Party-WoD: disabled
 DBM-Nighthold: disabled
 DBM-WorldEvents: disabled
+ArkInventory: disabled
+ArkInventoryConfig: disabled
+ArkInventoryRules: disabled
+ArkInventorySearch: disabled

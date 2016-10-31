@@ -14,6 +14,7 @@ local cc = CreateFrame('Frame')
 -- add media to LSM ############################################################
 LSM:Register(LSM.MediaType.FONT,'Yanone Kaffesatz Bold',kui.m.f.yanone)
 LSM:Register(LSM.MediaType.FONT,'FrancoisOne',kui.m.f.francois)
+LSM:Register(LSM.MediaType.FONT,'Roboto Condensed Bold',kui.m.f.roboto)
 
 LSM:Register(LSM.MediaType.STATUSBAR, 'Kui status bar', kui.m.t.bar)
 LSM:Register(LSM.MediaType.STATUSBAR, 'Kui shaded bar', kui.m.t.oldbar)
@@ -29,6 +30,7 @@ local default_config = {
     bar_animation = 3,
     combat_hostile = 1,
     combat_friendly = 1,
+    ignore_uiscale = false,
     glow_as_shadow = true,
     state_icons = true,
     target_glow = true,
@@ -43,6 +45,9 @@ local default_config = {
     nameonly_enemies = true,
     nameonly_all_enemies = false,
     nameonly_target = true,
+    guild_text_npcs = true,
+    guild_text_players = false,
+    title_text_players = false,
 
     fade_all = false,
     fade_alpha = .5,
@@ -54,6 +59,7 @@ local default_config = {
     fade_avoid_raidicon = true,
     fade_avoid_execute_friend = false,
     fade_avoid_execute_hostile = false,
+    fade_avoid_tracked = false,
 
     font_face = DEFAULT_FONT,
     font_style = 2,
@@ -66,6 +72,8 @@ local default_config = {
     text_vertical_offset = -1.5,
     name_vertical_offset = -2,
     bot_vertical_offset = -3,
+    class_colour_friendly_names = true,
+    class_colour_enemy_names = false,
 
     health_text_friend_max = 5,
     health_text_friend_dmg = 4,
@@ -92,14 +100,17 @@ local default_config = {
     frame_height = 13,
     frame_width_minus = 72,
     frame_height_minus = 9,
+    frame_width_personal = 132,
+    frame_height_personal = 13,
     castbar_height = 5,
     powerbar_height = 3,
 
     auras_enabled = true,
     auras_on_personal = true,
+    auras_vanilla_filter = true,
     auras_whitelist = false,
     auras_pulsate = true,
-    auras_centre = false,
+    auras_centre = true,
     auras_sort = 2,
     auras_time_threshold = 60,
     auras_minimum_length = 0,
@@ -127,7 +138,7 @@ local default_config = {
 
     classpowers_enable = true,
     classpowers_on_target = true,
-    classpowers_size = 10,
+    classpowers_size = 11,
     classpowers_bar_width = 50,
     classpowers_bar_height = 3,
 
@@ -147,7 +158,13 @@ local function UpdateClickboxSize()
         (core.profile.frame_width * addon.uiscale)+10,
         (core.profile.frame_height * addon.uiscale)+20
 
-    C_NamePlate.SetNamePlateOtherSize(width,height)
+    if C_NamePlate.SetNamePlateOtherSize then
+        C_NamePlate.SetNamePlateOtherSize(width,height)
+    else
+        C_NamePlate.SetNamePlateFriendlySize(width,height)
+        C_NamePlate.SetNamePlateEnemySize(width,height)
+    end
+
     C_NamePlate.SetNamePlateSelfSize(width,height)
 end
 local function QueueClickboxUpdate()
@@ -257,6 +274,12 @@ local function configChangedFadeRule(v,on_load)
         core:UnregisterMessage('ExecuteUpdate')
     end
 
+    if core.profile.fade_avoid_tracked then
+        plugin:AddFadeRule(function(f)
+            return f.state.tracked and 1
+        end,22)
+    end
+
     if core.profile.fade_neutral_enemy then
         plugin:AddFadeRule(function(f)
             return f.state.reaction == 4 and
@@ -274,7 +297,7 @@ local function configChangedFadeRule(v,on_load)
 
     if core.profile.fade_untracked then
         plugin:AddFadeRule(function(f)
-            return f.state.no_name and -1
+            return not f.state.tracked and -1
         end,25)
     end
 end
@@ -286,6 +309,7 @@ configChanged.fade_avoid_nameonly = configChangedFadeRule
 configChanged.fade_avoid_raidicon = configChangedFadeRule
 configChanged.fade_avoid_execute_friend = configChangedFadeRule
 configChanged.fade_avoid_execute_hostile = configChangedFadeRule
+configChanged.fade_avoid_tracked = configChangedFadeRule
 
 local function configChangedTextOffset()
     core:configChangedTextOffset()
@@ -378,6 +402,7 @@ end
 local function configChangedAuras()
     core:SetAurasConfig()
 end
+configChanged.auras_vanilla_filter = configChangedAuras
 configChanged.auras_whitelist = configChangedAuras
 configChanged.auras_pulsate = configChangedAuras
 configChanged.auras_centre = configChangedAuras
@@ -472,6 +497,12 @@ function configChanged.frame_glow_size(v)
     end
 end
 
+function configChanged.ignore_uiscale(v)
+    addon.IGNORE_UISCALE = v
+    addon:UI_SCALE_CHANGED()
+    QueueClickboxUpdate()
+end
+
 -- config loaded functions #####################################################
 local configLoaded = {}
 configLoaded.fade_alpha = configChanged.fade_alpha
@@ -507,6 +538,11 @@ configLoaded.fade_all = configLoadedFadeRule
 configLoaded.execute_enabled = configChanged.execute_enabled
 configLoaded.execute_colour = configChanged.execute_colour
 configLoaded.execute_percent = configChanged.execute_percent
+
+function configLoaded.ignore_uiscale(v)
+    addon.IGNORE_UISCALE = v
+    addon:UI_SCALE_CHANGED()
+end
 
 -- init config #################################################################
 function core:InitialiseConfig()

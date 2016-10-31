@@ -1,0 +1,16 @@
+tag v4.0.10
+de90245f698d013dabd4de69516cef0ae21f0fc6
+Kyle Buller <bullerk@gmail.com>
+2016-10-20 04:47:54 -0500
+
+Tagging as v4.0.10
+
+
+--------------------
+
+Kyle Buller:
+	- PowerBar: Fix updating units with special power types (vehicles, pets, etc)
+	- Fix not showing interact options in the player right-click menu
+	- ThreatBar: Fix showing for group units and add option to show when solo
+	- ArtifactPowerBar: Use PLAYER_EQUIPMENT_CHANGED
+	- Portrait: Only show pirate costumes for 3D portraits

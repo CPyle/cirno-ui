@@ -5,7 +5,7 @@
 ## Title-frFR: PitBull4 |r[|cffeda55fTextes DogTag-3.0|r]
 ## Title-koKR: PitBull4 |r[|cffeda55fDogTag-3.0 문자|r]
 ## Title-ruRU: PitBull4 |r[|cffeda55fDogTag-3.0 теги|r]
-## Title-zhCN: PitBull4 |r[|cffeda55fDogTag-3.0文本|r]
+## Title-zhCN: PitBull4 |r[|cffeda55fDogTag-3.0 文本|r]
 ## Title-zhTW: PitBull4 |r[|cffeda55fDogTag-3.0文字|r]
 ## Notes: Text provider for LibDogTag-3.0 texts.
 ## Notes-deDE: Textanbieter für LibDogTag-3.0-Texte.
@@ -13,16 +13,16 @@
 ## Notes-frFR: Fournisseur de texte pour les textes de LibDogTag-3.0.
 ## Notes-koKR: LibDogTag-3.0 문자를 위한 문자 제공자입니다.
 ## Notes-ruRU: Редактор тегов для надписей LibDogTag-3.0.
-## Notes-zhCN: LibDogTag-3.0文本代码
+## Notes-zhCN: LibDogTag-3.0 文本代码。
 ## Notes-zhTW: LibDogTag-3.0文字代碼。
 ## Author: ckknight
 ## DefaultState: enabled
 ## LoadOnDemand: 1
 ## Dependencies: PitBull4
 ## OptionalDeps: LibDogTag-3.0, LibDogTag-Unit-3.0
-## Version: v4.0.4
+## Version: v4.0.10
 ## X-PitBull4-DefaultState: disabled
-## X-Curse-Packaged-Version: v4.0.4
+## X-Curse-Packaged-Version: v4.0.10
 ## X-Curse-Project-Name: PitBull Unit Frames 4.0
 ## X-Curse-Project-ID: pitbull4
 ## X-Curse-Repository-ID: wow/pitbull4/mainline

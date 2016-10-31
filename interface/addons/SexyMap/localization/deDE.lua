@@ -93,7 +93,7 @@ L["Lock Minimap"] = "Minikarte sperren"
 L["Lock Movers"] = "Bewegliche Knöpfe sperren"
 L["Map Button"] = "Kartenknopf"
 L["Minimap shape"] = "Form der Minikarte"
-L["Mod Blend (modulative)"] = "Mod Blend (modulativ)" -- Needs review
+L["Mod Blend (modulative)"] = "Moderne Mischung (modulierbar)" -- Needs review
 L["Movers"] = "Bewegliche Knöpfe"
 L["Movers Warning"] = "WARNUNG: Diese Funktion wird nicht offiziell unterstützt. Es kann zu Problemen, wie z.B. verdorbene (programmiertechnisch) Funktionen, Verlust der Questverfolgung oder 'springenden' Bossanzeigen, führen. Blizzard Frames wie die Questverfolgung und die Bossanzeige sind nicht für Umpositionierungen ausgelegt. Es wird empfohlen, diese durch AddOns zu ersetzen; z.B. durch Einheitenfenster mit Bossanzeige."
 L["Name"] = "Name"
@@ -172,5 +172,3 @@ L["You can set a background and edge file for the minimap like you would with an
 L["Zone Text"] = "Zonentext"
 L["Zoom In Button"] = "Heranzoom-Knopf"
 L["Zoom Out Button"] = "Herauszoom-Knopf"
-
-

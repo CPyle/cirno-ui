@@ -2,22 +2,29 @@ BINDINGMODE 0
 bind BUTTON3 CLICK BindPadKey:SPELL Roll
 bind LEFT NONE
 bind RIGHT NONE
-bind Q CLICK BindPadKey:SPELL Strike of the Windlord
-bind E NONE
+bind Q CLICK BindPadKey:SPELL Ironskin Brew
+bind E CLICK BindPadKey:SPELL Purifying Brew
+bind NUMLOCK NONE
 bind BUTTON4 ACTIONBUTTON10
+bind INSERT TOGGLEAUTORUN
+bind R CLICK BindPadKey:SPELL Fortifying Brew
+bind SHIFT-R CLICK BindPadKey:SPELL Paralysis
 bind 0 NONE
 bind SHIFT-UP NONE
 bind SHIFT-MOUSEWHEELUP NONE
 bind SHIFT-DOWN NONE
 bind SHIFT-MOUSEWHEELDOWN NONE
-bind F CLICK BindPadKey:MACRO Detox
-bind SHIFT-T CLICK BindPadKey:SPELL Transcendence: Transfer
+bind F CLICK BindPadKey:SPELL Leg Sweep
+bind SHIFT-T CLICK BindPadKey:SPELL Healing Elixir
 bind BUTTON5 ACTIONBUTTON11
 bind SHIFT-X CLICK BindPadMacro:Summon Random Favorite Mount
 bind SHIFT-BUTTON4 ACTIONBUTTON12
 bind SHIFT-BUTTON5 CLICK BT4Button13:LeftButton
 bind [ PAWN_COMPARE_LEFT
 bind ] PAWN_COMPARE_RIGHT
-bind T CLICK BindPadKey:SPELL Transcendence
-bind SHIFT-BUTTON3 CLICK BindPadKey:SPELL Flying Serpent Kick
+bind T NONE
+bind SHIFT-BUTTON3 NONE
+bind SHIFT-F NONE
+bind SHIFT-E CLICK BindPadKey:SPELL Expel Harm
+bind SHIFT-Q CLICK BindPadKey:SPELL Exploding Keg
 modifiedclick NONE SELFCAST

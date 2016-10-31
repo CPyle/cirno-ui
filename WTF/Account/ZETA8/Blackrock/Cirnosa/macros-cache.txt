@@ -1,4 +1,4 @@
 VER 3 0100000000000001 "Detox" "INV_MISC_QUESTIONMARK"
 #showtooltip Detox
-/cast [mouseoverr] Detox
+/cast [@mouseover] Detox
 END

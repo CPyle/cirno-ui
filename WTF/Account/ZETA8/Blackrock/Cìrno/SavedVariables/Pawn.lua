@@ -1,12 +1,12 @@
 
 PawnOptions = {
-	["LastVersion"] = 2.0009,
+	["LastVersion"] = 2.0103,
 	["LastPlayerFullName"] = "Cìrno-Blackrock",
 	["AutoSelectScales"] = false,
 	["UpgradeTracking"] = false,
 	["LastKeybindingsSet"] = 1,
 }
-PawnWowheadScaleProviderOptions = {
+PawnMrRobotScaleProviderOptions = {
 	["LastClass"] = "PRIEST",
-	["LastAdded"] = 5,
+	["LastAdded"] = 1,
 }

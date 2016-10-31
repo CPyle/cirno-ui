@@ -1,0 +1,5 @@
+ArkInventory: disabled
+ArkInventoryConfig: disabled
+ArkInventoryRules: disabled
+ArkInventorySearch: disabled
+DBM-Core: enabled

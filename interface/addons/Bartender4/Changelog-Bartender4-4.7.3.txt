@@ -1,0 +1,16 @@
+tag 4.7.3
+bdda98fbd6950e71cdd05482e2a0506f91fcaef8
+Hendrik Leppkes <h.leppkes@gmail.com>
+2016-10-25 10:07:28 +0200
+
+Tag as 4.7.3
+
+
+--------------------
+
+Hendrik Leppkes:
+	- Replace the title region with manual drag handlers, as title regions are removed in 7.1
+	- Remove check if the AP bar exists
+	- Remove defer animation callbacks from xp/ap/honor bars
+	This may help fix stale bars.
+	- Update localization script to use https to access WoWAce

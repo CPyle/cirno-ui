@@ -395,6 +395,69 @@ end
 return ConfigMode()]],
 		},
 	},
+	[L["Artifact power"]] = {
+		[L["Absolute"]] = {
+			events = {['ARTIFACT_XP_UPDATE']=true},
+			code = [[
+local cur,max,points = ArtifactPower()
+if max > 0 then
+  if points > 0 then
+    return "%s/%s (%d)",cur,max,points
+  end
+  return "%s/%s",cur,max
+end
+return ConfigMode()]],
+		},
+		[L["Absolute short"]] = {
+			events = {['ARTIFACT_XP_UPDATE']=true},
+			code = [[
+local cur,max,points = ArtifactPower()
+if max > 0 then
+  if points > 0 then
+    return "%s/%s (%d)",Short(cur,true),Short(max,true),points
+  end
+  return "%s/%s",Short(cur,true),Short(max,true)
+end
+return ConfigMode()]],
+		},
+		[L["Difference"]] = {
+			events = {['ARTIFACT_XP_UPDATE']=true},
+			code = [[
+local cur,max,points = ArtifactPower()
+if max > 0 then
+  local missing = -(max-cur)
+  if points > 0 then
+    return "%d (%d)",missing,points
+  end
+  return missing
+end
+return ConfigMode()]],
+		},
+		[L["Percent"]] = {
+			events = {['ARTIFACT_XP_UPDATE']=true},
+			code = [[
+local cur,max,points = ArtifactPower()
+if max > 0 then
+  if points > 0 then
+    return "%s%% (%d)",Percent(cur,max),points
+  end
+  return "%s%%",Percent(cur,max)
+end
+return ConfigMode()]],
+		},
+		[L["Mini"]] = {
+			events = {['ARTIFACT_XP_UPDATE']=true},
+			code = [[
+local cur,max,points = ArtifactPower()
+if max > 0 then
+  if points > 0 then
+    return "%s (%d)",VeryShort(cur,true),points
+  end
+  return VeryShort(cur)
+end
+return ConfigMode()]],
+		},
+	},
 	[L["Threat"]] = {
 		[L["Percent"]] = {
 			events = {['UNIT_THREAT_LIST_UPDATE']=true,['UNIT_THREAT_SITUATION_UPDATE']=true},
@@ -449,7 +512,7 @@ return ConfigMode()]],
 	},
 	[L["Combo points"]] = {
 		[L["Standard"]] = {
-			events = {['UNIT_COMBO_POINTS']=true,['UNIT_POWER']=true},
+			events = {['UNIT_POWER']=true},
 			code = [[
 local combos = Combos()
 if combos ~= 0 then
@@ -577,7 +640,7 @@ do
 		-- Harcoded events basically the ones that aren't just unit=true ones
 		['UNIT_PET_EXPERIENCE'] = {pet=true},
 		['PLAYER_XP_UPDATE'] = {player=true},
-		['UNIT_COMBO_POINTS'] = {all=true},
+		['ARTIFACT_XP_UPDATE'] = {player=true},
 		['UPDATE_FACTION'] = {all=true},
 		['UNIT_LEVEL'] = {all=true},
 
@@ -659,6 +722,7 @@ compat_event_map.UNIT_RUNIC_POWER = 'UNIT_POWER_FREQUENT'
 compat_event_map.UNIT_MAXRUNIC_POWER = 'UNIT_POWER_FREQUENT'
 compat_event_map.PARTY_MEMBERS_CHANGED = 'GROUP_ROSTER_UPDATE'
 compat_event_map.RAID_ROSTER_UPDATE = 'GROUP_ROSTER_UPDATE'
+compat_event_map.UNIT_COMBO_POINTS = 'UNIT_POWER'
 
 local timerframe = CreateFrame("Frame")
 PitBull4_LuaTexts.timerframe = timerframe
@@ -1320,6 +1384,12 @@ function PitBull4_LuaTexts:OnNewLayout(layout)
 			events = copy(PROVIDED_CODES[L["Alternate power"]][L["Percent"]].events),
 			attach_to = "AltPowerBar",
 			location = "right"
+		},
+		["Lua:"..L["Artifact power"]] = {
+			code = PROVIDED_CODES[L["Artifact power"]][L["Absolute"]].code,
+			events = copy(PROVIDED_CODES[L["Artifact power"]][L["Absolute"]].events),
+			attach_to = "ArtifactPowerBar",
+			location = "center"
 		},
 	} do
 		local text_db = text_elements[name]

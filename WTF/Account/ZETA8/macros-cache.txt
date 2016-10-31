@@ -44,3 +44,7 @@ VER 3 0000000000000020 "Purge" "Spell_Nature_WispSplode"
 #showtooltip Purge
 /cast [target=mouseover,exists] Cleanse Spirit; Cleanse Spirit
 END
+VER 3 0000000000000022 "Purify" "INV_MISC_QUESTIONMARK"
+#showtooltip Purify
+/cast [@mouseover][friendly] Purify
+END

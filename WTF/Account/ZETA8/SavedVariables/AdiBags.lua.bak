@@ -1,0 +1,70 @@
+
+AdiBagsDB = {
+	["profileKeys"] = {
+		["Cìrno - Blackrock"] = "Default",
+	},
+	["namespaces"] = {
+		["ItemLevel"] = {
+		},
+		["FilterOverride"] = {
+			["profiles"] = {
+				["Default"] = {
+					["version"] = 3,
+				},
+			},
+		},
+		["ItemCategory"] = {
+		},
+		["NewItem"] = {
+		},
+		["AdiBags_TooltipInfo"] = {
+		},
+		["Equipment"] = {
+		},
+		["ItemSets"] = {
+		},
+		["CurrencyFrame"] = {
+			["profiles"] = {
+				["Default"] = {
+					["shown"] = {
+						["Apexis Crystal"] = false,
+					},
+				},
+			},
+		},
+		["DataSource"] = {
+		},
+		["Junk"] = {
+			["profiles"] = {
+				["Default"] = {
+					["exclude"] = {
+						[21171] = true,
+						[140192] = true,
+					},
+				},
+			},
+		},
+		["MoneyFrame"] = {
+		},
+	},
+	["profiles"] = {
+		["Default"] = {
+			["skin"] = {
+				["border"] = "Caith",
+				["insets"] = 4,
+			},
+			["positions"] = {
+				["anchor"] = {
+					["xOffset"] = -306.713500976563,
+					["yOffset"] = 243.415054321289,
+				},
+				["Backpack"] = {
+					["xOffset"] = 354.339189850378,
+					["point"] = "TOPLEFT",
+					["yOffset"] = -196.802420085391,
+				},
+			},
+			["positionMode"] = "manual",
+		},
+	},
+}

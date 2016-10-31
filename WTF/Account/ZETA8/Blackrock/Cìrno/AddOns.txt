@@ -3,7 +3,7 @@ Combuctor_Config: disabled
 Forte_Core: disabled
 Combuctor_Sets: disabled
 Combuctor: disabled
-DBM-Core: disabled
+DBM-Core: enabled
 HaloPro: disabled
 EnemyGrid: disabled
 BagBrother: enabled
@@ -102,3 +102,7 @@ DBM-Party-Legion: enabled
 DBM-Party-WoD: enabled
 DBM-Nighthold: enabled
 DBM-WorldEvents: enabled
+ArkInventory: disabled
+ArkInventoryConfig: disabled
+ArkInventoryRules: disabled
+ArkInventorySearch: disabled

@@ -14,28 +14,28 @@ Quartz3DB = {
 				["Default"] = {
 					["h"] = 14,
 					["w"] = 130,
-					["hideicon"] = true,
-					["font"] = "Expressway",
+					["y"] = 34.5473480224609,
+					["x"] = 178.990493774414,
 					["border"] = "Caith",
 					["texture"] = "Melli Dark",
-					["x"] = 178.990493774414,
-					["y"] = 34.5473480224609,
+					["font"] = "Expressway",
+					["hideicon"] = true,
 				},
 			},
-		},
-		["EnemyCasts"] = {
 		},
 		["Player"] = {
 			["profiles"] = {
 				["Default"] = {
 					["w"] = 235,
-					["y"] = 80,
-					["font"] = "Expressway",
+					["y"] = 60,
+					["x"] = 389,
 					["border"] = "Caith",
-					["x"] = 387,
+					["font"] = "Expressway",
 					["texture"] = "Melli Dark",
 				},
 			},
+		},
+		["EnemyCasts"] = {
 		},
 		["GCD"] = {
 		},
@@ -48,11 +48,11 @@ Quartz3DB = {
 					["showtarget"] = false,
 					["w"] = 233,
 					["y"] = 230.751907348633,
-					["font"] = "Expressway",
+					["x"] = 79.3925094604492,
 					["iconposition"] = "right",
 					["border"] = "Caith",
 					["texture"] = "Melli Dark",
-					["x"] = 79.3925094604492,
+					["font"] = "Expressway",
 				},
 			},
 		},
@@ -61,15 +61,13 @@ Quartz3DB = {
 				["Default"] = {
 					["h"] = 25,
 					["w"] = 235,
-					["y"] = 80,
-					["font"] = "Expressway",
+					["y"] = 60,
+					["x"] = 803,
 					["border"] = "Caith",
 					["texture"] = "Melli Dark",
-					["x"] = 801,
+					["font"] = "Expressway",
 				},
 			},
-		},
-		["Range"] = {
 		},
 		["Mirror"] = {
 			["profiles"] = {
@@ -85,6 +83,8 @@ Quartz3DB = {
 				},
 			},
 		},
+		["Range"] = {
+		},
 		["Latency"] = {
 			["profiles"] = {
 				["Default"] = {
@@ -94,8 +94,8 @@ Quartz3DB = {
 						nil, -- [3]
 						1, -- [4]
 					},
-					["lagembed"] = true,
 					["lagalpha"] = 1,
+					["lagembed"] = true,
 				},
 			},
 		},
@@ -106,8 +106,8 @@ Quartz3DB = {
 		["Feralde - Bronzebeard"] = "Default",
 		["Prismriver - Drak'thul"] = "Default",
 		["Mews - Cho'gall"] = "Default",
-		["Cìrno - Skywall"] = "Default",
 		["Cirnosa - Blackrock"] = "Default",
+		["Cìrno - Skywall"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

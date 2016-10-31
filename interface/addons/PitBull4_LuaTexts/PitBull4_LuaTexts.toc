@@ -5,7 +5,7 @@
 ## Title-frFR: PitBull4 |r[|cffeda55fTextes Lua|r]
 ## Title-koKR: PitBull4 |r[|cffeda55fLua 문자|r]
 ## Title-ruRU: PitBull4 |r[|cffeda55fLua коды|r]
-## Title-zhCN: PitBull4 |r[|cffeda55fLua文本|r]
+## Title-zhCN: PitBull4 |r[|cffeda55fLua 文本|r]
 ## Title-zhTW: PitBull4 |r[|cffeda55fLua文字|r]
 ## Notes: Text provider using Lua scripts to generate texts.
 ## Notes-deDE: Textanbieter, der Lua-Scripts zum Genrieren von Texten nutzt.
@@ -19,8 +19,8 @@
 ## DefaultState: enabled
 ## LoadOnDemand: 1
 ## Dependencies: PitBull4
-## Version: v4.0.4
-## X-Curse-Packaged-Version: v4.0.4
+## Version: v4.0.10
+## X-Curse-Packaged-Version: v4.0.10
 ## X-Curse-Project-Name: PitBull Unit Frames 4.0
 ## X-Curse-Project-ID: pitbull4
 ## X-Curse-Repository-ID: wow/pitbull4/mainline

@@ -8,19 +8,19 @@
 ## Title-zhCN: PitBull4 |r[|cffeda55f法力条|r]
 ## Title-zhTW: PitBull4 |r[|cffeda55f法力條|r]
 ## Notes: Show a bar for your primary resource.
-## Notes-deDE: Show a bar for your primary resource.
+## Notes-deDE: Zeigt eine Leiste für deine primäre Ressource.
 ## Notes-esES: Show a bar for your primary resource.
 ## Notes-frFR: Show a bar for your primary resource.
 ## Notes-koKR: 주 자원 바를 표시합니다.
 ## Notes-ruRU: Отображать полосу для вашего основного ресурса.
-## Notes-zhCN: Show a bar for your primary resource.
+## Notes-zhCN: 显示主资源条。
 ## Notes-zhTW: Show a bar for your primary resource.
 ## Author: ckknight
 ## DefaultState: enabled
 ## LoadOnDemand: 1
 ## Dependencies: PitBull4
-## Version: v4.0.4
-## X-Curse-Packaged-Version: v4.0.4
+## Version: v4.0.10
+## X-Curse-Packaged-Version: v4.0.10
 ## X-Curse-Project-Name: PitBull Unit Frames 4.0
 ## X-Curse-Project-ID: pitbull4
 ## X-Curse-Repository-ID: wow/pitbull4/mainline

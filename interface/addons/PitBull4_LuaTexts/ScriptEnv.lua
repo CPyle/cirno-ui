@@ -95,9 +95,8 @@ local function VehicleName(unit)
 	local owner = UnitName(owner_unit)
 	if owner then
 		return L["%s's %s"]:format(owner, name)
-	else
-		return name
 	end
+	return name
 end
 ScriptEnv.VehicleName = VehicleName
 
@@ -126,6 +125,7 @@ local L_DAYS_ABBR = DAYS_ABBR:gsub("%s*%%d%s*","")
 local L_HOURS_ABBR = HOURS_ABBR:gsub("%s*%%d%s*","")
 local L_MINUTES_ABBR = MINUTES_ABBR:gsub("%s*%%d%s*","")
 local L_SECONDS_ABBR = SECONDS_ABBR:gsub("%s*%%d%s*","")
+local L_HUGE = "%s***"
 
 local t = {}
 local function FormatDuration(number, format)
@@ -136,14 +136,14 @@ local function FormatDuration(number, format)
 	end
 
 	if not format then
-		format = 'c'
+		format = "c"
 	else
 		format = format:sub(1, 1):lower()
 	end
 
 	if format == "e" then
 		if number == math.huge then
-			return negative .. "***"
+			return L_HUGE:format(negative)
 		end
 
 		t[#t+1] = negative
@@ -203,7 +203,7 @@ local function FormatDuration(number, format)
 		return s
 	elseif format == "f" then
 		if number == math.huge then
-			return negative .. "***"
+			return L_HUGE:format(negative)
 		elseif number >= 60*60*24 then
 			return ("%s%.0f%s %02d%s %02d%s %02d%s"):format(negative, math.floor(number/86400), L_DAY_ONELETTER_ABBR, number/3600 % 24, L_HOUR_ONELETTER_ABBR, number/60 % 60, L_MINUTE_ONELETTER_ABBR, number % 60, L_SECOND_ONELETTER_ABBR)
 		elseif number >= 60*60 then
@@ -215,7 +215,7 @@ local function FormatDuration(number, format)
 		end
 	elseif format == "s" then
 		if number == math.huge then
-			return negative .. "***"
+			return L_HUGE:format(negative)
 		elseif number >= 2*60*60*24 then
 			return ("%s%.1f %s"):format(negative, number/86400, L_DAYS_ABBR)
 		elseif number >= 2*60*60 then
@@ -244,10 +244,10 @@ ScriptEnv.FormatDuration = FormatDuration
 -- Depends upon the local t = {} above FormatDuration
 local function SeparateDigits(number, thousands, decimal)
 	if not thousands then
-		thousands = ','
+		thousands = ","
 	end
 	if not decimal then
-		decimal = '.'
+		decimal = "."
 	end
 	local int = math.floor(number)
 	local rest = number % 1
@@ -277,20 +277,18 @@ end
 ScriptEnv.SeparateDigits = SeparateDigits
 
 local function Angle(value)
-	if value and value ~= '' then
-		return '<',value,'>'
-	else
-		return '','',''
+	if not value or value == "" then
+		return "", "", ""
 	end
+	return "<", value, ">"
 end
 ScriptEnv.Angle = Angle
 
 local function Paren(value)
-	if value and value ~= '' then
-		return '(',value,')'
-	else
-		return '','',''
+	if not value or value == "" then
+		return "", "", ""
 	end
+	return "(", value, ")"
 end
 ScriptEnv.Paren = Paren
 
@@ -322,7 +320,7 @@ ScriptEnv.AFKDuration = AFKDuration
 local function AFK(unit)
 	local afk = AFKDuration(unit)
 	if afk then
-		return _G.AFK..' ('..FormatDuration(afk)..')'
+		return ("%s (%s)"):format(_G.AFK, FormatDuration(afk))
 	end
 end
 ScriptEnv.AFK = AFK
@@ -408,7 +406,7 @@ local function Level(unit)
 	end
 	local level = UnitLevel(unit)
 	if level <= 0 then
-		level = '??'
+		level = "??"
 	end
 	return level
 end
@@ -416,7 +414,7 @@ ScriptEnv.Level = Level
 
 local function DifficultyColor(unit)
 	local level = Level(unit)
-	if level == '??' then
+	if level == "??" then
 		level = 99
 	end
 	local color = GetQuestDifficultyColor(level)
@@ -473,8 +471,8 @@ end
 ScriptEnv.Class = Class
 
 local ShortClass_abbrev = {
-	[LOCALIZED_CLASS_NAMES_MALE.DEMONHUNTER] = L["Demon Hunter_short"],
 	[LOCALIZED_CLASS_NAMES_MALE.DEATHKNIGHT] = L["Death Knight_short"],
+	[LOCALIZED_CLASS_NAMES_MALE.DEMONHUNTER] = L["Demon Hunter_short"],
 	[LOCALIZED_CLASS_NAMES_MALE.DRUID] = L["Druid_short"],
 	[LOCALIZED_CLASS_NAMES_MALE.HUNTER] = L["Hunter_short"],
 	[LOCALIZED_CLASS_NAMES_MALE.MAGE] = L["Mage_short"],
@@ -486,8 +484,8 @@ local ShortClass_abbrev = {
 	[LOCALIZED_CLASS_NAMES_MALE.WARLOCK] = L["Warlock_short"],
 	[LOCALIZED_CLASS_NAMES_MALE.WARRIOR] = L["Warrior_short"],
 
-	[LOCALIZED_CLASS_NAMES_FEMALE.DEMONHUNTER] = L["Demon Hunter_short"],
 	[LOCALIZED_CLASS_NAMES_FEMALE.DEATHKNIGHT] = L["Death Knight_short"],
+	[LOCALIZED_CLASS_NAMES_FEMALE.DEMONHUNTER] = L["Demon Hunter_short"],
 	[LOCALIZED_CLASS_NAMES_FEMALE.DRUID] = L["Druid_short"],
 	[LOCALIZED_CLASS_NAMES_FEMALE.HUNTER] = L["Hunter_short"],
 	[LOCALIZED_CLASS_NAMES_FEMALE.MAGE] = L["Mage_short"],
@@ -512,7 +510,7 @@ ScriptEnv.ShortClass = ShortClass
 
 local function Creature(unit)
 	if UnitIsWildBattlePet(unit) or UnitIsBattlePetCompanion(unit) then
-		return _G["BATTLE_PET_NAME_"..UnitBattlePetType(unit)]..' '..TOOLTIP_BATTLE_PET
+		return _G["BATTLE_PET_NAME_"..UnitBattlePetType(unit)].." "..TOOLTIP_BATTLE_PET
 	end
 	return UnitCreatureFamily(unit) or UnitCreatureType(unit) or UNKNOWN
 end
@@ -522,9 +520,8 @@ local function SmartRace(unit)
 	if UnitIsPlayer(unit) then
 		local race = UnitRace(unit)
 		return race or UNKNOWN
-	else
-		return Creature(unit)
 	end
+	return Creature(unit)
 end
 ScriptEnv.SmartRace = SmartRace
 
@@ -586,7 +583,7 @@ ScriptEnv.OfflineDuration = OfflineDuration
 local function Offline(unit)
  	local offline = OfflineDuration(unit)
 	if offline then
-		return L["Offline"]..' ('..FormatDuration(offline)..')'
+		return ("%s (%s)"):format(L["Offline"], FormatDuration(offline))
 	end
 end
 ScriptEnv.Offline = Offline
@@ -611,7 +608,7 @@ local function Dead(unit)
 	local dead_time = DeadDuration(unit)
 	local dead_type = (UnitIsGhost(unit) and L["Ghost"]) or (UnitIsDead(unit) and L["Dead"])
 	if dead_time and dead_type then
-		return dead_type..' ('..FormatDuration(dead_time)..')'
+		return ("%s (%s)"):format(dead_type, FormatDuration(dead_time))
 	elseif dead_type then
 		return dead_type
 	end
@@ -619,32 +616,24 @@ end
 ScriptEnv.Dead = Dead
 
 local MOONKIN_FORM = GetSpellInfo(24858)
-local AQUATIC_FORM = GetSpellInfo(1066)
-local FLIGHT_FORM = GetSpellInfo(33943)
-local SWIFT_FLIGHT_FORM = GetSpellInfo(40120)
 local TRAVEL_FORM = GetSpellInfo(783)
 local TREE_OF_LIFE = GetSpellInfo(33891)
 
 local function DruidForm(unit)
 	local _, class = UnitClass(unit)
-	if class ~= "DRUID" then
-		return nil
-	end
-	local power = UnitPowerType(unit)
-	if power == 1 then
-		return L["Bear"]
-	elseif power == 3 then
-		return L["Cat"]
-	elseif UnitAura(unit,MOONKIN_FORM) then
-		return L["Moonkin"]
-	elseif UnitAura(unit,TREE_OF_LIFE) then
-		return L["Tree"]
-	elseif UnitAura(unit,TRAVEL_FORM) then
-		return L["Travel"]
-	elseif UnitAura(unit,AQUATIC_FORM) then
-		return L["Aquatic"]
-	elseif UnitAura(unit,SWIFT_FLIGHT_FORM) or UnitAura(unit,FLIGHT_FORM) then
-		return L["Flight"]
+	if class == "DRUID" then
+		local power = UnitPowerType(unit)
+		if power == 1 then
+			return L["Bear"]
+		elseif power == 3 then
+			return L["Cat"]
+		elseif UnitAura(unit, MOONKIN_FORM) then
+			return L["Moonkin"]
+		elseif UnitAura(unit, TRAVEL_FORM) then
+			return L["Travel"]
+		elseif UnitAura(unit, TREE_OF_LIFE) then
+			return L["Tree"]
+		end
 	end
 end
 ScriptEnv.DruidForm = DruidForm
@@ -700,24 +689,23 @@ local MaxPower = UnitPowerMax
 ScriptEnv.MaxPower = MaxPower
 
 local function Round(number, digits)
-	if not digits then
-		digits = 0
-	end
-	local mantissa = 10^digits
-	local norm = number*mantissa + 0.5
+	local mantissa = 10^(digits or 0)
+	local norm = number * mantissa + 0.5
 	local norm_floor = math.floor(norm)
 	if norm == norm_floor and (norm_floor % 2) == 1 then
-		return (norm_floor-1) / mantissa
-	else
-		return norm_floor / mantissa
+		return (norm_floor - 1) / mantissa
 	end
+	return norm_floor / mantissa
 end
 ScriptEnv.Round = Round
 
 local function Short(value,format)
 	if type(value) == "number" then
 		local fmt
-		if value >= 10000000 or value <= -10000000 then
+		if value >= 1000000000 or value <= -1000000000 then
+			fmt = "%.1fb"
+			value = value / 1000000000
+		elseif value >= 10000000 or value <= -10000000 then
 			fmt = "%.1fm"
 			value = value / 1000000
 		elseif value >= 1000000 or value <= -1000000 then
@@ -731,19 +719,21 @@ local function Short(value,format)
 			value = value / 1000
 		else
 			fmt = "%d"
-			value = math.floor(value+0.5)
+			value = math.floor(value + 0.5)
 		end
 		if format then
 			return fmt:format(value)
-		else
-			return fmt, value
 		end
+		return fmt, value
 	else
 		local fmt_a, fmt_b
-		local a,b = value:match("^(%d+)/(%d+)$")
+		local a, b = value:match("^(%d+)/(%d+)$")
 		if a then
 			a, b = tonumber(a), tonumber(b)
-			if a >= 10000000 or a <= -10000000 then
+			if a >= 1000000000 or a <= -1000000000 then
+				fmt_a = "%.1fb"
+				a = a / 1000000000
+			elseif a >= 10000000 or a <= -10000000 then
 				fmt_a = "%.1fm"
 				a = a / 1000000
 			elseif a >= 1000000 or a <= -1000000 then
@@ -756,7 +746,10 @@ local function Short(value,format)
 				fmt_a = "%.1fk"
 				a = a / 1000
 			end
-			if b >= 10000000 or b <= -10000000 then
+			if b >= 1000000000 or b <= -1000000000 then
+				fmt_b = "%.1fb"
+				b = b / 1000000000
+			elseif b >= 10000000 or b <= -10000000 then
 				fmt_b = "%.1fm"
 				b = b / 1000000
 			elseif b >= 1000000 or b <= -1000000 then
@@ -769,11 +762,11 @@ local function Short(value,format)
 				fmt_b = "%.1fk"
 				b = b / 1000
 			end
+			local fmt = ("%s/%s"):format(fmt_a, fmt_b)
 			if format then
-				return (fmt_a.."/"..fmt_b):format(a,b)
-			else
-				return fmt_a.."/"..fmt_b,a,b
+				return fmt:format(a, b)
 			end
+			return fmt, a, b
 		else
 			return value
 		end
@@ -784,7 +777,10 @@ ScriptEnv.Short = Short
 local function VeryShort(value,format)
 	if type(value) == "number" then
 		local fmt
-		if value >= 1000000 or value <= -1000000 then
+		if value >= 1000000000 or value <= -1000000000 then
+			fmt = "%.1fb"
+			value = value / 1000000000
+		elseif value >= 1000000 or value <= -1000000 then
 			fmt = "%.0fm"
 			value = value / 1000000
 		elseif value >= 1000 or value <= -1000 then
@@ -795,33 +791,38 @@ local function VeryShort(value,format)
 		end
 		if format then
 			return fmt:format(value)
-		else
-			return fmt, value
 		end
+		return fmt, value
 	else
-		local a,b = value:match("^(%d+)/(%d+)")
+		local a, b = value:match("^(%d+)/(%d+)")
 		if a then
 			local fmt_a, fmt_b
 			a, b = tonumber(a), tonumber(b)
-			if b >= 1000000 or b <= -1000000 then
+			if b >= 1000000000 or b <= -1000000000 then
+				fmt_b = "%.1fb"
+				b = b / 1000000000
+			elseif b >= 1000000 or b <= -1000000 then
 				fmt_b = "%.0fm"
 				b = b / 1000000
 			elseif b >= 1000 or b <= -1000 then
 				fmt_b = "%.0fk"
 				b = b / 1000
 			end
-			if a >= 1000000 or a <= -1000000 then
+			if a >= 1000000000 or a <= -1000000000 then
+				fmt_a = "%.1fb"
+				a = a / 1000000000
+			elseif a >= 1000000 or a <= -1000000 then
 				fmt_a = "%.0fm"
 				a = a / 1000000
 			elseif a >= 1000 or a <= -1000 then
 				fmt_a = "%.0fk"
 				a = a / 1000
 			end
+			local fmt = ("%s/%s"):format(fmt_a, fmt_b)
 			if format then
-				return (fmt_a.."/"..fmt_b):format(a,b)
-			else
-				return fmt_a.."/"..fmt_b,a,b
+				return fmt:format(a, b)
 			end
+			return fmt, a, b
 		else
 			return value
 		end
@@ -837,29 +838,24 @@ local function IsMouseOver()
 end
 ScriptEnv.IsMouseOver = IsMouseOver
 
-local function Combos(unit, target)
-	if unit and target then
-		return GetComboPoints(unit, target)
-	else
-		return GetComboPoints(UnitHasVehicleUI("player") and "vehicle" or "player", "target")
+local function Combos()
+	if UnitHasVehicleUI("player") then
+		return GetComboPoints("vehicle")
 	end
+	return UnitPower("player", SPELL_POWER_COMBO_POINTS)
 end
 ScriptEnv.Combos = Combos
 
-local function ComboSymbols(symbol, unit, target)
-	if not symbol then
-		symbol = '@'
-	end
-	return string.rep(symbol,Combos(unit,target))
+local function ComboSymbols(symbol)
+	return string.rep(symbol or "@", Combos())
 end
 ScriptEnv.ComboSymbols = ComboSymbols
 
 local function Percent(x, y)
 	if y ~= 0 then
-		return Round(x / y * 100,1)
-	else
-		return 0
+		return Round(x / y * 100, 1)
 	end
+	return 0
 end
 ScriptEnv.Percent = Percent
 
@@ -868,9 +864,8 @@ local function XP(unit)
 		return UnitXP(unit)
 	elseif unit == "pet" or unit == "playerpet" then
 		return GetPetExperience()
-	else
-		return 0
 	end
+	return 0
 end
 ScriptEnv.XP = XP
 
@@ -880,27 +875,43 @@ local function MaxXP(unit)
 	elseif unit == "pet" or unit == "playerpet" then
 		local _, max = GetPetExperience()
 		return max
-	else
-		return 0
 	end
+	return 0
 end
 ScriptEnv.MaxXP = MaxXP
 
 local function RestXP(unit)
 	if unit == "player" then
 		return GetXPExhaustion() or 0
-	else
-		return 0
 	end
+	return 0
 end
 ScriptEnv.RestXP = RestXP
+
+local function ArtifactPower()
+	if HasArtifactEquipped() then
+		local _, _, _, _, xp, pointsSpent = C_ArtifactUI.GetEquippedArtifactInfo()
+
+		local numPoints = 0
+		local xpForNextPoint = C_ArtifactUI.GetCostForPointAtRank(pointsSpent)
+		while xp >= xpForNextPoint and xpForNextPoint > 0 do
+			xp = xp - xpForNextPoint
+
+			pointsSpent = pointsSpent + 1
+			numPoints = numPoints + 1
+
+			xpForNextPoint = C_ArtifactUI.GetCostForPointAtRank(pointsSpent)
+		end
+		return xp, xpForNextPoint, numPoints
+	end
+	return 0, 0, 0
+end
+ScriptEnv.ArtifactPower = ArtifactPower
 
 local function ThreatPair(unit)
 	if UnitIsFriend("player", unit) then
 		if UnitExists("target") then
 			return unit, "target"
-		else
-			return
 		end
 	else
 		return "player", unit
@@ -958,11 +969,10 @@ local function abbreviate(text)
 	end
 end
 local function Abbreviate(value)
-    if value:find(" ") then
-      return value:gsub(" *([^ ]+) *", abbreviate)
-    else
-      return value
-    end
+	if value:find(" ") then
+		return value:gsub(" *([^ ]+) *", abbreviate)
+	end
+	return value
 end
 ScriptEnv.Abbreviate = Abbreviate
 
@@ -970,7 +980,7 @@ local function PVPDuration(unit)
 	if unit and not UnitIsUnit(unit,"player") then return end
   if IsPVPTimerRunning() then
 		UpdateIn(0.25)
-		return GetPVPTimer()/1000
+		return GetPVPTimer() / 1000
 	end
 end
 ScriptEnv.PVPDuration = PVPDuration
@@ -1013,9 +1023,9 @@ ScriptEnv.HPColor = HPColor
 
 local function PowerColor(power_type)
 	local color = PitBull4.PowerColors[power_type]
-	local r,g,b
+	local r, g, b
 	if color then
-		r, g, b = color[1],color[2],color[3]
+		r, g, b = color[1], color[2], color[3]
 	else
 		r, g, b = 0.7, 0.7, 0.7
 	end

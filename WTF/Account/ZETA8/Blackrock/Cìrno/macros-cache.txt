@@ -1,4 +1,8 @@
 VER 3 0100000000000001 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Leap of Faith
-/cast @[mouseover] Leap Of Faith
+/cast [@mouseover] Leap Of Faith
+END
+VER 3 0100000000000002 "VB" "INV_MISC_QUESTIONMARK"
+#showtooltip Void Eruption
+/cast [target=mouseover,harm,exists,nodead] Void Eruption; Void Eruption
 END

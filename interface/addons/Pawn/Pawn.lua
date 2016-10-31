@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.0009
+PawnVersion = 2.0103
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.09
@@ -55,7 +55,7 @@ local PawnScaleProvidersInitialized = nil
 -- "Constants"
 local PawnCurrentScaleVersion = 1
 
-local PawnTooltipAnnotation = " " .. PawnDiamondTexture -- diamond texture defined in Localization.lua
+local PawnTooltipAnnotation = " " .. PawnDiamondTexture -- diamond texture defined in Core.lua
 
 local PawnScaleColorDarkFactor = 0.75 -- the unenchanted color is 75% of the enchanted color
 
@@ -69,7 +69,7 @@ PawnImportScaleResultTagError = 3
 
 PawnIgnoreStatValue = -1000000
 PawnBigUpgradeThreshold = 100 -- 100 = 10000% upgrade: don't display upgrade numbers that large
-PawnMinimumItemLevelToConsiderGems = 685 -- Sockets on items below this ilvl are ignored *** change this to 800 when Legion (not just 7.0) actually launches
+PawnMinimumItemLevelToConsiderGems = 800 -- Sockets on items below this ilvl are ignored
 
 -- Data used by PawnGetSlotsForItemType.
 local PawnItemEquipLocToSlot1 = 
@@ -141,14 +141,6 @@ function PawnInitialize()
 	if (not VgerCore) or (not VgerCore.Version) or (VgerCore.Version < PawnVgerCoreVersionRequired) then
 		if DEFAULT_CHAT_FRAME then DEFAULT_CHAT_FRAME:AddMessage("|cfffe8460" .. PawnLocal.NeedNewerVgerCoreMessage) end
 		message(PawnLocal.NeedNewerVgerCoreMessage)
-		return
-	end
-
-	-- Check the current WoW version. *** Remove this when 7.0 launches worldwide.
-	_, _, _, Toc = GetBuildInfo()
-	if Toc < 70000 then
-		if DEFAULT_CHAT_FRAME then DEFAULT_CHAT_FRAME:AddMessage("|cfffe8460" .. "This version of Pawn is for World of Warcraft 7.0 only.  Please use Pawn 1.9 if your region hasn't updated to 7.0 yet.") end
-		message("This version of Pawn is for World of Warcraft 7.0 only.  Please use Pawn 1.9 if your region hasn't updated to 7.0 yet.")
 		return
 	end
 
@@ -256,6 +248,18 @@ function PawnInitialize()
 			if ItemLink then PawnUpdateTooltip("GameTooltip", "SetHyperlink", ItemLink) end
 		end)
 	hooksecurefunc(GameTooltip, "Hide", function(self, ...) PawnLastHoveredItem = nil end)
+
+	-- World quest embedded tooltips
+	hooksecurefunc("EmbeddedItemTooltip_SetItemByQuestReward",
+		function(self, QuestLogIndex, QuestID, ...)
+			if PawnCommon.ShowQuestUpgradeAdvisor then
+				local ItemName, ItemTexture = GetQuestLogRewardInfo(QuestLogIndex, QuestID)
+				if ItemName and ItemTexture then
+					PawnUpdateTooltip(self.Tooltip:GetName(), "SetQuestLogItem", "reward", QuestLogIndex, QuestID, ...)
+					self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
+				end
+			end
+		end)
 	
 	-- World map tooltip (for quest rewards)
 	hooksecurefunc(WorldMapTooltip, "SetHyperlink", function(self, ...) PawnUpdateTooltip("WorldMapTooltip", "SetHyperlink", ...) end) -- HandyNotes_DraenorTreasures compatibility
@@ -360,6 +364,19 @@ function PawnInitialize()
 	if LinkWrangler then
 		LinkWrangler.RegisterCallback("Pawn", PawnLinkWranglerOnTooltip, "refresh")
 		LinkWrangler.RegisterCallback("Pawn", PawnLinkWranglerOnTooltip, "refreshcomp")
+	end
+
+	-- WoW 7.1 in-bag upgrade icons
+	PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
+	IsContainerItemAnUpgrade = function(bagID, slot, ...)
+		if PawnCommon.ShowBagUpgradeAdvisor then
+			local _, _, _, _, _, _, ItemLink = GetContainerItemInfo(bagID, slot)
+			local Item = PawnGetItemData(ItemLink)
+			if not Item then return nil end
+			return PawnIsItemAnUpgrade(Item) ~= nil
+		else
+			return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
+		end
 	end
 
 	-- We're now effectively initialized.  Just the last steps of scale initialization remain.
@@ -516,11 +533,11 @@ function PawnInitializeOptions()
 	PawnCommon.ShowBoth1HAnd2HUpgrades = nil
 	PawnCommon.ShowSpace = nil
 
-	-- The current version of Pawn doesn't use placeholder scales anymore, so remove any stale data that
+	-- Remove any stale scales from previous versions that might have accumulated.
 	-- the user might have accumulated.
 	local ScalesToDelete = { }
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
-		if Scale.Provider == "PawnPlaceholder" then tinsert(ScalesToDelete, ScaleName) end
+		if Scale.Provider == "PawnPlaceholder" or Scale.Provider == "Starter" or Scale.Provider == "Wowhead" then tinsert(ScalesToDelete, ScaleName) end
 	end
 	for _, ScaleName in pairs(ScalesToDelete) do
 		PawnCommon.Scales[ScaleName] = nil
@@ -536,8 +553,6 @@ function PawnInitializeOptions()
 		PawnCommon.IgnoreGemsWhileLeveling = true
 	end
 	if (not PawnCommon.LastVersion) or (PawnCommon.LastVersion < 2.0000) then
-		-- WoW 7.0 is a major patch, so invalidate best item data.
-		PawnInvalidateBestItems()
 		-- The new "show spec icons" option is enabled by default.
 		PawnCommon.ShowSpecIcons = true
 	end
@@ -549,10 +564,16 @@ function PawnInitializeOptions()
 		-- The baleful/valor upgrade option returned temporarily in 2.0.4, and it's on by default. 
 		PawnCommon.IgnoreItemUpgrades = true
 	end
+	if (not PawnCommon.LastVersion) or (PawnCommon.LastVersion < 2.01) then
+		-- The default scales changed in 2.1 when we switched from Wowhead to Ask Mr. Robot, so reset all upgrade data.
+		PawnInvalidateBestItems()
+	end
+	if (not PawnCommon.LastVersion) or (PawnCommon.LastVersion < 2.0101) then
+		-- The new Bag Upgrade Advisor is on by default.
+		PawnCommon.ShowBagUpgradeAdvisor = true
+	end
 	PawnCommon.LastVersion = PawnVersion
 	PawnOptions.LastVersion = PawnVersion
-
-	-- TODO: *** Should remove any scales from the "Starter" provider that are still in peoples' SavedVariables...
 
 	-- Just to fix up people who used the beta...  (Can remove this when the Legion beta realms close down)
 	if PawnOptions.UpgradeTracking == nil then PawnOptions.UpgradeTracking = false end
@@ -632,14 +653,19 @@ function PawnGetEmptyScale()
 	}
 end
 
--- Returns the default Pawn scale table.
-function PawnGetDefaultScale()
-	local _, _, ClassID = UnitClass("player")
-	local SpecID = GetSpecialization()
+-- Returns the default Pawn scale table, either for the current player's spec, or for the supplied class and spec if non-nil.
+function PawnGetDefaultScale(ClassID, SpecID, NoStats)
+	local _
+	if ClassID == nil or SpecID == nil then
+		local ClassID = UnitClass("player")
+		local SpecID = GetSpecialization()
+	end
 	local Template = PawnFindScaleTemplate(ClassID, SpecID)
-	local ScaleValues = PawnGetStatValuesForTemplate(Template)
+	local ScaleValues = PawnGetStatValuesForTemplate(Template, NoStats)
 	return 
 	{
+		["ClassID"] = ClassID,
+		["SpecID"] = SpecID,
 		["UpgradesFollowSpecialization"] = true,
 		["PerCharacterOptions"] = { },
 		["Values"] = ScaleValues,
@@ -1259,8 +1285,8 @@ function PawnAddValuesToTooltip(Tooltip, ItemValues, UpgradeInfo, BestItemFor, S
 				if not PawnCommon.ShowEnchanted then Value = 0 end
 			end
 
-			-- Override the localized name if the scale was designed for only the current class.
-			if Scale.ClassID == ClassID and Scale.SpecID then
+			-- Override the localized name if the scale was designed for only the current class, and it's not a user scale.
+			if Scale.ClassID == ClassID and Scale.SpecID and Scale.Provider then
 				local _, LocalizedSpecName = GetSpecializationInfoForClassID(ClassID, Scale.SpecID)
 				LocalizedName = LocalizedSpecName
 			end
@@ -1543,6 +1569,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 	for i = ItemNameLineNumber + 1, Tooltip:NumLines() do
 		local LeftLine = _G[TooltipName .. "TextLeft" .. i]
 		local LeftLineText = LeftLine:GetText()
+		if not LeftLineText then break end
 		
 		-- Look for this line in the "kill lines" list.  If it's there, we're done.
 		local IsKillLine = false
@@ -1905,6 +1932,9 @@ end
 -- of each line specified by index in the list Lines.
 -- Returns true if any lines were annotated.
 function PawnAnnotateTooltipLines(TooltipName, Lines)
+	-- Temporarily disabling this feature to see if anyone misses it.
+	if not PawnCommon.ShowAsterisks then return end
+
 	if not Lines then return false end
 	local Annotated = false
 	local Tooltip = _G[TooltipName]
@@ -2352,8 +2382,12 @@ function PawnParseScaleTag(ScaleTag)
 	-- Now, parse the values string for stat names and values.
 	local Values = {}
 	local function SplitStatValuePair(Pair)
-		local Pos, _, Stat, Value = strfind(Pair, "^%s*([%a%d]+)%s*=%s*(%-?[%d%.]+)%s*,$")
-		Value = tonumber(Value)
+		local Pos, _, Stat, Value = strfind(Pair, "^%s*([%a%d]+)%s*=%s*(%-?[%d%.a-zA-Z]+)%s*,$")
+		if Stat == "Class" then
+			Value = PawnGetClassIDFromName(Value) or tonumber(Value)
+		else
+			Value = tonumber(Value)
+		end
 		if Pos and Stat and (Stat ~= "") and Value then 
 			Values[Stat] = Value
 		end
@@ -2362,6 +2396,25 @@ function PawnParseScaleTag(ScaleTag)
 	
 	-- Looks like everything worked.
 	return Name, Values
+end
+
+local ClassNameToIDMap =
+{
+	["WARRIOR"] = 1, ["PALADIN"] = 2, ["HUNTER"] = 3, ["ROGUE"] = 4, ["PRIEST"] = 5, ["DEATHKNIGHT"] = 6, ["SHAMAN"] = 7, ["MAGE"] = 8, ["WARLOCK"] = 9, ["MONK"] = 10, ["DRUID"] = 11, ["DEMONHUNTER"] = 12
+}
+local ClassIDToEnglishNameMap =
+{
+	[1] = "Warrior", [2] = "Paladin", [3] = "Hunter", [4] = "Rogue", [5] = "Priest", [6] = "DeathKnight", [7] = "Shaman", [8] = "Mage", [9] = "Warlock", [10] = "Monk", [11] = "Druid", [12] = "DemonHunter" 
+}
+
+-- Returns a class ID number (1-12) from the string passed in, or nil if the string isn't a class name.
+function PawnGetClassIDFromName(Name)
+	return ClassNameToIDMap[string.upper(Name)]
+end
+
+-- Returns an unlocalized English class name from the class ID number.
+function PawnGetEnglishClassNameFromID(ID)
+	return ClassIDToEnglishNameMap[ID]
 end
 
 -- Escapes a string so that it can be more easily printed.
@@ -3350,14 +3403,14 @@ end
 --		Additional fields can be present.
 -- Returns: List
 --	List: The same table passed in, with one additional field added: { ..., Result }
---		Result: "upgrade" if the item is an upgrade, "vendor" if the item is the most valuable choice, "trinket" if the item is a trinket, or nil if none of the above.
+--		Result: "upgrade" if the item is an upgrade, "vendor" if the item is the most valuable choice, "trinket" if the item is a trinket or relic, or nil if none of the above.
 function PawnFindInterestingItems(List)
 	local Info, _
 	local HighestValue, HighestValueInfo = 0, nil
 	local DoNotVendor
 	
 	for _, Info in pairs(List) do
-		if Info.Item.InvType == "INVTYPE_TRINKET" then
+		if Info.Item.InvType == "INVTYPE_TRINKET" or (Info.Item.ID and IsArtifactRelicItem(Info.Item.ID)) then
 			Info.Result = "trinket"
 		end
 		if Info.Usable and PawnIsItemAnUpgrade(Info.Item) then
@@ -3365,7 +3418,7 @@ function PawnFindInterestingItems(List)
 			Info.Result = "upgrade"
 			-- If it's a choice item, then we shouldn't pick a choice item to vendor.
 			if Info.RewardType == "choice" then DoNotVendor = true end
-		elseif Info.RewardType == "choice" and Info.Item.InvType == "INVTYPE_TRINKET" then
+		elseif Info.RewardType == "choice" and (Info.Item.InvType == "INVTYPE_TRINKET" or (Info.Item.ID and IsArtifactRelicItem(Info.Item.ID))) then
 			-- If one of the choices is a trinket, don't mark any items as vendor items.
 			DoNotVendor = true
 		elseif (not DoNotVendor) and Info.RewardType == "choice" then
@@ -3393,7 +3446,6 @@ function PawnIsArmorBestTypeForPlayer(Item)
 	if not Stats then return false end
 	-- If the item isn't armor then we don't need to check anything.	
 	if (not Stats.IsCloth) and (not Stats.IsLeather) and (not Stats.IsMail) and (not Stats.IsPlate) then return true end
-	-- At level 40 some classes learn a new type of armor.
 	-- Before level 50 it's fine if the player is wearing the wrong type of armor.
 	local Level = UnitLevel("player")
 	local IsLevelForSpecialization = (Level >= 50)
@@ -3489,9 +3541,11 @@ function PawnOnSpecChanged()
 
 	-- Disable all scales that don't match the current spec, activate any that do, and then select one
 	-- of them in the UI.
+	-- Right now, we only take scales from a provider into account, because some code assumes that only one
+	-- scale can ever be enabled in Automatic mode. 
 	local ScaleName, Scale, LastEnabledScaleName
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
-		if Scale.ClassID == ClassID and Scale.SpecID == SpecID then
+		if Scale.ClassID == ClassID and Scale.SpecID == SpecID and Scale.Provider ~= nil then
 			PawnSetScaleVisible(ScaleName, true)
 			LastEnabledScaleName = ScaleName
 		else
@@ -3519,7 +3573,7 @@ function PawnFindScaleForSpec(ClassID, SpecID)
 
 	local ScaleName, Scale
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
-		if Scale.ClassID == ClassID and Scale.SpecID == SpecID then return ScaleName end
+		if Scale.ClassID == ClassID and Scale.SpecID == SpecID and Scale.Provider then return ScaleName end
 	end
 
 	return nil
@@ -3581,7 +3635,8 @@ function PawnAddEmptyScale(ScaleName)
 end
 
 -- Adds a new scale with the default values.  Returns true if successful.
-function PawnAddDefaultScale(ScaleName)
+-- The scale returned will be for the current class and spec unless they're supplied as parameters.
+function PawnAddDefaultScale(ScaleName, ClassID, SpecID)
 	if not PawnIsInitialized then VgerCore.Fail("Can't add scales until Pawn is initialized") return end
 
 	if (not ScaleName) or (ScaleName == "") then
@@ -3592,7 +3647,7 @@ function PawnAddDefaultScale(ScaleName)
 		return false
 	end
 	
-	PawnCommon.Scales[ScaleName] = PawnGetDefaultScale()
+	PawnCommon.Scales[ScaleName] = PawnGetDefaultScale(ClassID, SpecID)
 	PawnCommon.Scales[ScaleName].PerCharacterOptions[PawnPlayerFullName] = { }
 	PawnCommon.Scales[ScaleName].PerCharacterOptions[PawnPlayerFullName].Visible = true
 	PawnRecalculateScaleTotal(ScaleName)
@@ -3877,13 +3932,14 @@ end
 function PawnGetScaleTag(ScaleName)
 	if not PawnIsInitialized then VgerCore.Fail("Can't export scales until Pawn is initialized") return end
 
+	local Scale = PawnCommon.Scales[ScaleName]
 	if (not ScaleName) or (ScaleName == "") then
 		VgerCore.Fail("ScaleName cannot be empty.  Usage: PawnGetScaleTag(\"ScaleName\")")
 		return
-	elseif not PawnCommon.Scales[ScaleName] then
+	elseif not Scale then
 		VgerCore.Fail("ScaleName must be the name of an existing scale, and is case-sensitive.")
 		return
-	elseif not PawnCommon.Scales[ScaleName].Values then
+	elseif not Scale.Values then
 		return
 	end
 	
@@ -3891,9 +3947,19 @@ function PawnGetScaleTag(ScaleName)
 	local ScaleFriendlyName = PawnGetScaleLocalizedName(ScaleName)
 	local ScaleTag = "( Pawn: v" .. PawnCurrentScaleVersion .. ": \"" .. ScaleFriendlyName .. "\": "
 	local AddComma = false
+	local TemplateStats
+	if Scale.ClassID and Scale.SpecID then
+		ScaleTag = ScaleTag .. "Class=" .. PawnGetEnglishClassNameFromID(Scale.ClassID) .. ", Spec=" .. Scale.SpecID
+		AddComma = true
+		TemplateStats = PawnGetStatValuesForTemplate(PawnFindScaleTemplate(Scale.ClassID, Scale.SpecID), true)
+	end
 	local IncludeThis
-	for StatName, Value in pairs(PawnCommon.Scales[ScaleName].Values) do
+	for StatName, Value in pairs(Scale.Values) do
 		local IncludeThis = (Value and Value ~= 0)
+		if IncludeThis and TemplateStats and Value == TemplateStats[StatName] then
+			-- If class and spec are included, don't include things that are already in the template.
+			IncludeThis = false
+		end
 		if IncludeThis then
 			if AddComma then ScaleTag = ScaleTag .. ", " end
 			ScaleTag = ScaleTag .. StatName .. "=" .. tostring(Value)
@@ -3920,6 +3986,16 @@ function PawnImportScale(ScaleTag, Overwrite)
 		-- This tag couldn't be parsed.
 		return PawnImportScaleResultTagError
 	end
+	-- The "Class" and "Spec" parameters aren't actually stat values, so take them out of the list now.
+	local ClassID = Values.Class
+	Values.Class = nil
+	local SpecID = Values.Spec
+	Values.Spec = nil
+	if ClassID and not SpecID then
+		ClassID = nil
+	elseif SpecID and not ClassID then
+		SpecID = nil
+	end
 	
 	local AlreadyExists = PawnCommon.Scales[ScaleName] ~= nil
 	if AlreadyExists and (PawnScaleIsReadOnly(ScaleName) or not Overwrite) then
@@ -3930,14 +4006,23 @@ function PawnImportScale(ScaleTag, Overwrite)
 	
 	-- Looks like everything's okay.  Import the scale.  If the scale already exists but Overwrite = true was passed,
 	-- don't change other options about this scale, such as the color.
+
 	if not AlreadyExists then
-		-- REVIEW: Shouldn't this really use the default new blank scale codepath?
-		PawnCommon.Scales[ScaleName] = { }
-		PawnCommon.Scales[ScaleName].PerCharacterOptions = { }
+		if ClassID and SpecID then
+			PawnCommon.Scales[ScaleName] = PawnGetDefaultScale(ClassID, SpecID, true)
+		else
+			PawnCommon.Scales[ScaleName] = PawnGetEmptyScale()
+		end	
 		PawnCommon.Scales[ScaleName].PerCharacterOptions[PawnPlayerFullName] = { }
 		PawnCommon.Scales[ScaleName].PerCharacterOptions[PawnPlayerFullName].Visible = true
 	end
-	PawnCommon.Scales[ScaleName].Values = Values	
+	local NewScale = PawnCommon.Scales[ScaleName]
+
+	-- Merge the scale tag's stats into the template stats.
+	local StatName, Value
+	for StatName, Value in pairs(Values) do
+		NewScale.Values[StatName] = Value
+	end
 	PawnCorrectScaleErrors(ScaleName)
 	
 	PawnRecalculateScaleTotal(ScaleName)

@@ -10,11 +10,11 @@ Prat3DB = {
 		["Prat_Frames"] = {
 			["profiles"] = {
 				["Default"] = {
-					["minchatwidthdefault"] = 296,
+					["initialized"] = true,
 					["framealpha"] = 0.3,
 					["maxchatheightdefault"] = 400,
 					["maxchatwidthdefault"] = 608.000061035156,
-					["initialized"] = true,
+					["minchatwidthdefault"] = 296,
 				},
 			},
 		},
@@ -22,15 +22,25 @@ Prat3DB = {
 			["profiles"] = {
 				["Default"] = {
 					["colors"] = {
-						["trade"] = {
-							["r"] = 1,
-							["g"] = 0.752941250801086,
-							["b"] = 0.752941250801086,
+						["darkwater"] = {
+							["b"] = 0.372549027204514,
+							["g"] = 1,
+							["r"] = 0.0901960805058479,
 						},
 						["lfr"] = {
-							["r"] = 1,
-							["g"] = 0.752941250801086,
 							["b"] = 0.752941250801086,
+							["g"] = 0.752941250801086,
+							["r"] = 1,
+						},
+						["lfg"] = {
+							["b"] = 0.752941250801086,
+							["g"] = 0.752941250801086,
+							["r"] = 1,
+						},
+						["trade"] = {
+							["b"] = 0.752941250801086,
+							["g"] = 0.752941250801086,
+							["r"] = 1,
 						},
 					},
 				},
@@ -62,7 +72,7 @@ Prat3DB = {
 		},
 		["Prat_Scroll"] = {
 		},
-		["Prat_UrlCopy"] = {
+		["Prat_Bubbles"] = {
 		},
 		["Prat_Paragraph"] = {
 		},
@@ -76,6 +86,21 @@ Prat3DB = {
 		},
 		["Prat_ChannelSticky"] = {
 		},
+		["Prat_ChatLog"] = {
+		},
+		["Prat_History"] = {
+			["profiles"] = {
+				["Default"] = {
+					["chatlinesframes"] = {
+						["ChatFrame1"] = false,
+					},
+				},
+			},
+		},
+		["Prat_PopupMessage"] = {
+		},
+		["Prat_CopyChat"] = {
+		},
 		["Prat_Timestamps"] = {
 			["profiles"] = {
 				["Default"] = {
@@ -85,14 +110,6 @@ Prat3DB = {
 				},
 			},
 		},
-		["Prat_History"] = {
-		},
-		["Prat_PopupMessage"] = {
-		},
-		["Prat_CopyChat"] = {
-		},
-		["Prat_ChatLog"] = {
-		},
 		["Prat_Search"] = {
 		},
 		["Prat_Buttons"] = {
@@ -100,14 +117,14 @@ Prat3DB = {
 				["Default"] = {
 					["showBnet"] = false,
 					["showButtons"] = false,
-					["showMenu"] = false,
 					["showminimize"] = false,
+					["showMenu"] = false,
 				},
 			},
 		},
 		["Prat_ServerNames"] = {
 		},
-		["Prat_Bubbles"] = {
+		["Prat_UrlCopy"] = {
 		},
 	},
 	["profileKeys"] = {
@@ -116,22 +133,22 @@ Prat3DB = {
 		["Feralde - Bronzebeard"] = "Default",
 		["Prismriver - Drak'thul"] = "Default",
 		["Mews - Cho'gall"] = "Default",
-		["Cìrno - Skywall"] = "Default",
 		["Cirnosa - Blackrock"] = "Default",
+		["Cìrno - Skywall"] = "Default",
 	},
 	["profiles"] = {
 		["Cìrno - Blackrock"] = {
 		},
 		["Default"] = {
 			["modules"] = {
-				["ChatLog"] = 2,
+				["Alias"] = 2,
 				["AltNames"] = 2,
 				["Sounds"] = 2,
 				["Paragraph"] = 2,
 				["KeyBindings"] = 2,
 				["PopupMessage"] = 2,
 				["OriginalButtons"] = 2,
-				["Alias"] = 2,
+				["ChatLog"] = 2,
 			},
 		},
 		["Blackrock"] = {

@@ -5,6 +5,8 @@ Errors/
 Logs/
 Screenshots/
 Utils/
+GatherMate2/
+GatherMate2_Data/
 
 *.db
 *.curseclient

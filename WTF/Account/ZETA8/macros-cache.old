@@ -22,7 +22,7 @@ VER 3 0000000000000014 "BS3" "Spell_Shadow_UnstableAffliction_1"
 END
 VER 3 000000000000001D "Dispel" "SPELL_HOLY_DISPELMAGIC"
 #showtooltip
-/cast [@mouseover,help,nodead][help,nodead] Purify; [@mouseover,harm,nodead][harm,nodead] Dispel Magic; [@player] Purify
+/cast [@mouseover,harm,nodead][harm,nodead] Dispel Magic;
 END
 VER 3 0000000000000021 "Dispel Magic" "SPELL_NATURE_NULLIFYDISEASE"
 #showtooltip

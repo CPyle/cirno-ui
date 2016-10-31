@@ -74,7 +74,6 @@ function PitBull4_HealthBar:GetExampleValue(frame)
 end
 
 function PitBull4_HealthBar:GetColor(frame, value)
-	local db = self:GetLayoutDB(frame)
 	local unit = frame.unit
 
 	if not unit or not UnitIsConnected(unit) then

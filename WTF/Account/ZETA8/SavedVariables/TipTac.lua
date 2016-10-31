@@ -20,27 +20,27 @@ TipTac_Config = {
 	["classification_minus"] = "-%s ",
 	["anchorWorldTipType"] = "normal",
 	["showBuffs"] = false,
-	["left"] = 368.917907714844,
+	["left"] = 365.175262451172,
 	["anchorFrameTipType"] = "parent",
 	["classification_trivial"] = "~%s ",
 	["classification_worldboss"] = "%s|r (Boss) ",
 	["anchorWorldTipPoint"] = "TOPLEFT",
 	["classification_rareelite"] = "+%s|r (Rare) ",
 	["anchorWorldUnitType"] = "normal",
-	["classification_rare"] = "%s|r (Rare) ",
+	["showDebuffs"] = false,
 	["targetYouText"] = "<<YOU>>",
-	["anchorFrameTipPoint"] = "TOP",
-	["top"] = 784.491149902344,
-	["optionsBottom"] = 267.608154296875,
-	["gradientTip"] = false,
-	["backdropInsets"] = 3.08687019348145,
-	["anchorWorldUnitPoint"] = "TOPLEFT",
+	["anchorFrameUnitType"] = "normal",
+	["top"] = 791.976440429688,
 	["tipBorderColor"] = {
 		0.972549019607843, -- [1]
 		1, -- [2]
 		0.984313725490196, -- [3]
 		1, -- [4]
 	},
-	["anchorFrameUnitType"] = "normal",
-	["showDebuffs"] = false,
+	["gradientTip"] = false,
+	["anchorWorldUnitPoint"] = "TOPLEFT",
+	["backdropInsets"] = 3.08687019348145,
+	["optionsBottom"] = 267.608154296875,
+	["anchorFrameTipPoint"] = "TOP",
+	["classification_rare"] = "%s|r (Rare) ",
 }
